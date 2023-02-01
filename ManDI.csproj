@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="argcomm\doc_lib\category\" />
+    <Folder Include="argcomm\doc_lib\docement\" />
+    <Folder Include="argcomm\doc_lib\file\" />
+    <Folder Include="argcomm\doc_lib\link\" />
+    <Folder Include="argcomm\object\" />
+    <Folder Include="argcomm\position\" />
+    <Folder Include="argcomm\postemp\" />
+    <Folder Include="argcomm\group\" />
+    <Folder Include="argcomm\class\" />
+    <Folder Include="argcomm\properties\common\" />
+    <Folder Include="argcomm\properties\class\" />
+    <Folder Include="argcomm\properties\global\" />
+    <Folder Include="argcomm\properties\pos_temp\" />
+    <Folder Include="argcomm\properties\object\" />
+    <Folder Include="argcomm\properties\position\" />
+  </ItemGroup>
+
+</Project>
