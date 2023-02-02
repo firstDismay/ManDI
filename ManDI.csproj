@@ -7,21 +7,40 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="argcomm\doc_lib\category\" />
-    <Folder Include="argcomm\doc_lib\docement\" />
-    <Folder Include="argcomm\doc_lib\file\" />
-    <Folder Include="argcomm\doc_lib\link\" />
-    <Folder Include="argcomm\object\" />
-    <Folder Include="argcomm\position\" />
-    <Folder Include="argcomm\postemp\" />
-    <Folder Include="argcomm\group\" />
-    <Folder Include="argcomm\class\" />
-    <Folder Include="argcomm\properties\common\" />
-    <Folder Include="argcomm\properties\class\" />
-    <Folder Include="argcomm\properties\global\" />
-    <Folder Include="argcomm\properties\pos_temp\" />
-    <Folder Include="argcomm\properties\object\" />
-    <Folder Include="argcomm\properties\position\" />
+    <Folder Include="service\class\" />
+    <Folder Include="service\doc_lib\category\" />
+    <Folder Include="service\doc_lib\docement\" />
+    <Folder Include="service\doc_lib\file\" />
+    <Folder Include="service\doc_lib\link\" />
+    <Folder Include="service\group\" />
+    <Folder Include="service\position\" />
+    <Folder Include="service\postemp\" />
+    <Folder Include="service\properties\class\" />
+    <Folder Include="service\properties\common\" />
+    <Folder Include="service\properties\global\" />
+    <Folder Include="service\properties\object\" />
+    <Folder Include="service\properties\position\" />
+    <Folder Include="service\properties\pos_temp\" />
+    <Folder Include="command\common\" />
+    <Folder Include="command\doc_lib\category\" />
+    <Folder Include="command\doc_lib\docement\" />
+    <Folder Include="command\doc_lib\file\" />
+    <Folder Include="command\doc_lib\link\" />
+    <Folder Include="command\position\" />
+    <Folder Include="command\postemp\" />
+    <Folder Include="command\group\" />
+    <Folder Include="command\class\" />
+    <Folder Include="command\properties\common\" />
+    <Folder Include="command\properties\class\" />
+    <Folder Include="command\properties\global\" />
+    <Folder Include="command\properties\pos_temp\" />
+    <Folder Include="command\properties\object\" />
+    <Folder Include="command\properties\position\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="7.0.1" />
+    <PackageReference Include="Npgsql.Json.NET" Version="7.0.1" />
   </ItemGroup>
 
 </Project>
