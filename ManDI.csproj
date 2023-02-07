@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,23 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="service\class\" />
-    <Folder Include="service\doc_lib\category\" />
-    <Folder Include="service\doc_lib\docement\" />
-    <Folder Include="service\doc_lib\file\" />
-    <Folder Include="service\doc_lib\link\" />
-    <Folder Include="service\group\" />
-    <Folder Include="service\position\" />
-    <Folder Include="service\postemp\" />
-    <Folder Include="service\properties\class\" />
-    <Folder Include="service\properties\common\" />
-    <Folder Include="service\properties\global\" />
-    <Folder Include="service\properties\object\" />
-    <Folder Include="service\properties\position\" />
-    <Folder Include="service\properties\pos_temp\" />
-    <Folder Include="command\common\" />
+    <Compile Remove="command\doc_lib\docement\**" />
+    <EmbeddedResource Remove="command\doc_lib\docement\**" />
+    <None Remove="command\doc_lib\docement\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="command\doc_lib\category\" />
-    <Folder Include="command\doc_lib\docement\" />
     <Folder Include="command\doc_lib\file\" />
     <Folder Include="command\doc_lib\link\" />
     <Folder Include="command\position\" />
