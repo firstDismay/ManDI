@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects
+namespace ManDI.command.objects.sel
 {
     /// <summary>
     /// Команда возвращает таблицу объектов по идентификатору позиции
     /// </summary>
-    public class object_by_id_position: IParametersFunction
+    public class object_by_id_position : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции объекта
         /// </summary>
-        public Int64 iid_position { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -39,7 +39,7 @@ namespace ManDI.command.objects
         /// <summary>
         /// Наименование функции API
         /// </summary>
-        public String NameFunction
+        public string NameFunction
         {
             get
             {

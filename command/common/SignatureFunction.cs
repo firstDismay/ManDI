@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ManDI.command.common
 {
+    /// <summary>
+    /// Экстрактор сигнатур и аргументов функций
+    /// </summary>
     public class SignatureFunction : ISignatureFunction
     {
         IParametersFunction _function;

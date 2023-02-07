@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ManDI.command.common
 {
-    public class SignatureFunctionWhere : ISignatureFunction
+    public class SignatureFunctionDecoratorСondition : ISignatureFunction
     {
         ISignatureFunction _signature;
         UserContextSQL _user_context;
         
-        public SignatureFunctionWhere(ISignatureFunction Signature, UserContextSQL UserContext)
+        public SignatureFunctionDecoratorСondition(ISignatureFunction Signature, UserContextSQL UserContext)
         {
             if (Signature == null) throw new ArgumentNullException("Signature");
             if(UserContext == null) throw new ArgumentNullException("UserContext");

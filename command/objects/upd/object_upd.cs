@@ -7,32 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects
+namespace ManDI.command.objects.upd
 {
     /// <summary>
-    /// Команда добавляет новый объект в указанное расположение
+    /// Команда изменяет указанный объект
     /// </summary>
-    public class object_add: IParametersFunction
+    public class object_upd : IParametersFunction
     {
+
         /// <summary>
-        /// Идентификатор класса объекта
+        /// Идентификатор объекта
         /// </summary>
-        public Int64 iid_class { get; set; }
-        
-        /// <summary>
-        /// Идентификатор позиции объекта
-        /// </summary>
-        public Int64 iid_position { get; set; }
-        
+        public long iid { get; set; }
+
         /// <summary>
         /// Идентификатор правила пересчета количества объектов
         /// </summary>
-        public Int32 iid_unit_conversion_rule { get; set; }
+        public int iid_unit_conversion_rule { get; set; }
 
         /// <summary>
         /// Количество объектов в текущем правиле пересчета
         /// </summary>
-        public Decimal icquantity { get; set; }
+        public decimal icquantity { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -44,12 +40,8 @@ namespace ManDI.command.objects
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_class", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class;
-                ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
+                Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_unit_conversion_rule", NpgsqlDbType.Integer);
@@ -67,11 +59,11 @@ namespace ManDI.command.objects
         /// <summary>
         /// Наименование функции API
         /// </summary>
-        public String NameFunction
+        public string NameFunction
         {
             get
             {
-                return "object_add";
+                return "object_upd";
             }
         }
     }
