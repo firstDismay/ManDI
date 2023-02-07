@@ -29,7 +29,7 @@ namespace ManDI.command.objects.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("object_array", NpgsqlDbType.Array & NpgsqlDbType.Bigint);
+                Parameter = new NpgsqlParameter("object_array", NpgsqlDbType.Array | NpgsqlDbType.Bigint);
                 Parameter.Value = object_array;
                 ListParameter.Add(Parameter);
                 return ListParameter;
