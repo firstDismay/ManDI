@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position_by_id
+namespace ManDI.command.position.sel
 {
     /// <summary>
     /// Команда возвращает позицию по идентификатору
