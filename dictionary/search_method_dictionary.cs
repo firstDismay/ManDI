@@ -6,7 +6,7 @@ using ManDI.enums;
 
 namespace ManDI.function
 {
-    partial class global_dictionary
+    partial class search_method_dictionary
     {
         #region Функции сопоставления методов поиска и его пользовательского представления
 
@@ -78,7 +78,6 @@ namespace ManDI.function
             { eSearchMethods.any_array, "Соответствует значениям"},
             { eSearchMethods.not_any_array, "Не соответствует значениям"},
         };
-
         #endregion
     }
 }

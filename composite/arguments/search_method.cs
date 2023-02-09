@@ -29,21 +29,5 @@ namespace ManDI.composite.arguments
         /// </summary>
         [JsonProperty]
         public eSearchMethods SearchMethod { get; set; }
-
-        /// <summary>
-        /// Описание метода поиска
-        /// </summary>
-        public  String Description()
-        {
-            return global_dictionary.SearchMethodsToDescription(SearchMethod);
-        }
-
-        /// <summary>
-        /// Переопределение метода ToString
-        /// </summary>
-        public override String ToString()
-        {
-            return global_dictionary.SearchMethodsToString(SearchMethod);
-        }
     }
 }
