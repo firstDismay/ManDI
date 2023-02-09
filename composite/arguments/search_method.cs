@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ManDI.enums;
+using ManDI.function;
 using Newtonsoft.Json;
 
 namespace ManDI.composite.arguments
@@ -34,7 +35,7 @@ namespace ManDI.composite.arguments
         /// </summary>
         public  String Description()
         {
-            return manager.SearchMethodsToDescription(SearchMethod);
+            return global_dictionary.SearchMethodsToDescription(SearchMethod);
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace ManDI.composite.arguments
         /// </summary>
         public override String ToString()
         {
-            return manager.SearchMethodsToString(SearchMethod);
+            return global_dictionary.SearchMethodsToString(SearchMethod);
         }
     }
 }

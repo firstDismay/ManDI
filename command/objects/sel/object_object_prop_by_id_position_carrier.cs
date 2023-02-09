@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 namespace ManDI.command.objects.sel
 {
     /// <summary>
-    /// Команда возвращает список объектов-значений объектного свойства объекта по идентификатору свойства объекта
+    /// Команда возвращает список объектов-значений объектного свойства объекта по идентификатору свойства позиции
     /// </summary>
-    public class object_object_prop_by_id_object_carrier : IParametersFunction
+    public class object_object_prop_by_id_position_carrier : IParametersFunction
     {
 
         /// <summary>
-        /// Идентификатор объекта носителя
+        /// Идентификатор позиции носителя
         /// </summary>
-        public long iid_object_carrier { get; set; }
+        public long iid_position_carrier { get; set; }
 
         /// <summary>
         /// Идентификатор объектного свойства
         /// </summary>
-        public long iid_class_prop { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -35,12 +35,12 @@ namespace ManDI.command.objects.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_object_carrier", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object_carrier;
+                Parameter = new NpgsqlParameter("iid_position_carrier", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position_carrier;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class_prop;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -54,7 +54,7 @@ namespace ManDI.command.objects.sel
         {
             get
             {
-                return "object_object_prop_by_id_object_carrier";
+                return "object_object_prop_by_id_position_carrier";
             }
         }
     }
