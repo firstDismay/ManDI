@@ -9,12 +9,12 @@ namespace ManDI.command.objects.add
     /// <summary>
     /// Команда добавляет список объектов по массиву параметров объектов
     /// </summary>
-    public class object_add_for_array_object_parameter : IParametersFunction
+    public class object_add_for_array_object_parameters : IParametersFunction
     {
         /// <summary>
         /// Массив параметров объектов и значений их свойств
         /// </summary>
-        public object_parameters[] array_object_parameter { get; set; }
+        public object_parameters[] object_parameters { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -26,11 +26,11 @@ namespace ManDI.command.objects.add
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("array_object_parameters", NpgsqlDbType.Array | NpgsqlDbType.Jsonb);
-                String[] sarray_object_parameter = new String[array_object_parameter.Length];
-                for (Int32 i = 0; i < array_object_parameter.Length; i++)
+                Parameter = new NpgsqlParameter("object_parameters ", NpgsqlDbType.Array | NpgsqlDbType.Jsonb);
+                String[] sarray_object_parameter = new String[object_parameters.Length];
+                for (Int32 i = 0; i < object_parameters.Length; i++)
                 {
-                    sarray_object_parameter[i] = JsonConvert.SerializeObject(array_object_parameter[i], Formatting.Indented);
+                    sarray_object_parameter[i] = JsonConvert.SerializeObject(object_parameters[i], Formatting.Indented);
                 }
                 Parameter.Value = sarray_object_parameter;
                 ListParameter.Add(Parameter);
@@ -46,7 +46,7 @@ namespace ManDI.command.objects.add
         {
             get
             {
-                return "object_add_for_array_object_parameter";
+                return "object_add_for_array_object_parameters";
             }
         }
     }
