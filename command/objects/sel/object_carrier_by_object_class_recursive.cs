@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects.upd
+namespace ManDI.command.objects.sel
 {
     /// <summary>
-    /// Команда приводит объекты к активным состояниям классов  по идентификатору позиции рекурсивно
+    /// Команда возвращает полный список объектов носителей объектов по идентификатору класса рекурсивно
     /// </summary>
-    public class object_cast_for_class_act_by_id_position : IParametersFunction
+    public class object_carrier_by_object_class_recursive : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции объектов
+        /// Идентификатор позиции объекта
         /// </summary>
-        public long iid_position { get; set; }
+        public long iid_class { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -29,8 +29,8 @@ namespace ManDI.command.objects.upd
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("iid_class", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -44,7 +44,7 @@ namespace ManDI.command.objects.upd
         {
             get
             {
-                return "object_cast_for_class_act_by_id_position";
+                return "object_carrier_by_object_class_recursive";
             }
         }
     }

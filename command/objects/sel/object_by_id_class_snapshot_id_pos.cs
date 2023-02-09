@@ -7,13 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects.upd
+namespace ManDI.command.objects.sel
 {
     /// <summary>
-    /// Команда приводит объекты к активным состояниям классов  по идентификатору позиции рекурсивно
+    /// Команда возвращает список объектов снимка класса и всех наследующих снимков классов 
+    /// по идентификаторам класса, позиции и штампу времени
     /// </summary>
-    public class object_cast_for_class_act_by_id_position : IParametersFunction
+    public class object_by_id_class_snapshot_id_pos : IParametersFunction
     {
+        /// <summary>
+        /// Идентификатор класса объектов
+        /// </summary>
+        public long iid_class { get; set; }
+
+        /// <summary>
+        /// Шатамп времени наследуемого класса
+        /// </summary>
+        public DateTime itimestamp_class { get; set; }
+
         /// <summary>
         /// Идентификатор позиции объектов
         /// </summary>
@@ -28,6 +39,14 @@ namespace ManDI.command.objects.upd
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
+
+                Parameter = new NpgsqlParameter("iid_class", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("itimestamp_class", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp_class;
+                ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_position;
@@ -44,7 +63,7 @@ namespace ManDI.command.objects.upd
         {
             get
             {
-                return "object_cast_for_class_act_by_id_position";
+                return "object_by_id_class_snapshot_id_pos";
             }
         }
     }
