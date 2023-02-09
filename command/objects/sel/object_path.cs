@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace ManDI.command.objects.sel
 {
     /// <summary>
-    /// Команда возвращает таблицу объектов по идентификатору позиции
+    /// Команда возвращает путь объекта по идентификатору объекта
     /// </summary>
-    public class object_by_id : IParametersFunction
+    public class object_path : IParametersFunction
     {
         /// <summary>
         /// Идентификатор объекта
         /// </summary>
-        public long iid { get; set; }
+        public long iid_object { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -29,8 +29,8 @@ namespace ManDI.command.objects.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_object;
                 ListParameter.Add(Parameter);
                 return ListParameter;
             }
@@ -43,7 +43,7 @@ namespace ManDI.command.objects.sel
         {
             get
             {
-                return "object_by_id";
+                return "object_path";
             }
         }
     }
