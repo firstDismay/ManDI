@@ -8,18 +8,19 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user_options.sel
 {
     /// <summary>
     /// Команда возвращает позицию по идентификатору
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_options_by_login : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Логин пользователя
         /// </summary>
-        public long iid { get; set; }
+        public string ilogin { get; set; }
 
+        
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -30,8 +31,8 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Varchar);
+                Parameter.Value = ilogin;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +46,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_options_by_login";
             }
         }
     }

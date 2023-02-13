@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда удаляет пользователя БД
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_del : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Идентификатор  пользователя
         /// </summary>
-        public long iid { get; set; }
+        public long ilogin { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +30,8 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Bigint);
+                Parameter.Value = ilogin;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +45,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_del";
             }
         }
     }

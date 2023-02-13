@@ -4,22 +4,26 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда сбрасывает пароль пользователя программы, доступно администраторам
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_pwd_verify : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Логин пользователя
         /// </summary>
-        public long iid { get; set; }
+        public string ilogin { get; set; }
 
+        /// <summary>
+        /// Текущий пароль
+        /// </summary>
+        public string ipwd { get; set; }
+                
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -30,8 +34,12 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Varchar);
+                Parameter.Value = ilogin;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("ipwd", NpgsqlDbType.Varchar);
+                Parameter.Value = ipwd;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +53,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_pwd_verify";
             }
         }
     }

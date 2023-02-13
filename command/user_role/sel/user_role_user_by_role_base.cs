@@ -8,18 +8,18 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user_role.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда возвращает список пользовательских ролей, членов базовой роли по имени базовой роли
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_role_user_by_role_base : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Системное имя роли
         /// </summary>
-        public long iid { get; set; }
-
+        public string irole_base { get; set; }
+        
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -30,8 +30,8 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("irole_base", NpgsqlDbType.Varchar);
+                Parameter.Value = irole_base;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +45,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_role_user_by_role_base";
             }
         }
     }

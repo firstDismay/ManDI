@@ -4,21 +4,20 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user.upd
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда определяет для пользователя концепцию по умолчанию
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_options_upd : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Идентификатор концепции
         /// </summary>
-        public long iid { get; set; }
+        public long ipref_conception { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,10 +29,10 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("ipref_conception", NpgsqlDbType.Bigint);
+                Parameter.Value = ipref_conception;
                 ListParameter.Add(Parameter);
-
+                
                 return ListParameter;
             }
         }
@@ -45,7 +44,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_options_upd";
             }
         }
     }

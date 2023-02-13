@@ -4,22 +4,16 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user_role.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда возвращает список базовых ролей
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_role_base_by_all : IParametersFunction
     {
-        /// <summary>
-        /// Идентификатор  позиции
-        /// </summary>
-        public long iid { get; set; }
-
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -27,12 +21,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
-                ListParameter.Add(Parameter);
 
                 return ListParameter;
             }
@@ -45,7 +34,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_role_base_by_all";
             }
         }
     }

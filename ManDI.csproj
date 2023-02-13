@@ -25,8 +25,6 @@
     <Folder Include="command\properties\pos_temp\" />
     <Folder Include="command\properties\object\" />
     <Folder Include="command\properties\position\" />
-    <Folder Include="command\user\sel\" />
-    <Folder Include="command\user\del\" />
   </ItemGroup>
 
   <ItemGroup>

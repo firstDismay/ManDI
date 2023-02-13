@@ -43,7 +43,6 @@ namespace ManDI.command.common
                 return function;
             }
         }
-
         public IEnumerable<NpgsqlParameter> Parameters 
         {
             get

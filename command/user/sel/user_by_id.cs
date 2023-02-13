@@ -8,15 +8,15 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user.del
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда возвращает пользователя по логину
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Идентификатор  пользователя
         /// </summary>
         public long iid { get; set; }
 
@@ -45,7 +45,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_by_id";
             }
         }
     }

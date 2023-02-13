@@ -1,5 +1,6 @@
 ﻿using ManDI.command.common;
 using Npgsql;
+using Npgsql.Internal.TypeHandlers.DateTimeHandlers;
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
@@ -8,17 +9,24 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user_role.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
+    /// Команда возвращает данные по актуальности сопоставлямой сущности
     /// </summary>
-    public class position_by_id : IParametersFunction
+    public class user_role_user_is_actual : IParametersFunction
     {
         /// <summary>
         /// Идентификатор  позиции
         /// </summary>
-        public long iid { get; set; }
+        public string irole_user { get; set; }
+
+        /// <summary>
+        /// Штамп времени
+        /// </summary>
+        public DateTime itimestamp { get; set; }
+
+        
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +38,12 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("irole_user", NpgsqlDbType.Varchar);
+                Parameter.Value = irole_user;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +57,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_role_user_is_actual";
             }
         }
     }

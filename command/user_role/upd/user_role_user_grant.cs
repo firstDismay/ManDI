@@ -4,21 +4,24 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.user_role.upd
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору
-    /// </summary>
-    public class position_by_id : IParametersFunction
+    /// Команда добавляет пользователя в члены пользовательской роли
+    public class user_role_user_grant : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Логин пользователя
         /// </summary>
-        public long iid { get; set; }
+        public string ilogin { get; set; }
+
+        /// <summary>
+        /// Пользовательская роль
+        /// </summary>
+        public string irole_user { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +33,12 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Varchar);
+                Parameter.Value = ilogin;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("irole_user", NpgsqlDbType.Varchar);
+                Parameter.Value = irole_user;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +52,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id";
+                return "user_role_user_grant";
             }
         }
     }
