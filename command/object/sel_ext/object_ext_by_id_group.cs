@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects.sel
+namespace ManDI.command.objects.sel_ext
 {
     /// <summary>
     /// Команда ввозвращает список объектов по идентификатору группы рекурсивно

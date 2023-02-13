@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.objects.sel
+namespace ManDI.command.objects.sel_ext
 {
     /// <summary>
     /// Команда возвращает список объектов снимка класса и всех наследующих снимков классов 
