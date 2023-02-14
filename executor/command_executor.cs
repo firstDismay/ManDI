@@ -1,5 +1,6 @@
 ﻿using ManDI.command.common;
 using ManDI.command.objects;
+using ManDI.composite.entities;
 using ManDI.executor.common;
 using Npgsql;
 using System;
@@ -16,10 +17,10 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor : ICommandExecutor
     {
-        ISignatureFunction _function;
+        ISignatureExtractor _function;
         NpgsqlDataSource _data_source;
 
-        public command_executor(ISignatureFunction Function, NpgsqlDataSource DataSource)
+        public command_executor(ISignatureExtractor Function, NpgsqlDataSource DataSource)
         {
             if (Function == null) throw new ArgumentNullException("Function");
             if (DataSource == null) throw new ArgumentNullException("DataSource");
@@ -71,7 +72,7 @@ namespace ManDI.executor
         /// <summary>
         /// Функция подготовки основной команды
         /// </summary>
-        NpgsqlCommand prepare_cmd(ISignatureFunction signature, NpgsqlConnection cn)
+        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn)
         {
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;

@@ -19,11 +19,11 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor_runas : ICommandExecutor
     {
-        ISignatureFunction _function;
+        ISignatureExtractor _function;
         UserContextRole _user_context;
         NpgsqlDataSource _data_source;
 
-        public command_executor_runas(ISignatureFunction Function, UserContextRole UserContext, NpgsqlDataSource DataSource)
+        public command_executor_runas(ISignatureExtractor Function, UserContextRole UserContext, NpgsqlDataSource DataSource)
         {
             if (Function == null) throw new ArgumentNullException("Function");
             if (UserContext == null) throw new ArgumentNullException("UserContext");
@@ -84,7 +84,7 @@ namespace ManDI.executor
         /// <summary>
         /// Подготовка основной функции со сменой роли
         /// </summary>
-        NpgsqlCommand prepare_cmd(ISignatureFunction signature, NpgsqlConnection cn, NpgsqlTransaction trans)
+        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn, NpgsqlTransaction trans)
         {
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
