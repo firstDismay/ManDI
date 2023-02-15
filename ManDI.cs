@@ -13,7 +13,7 @@ namespace ManDI
     /// <summary>
     /// Базовый конфигуратор источника данных ManDI
     /// </summary>
-    public class ManDiBuilder
+    public partial class ManDiBuilder
     {
         NpgsqlConnectionStringBuilder _csb;
         public ManDiBuilder(NpgsqlConnectionStringBuilder ConnectionStringBuilder)
@@ -26,30 +26,11 @@ namespace ManDI
         /// </summary>
         public NpgsqlDataSource Build()
         {
-            _csb.SearchPath = "bpd";
-            _csb.LoadTableComposites = true;
-            
+            ConnectionStringConfiguration(_csb);
             var dataSourceBuilder = new NpgsqlDataSourceBuilder(_csb.ConnectionString);
             MapComposite(dataSourceBuilder);
             MapEnum(dataSourceBuilder);
             return dataSourceBuilder.Build();
-        }
-        
-        /// <summary>
-        /// Метод сопоставления композитных типов
-        /// </summary>
-        private void MapComposite(NpgsqlDataSourceBuilder dataSourceBuilder)
-        {
-            dataSourceBuilder.MapComposite<pg_vobject_prop>("vobject_prop");
-            dataSourceBuilder.MapComposite<pg_vobject_general_ext>("vobject_general_ext");
-        }
-
-        /// <summary>
-        /// Метод сопоставления перечислений
-        /// </summary>
-        private void MapEnum(NpgsqlDataSourceBuilder dataSourceBuilder)
-        {
-            //dataSourceBuilder.MapEnum<pg_vobject_prop>("bpd.vobject_prop");
         }
     }
 }
