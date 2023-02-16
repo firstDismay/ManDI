@@ -24,7 +24,6 @@
     <Folder Include="command\properties\global\" />
     <Folder Include="command\properties\pos_temp\" />
     <Folder Include="command\properties\object\" />
-    <Folder Include="command\properties\position\" />
   </ItemGroup>
 
   <ItemGroup>
