@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using ManDI.composite.entities.common;
 using ManDI.composite.entities.vobject;
 using ManDI.composite.entities.vobject.property;
 using System;
@@ -20,6 +21,8 @@ namespace ManDI
         /// </summary>
         private void MapComposite(NpgsqlDataSourceBuilder dataSourceBuilder)
         {
+            dataSourceBuilder.MapComposite<vconception>("vconception");
+
             dataSourceBuilder.MapComposite<vobject_prop>("vobject_prop");
             dataSourceBuilder.MapComposite<vobject_general>("vobject_general");
             dataSourceBuilder.MapComposite<vobject_general_ext>("vobject_general_ext");

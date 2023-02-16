@@ -1,4 +1,5 @@
 ﻿using ManDI.composite.entities.vclass.property;
+using System;
 
 namespace ManDI.composite.entities.vunits
 {
@@ -14,5 +15,3 @@ namespace ManDI.composite.entities.vunits
         public bool not_fractional { get; set; }
     }
 }
-
-
