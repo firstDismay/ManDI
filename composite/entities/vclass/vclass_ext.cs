@@ -49,5 +49,3 @@ namespace ManDI.composite.entities.vclass
         }
     }
 }
-
-
