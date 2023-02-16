@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace ManDI.command.common
 {
     /// <summary>
-    /// Интерфейс поддерживает соглашение определяющее порядок вызова связанной функции
+    /// Интерфейс обеспечивает извлечение сигнатуры вызова функции API из аргумента команды
     /// </summary>
-    public interface ISignatureFunction
+    public interface ISignatureExtractor
     {
         /// <summary>
         /// Метод возвращает строковое представление сигнатуры связанной функции

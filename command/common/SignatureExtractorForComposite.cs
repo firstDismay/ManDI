@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace ManDI.command.common
 {
     /// <summary>
-    /// Экстрактор сигнатур и аргументов функций
+    /// Экстрактор для извлечения сигнатуры вызова функции API из аргумента команды для возврата сопоставленных композитных типов
     /// </summary>
-    public class SignatureFunction : ISignatureFunction
+    public class SignatureExtractorForComposite: ISignatureExtractor
     {
         IParametersFunction _function;
-        public SignatureFunction(IParametersFunction function)
+        public SignatureExtractorForComposite(IParametersFunction function)
         {
             if (function == null) throw new ArgumentNullException("function");
             _function = function;
@@ -27,7 +27,7 @@ namespace ManDI.command.common
                 String function;
                 StringBuilder signature = new StringBuilder();
 
-                function = String.Format(@"SELECT * FROM {0}(?)", _function.NameFunction);
+                function = String.Format(@"SELECT {0}(?)", _function.NameFunction);
                 if (_function.Parameters.Count() > 0)
                 {
                     foreach (NpgsqlParameter p in _function.Parameters)

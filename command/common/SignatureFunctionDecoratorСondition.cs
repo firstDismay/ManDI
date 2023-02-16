@@ -8,12 +8,15 @@ using System.Threading.Tasks;
 
 namespace ManDI.command.common
 {
-    public class SignatureFunctionDecoratorСondition : ISignatureFunction
+    /// <summary>
+    /// Декоратор экстракторов сигнатур функций API для подставки условий выборки и сортировки
+    /// </summary>
+    public class SignatureFunctionDecoratorСondition : ISignatureExtractor
     {
-        ISignatureFunction _signature;
+        ISignatureExtractor _signature;
         UserContextSQL _user_context;
         
-        public SignatureFunctionDecoratorСondition(ISignatureFunction Signature, UserContextSQL UserContext)
+        public SignatureFunctionDecoratorСondition(ISignatureExtractor Signature, UserContextSQL UserContext)
         {
             if (Signature == null) throw new ArgumentNullException("Signature");
             if(UserContext == null) throw new ArgumentNullException("UserContext");
