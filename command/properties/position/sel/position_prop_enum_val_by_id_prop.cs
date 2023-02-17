@@ -8,23 +8,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.properties.position.sel
 {
     /// <summary>
-    /// Команда возвращает свойство позиции по идентификатору
+    /// Команда возвращает список данных значения свойства позиции ENUM STEP №3 по идентификатору свойства
     /// </summary>
-    public class position_prop_by_id : IParametersFunction
+    public class position_prop_enum_val_by_id_prop : IParametersFunction
     {
         /// <summary>
         /// Идентификатор  позиции
         /// </summary>
-        public long iid_position_carrier { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
-        /// </summary>
+        /// Идентификатор  свойства шаблона позиции 
+        /// /// </summary>
         public long iid_pos_temp_prop { get; set; }
-
 
         /// <summary>
         /// Список параметров функции
@@ -36,8 +35,8 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position_carrier", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position_carrier;
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
@@ -55,7 +54,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_prop_by_id";
+                return "position_prop_enum_val_by_id_prop";
             }
         }
     }
