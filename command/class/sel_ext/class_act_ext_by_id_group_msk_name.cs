@@ -8,12 +8,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.sel
+namespace ManDI.command.classes.sel_ext
 {
     /// <summary>
     /// Команда возвращает список активных представлений классов по идентификатору группы и маске имени 
     /// </summary>
-    public class class_act_by_id_group_msk_name : IParametersFunction
+    public class class_act_ext_by_id_group_msk_name : IParametersFunction
     {
         /// <summary>
         /// Идентификатор  группы
@@ -54,7 +54,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_act_by_id_group_msk_name";
+                return "class_act_ext_by_id_group_msk_name";
             }
         }
     }

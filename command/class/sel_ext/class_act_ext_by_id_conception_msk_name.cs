@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.sel
+namespace ManDI.command.classes.sel_ext
 {
     /// <summary>
-    /// Команда возвращает список активных представлений классов по идентификатору группы и маске имени 
+    /// Команда возвращает список активных представлений классов по идентификатору концепции и маске имени 
     /// </summary>
-    public class class_act_by_id_group_msk_name : IParametersFunction
+    public class class_act_ext_by_id_conception_msk_name : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  группы
+        /// Идентификатор  концепции
         /// </summary>
-        public long iid_group { get; set; }
+        public long iid_conception { get; set; }
 
         /// <summary>
         /// Маска имени класса
@@ -35,8 +35,8 @@ namespace ManDI.command.classes.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_group;
+                Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("name_mask", NpgsqlDbType.Varchar);
@@ -54,7 +54,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_act_by_id_group_msk_name";
+                return "class_act_ext_by_id_conception_msk_name";
             }
         }
     }

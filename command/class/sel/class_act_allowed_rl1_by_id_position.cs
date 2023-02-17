@@ -11,19 +11,14 @@ using System.Threading.Tasks;
 namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда возвращает список активных представлений классов по идентификатору группы и маске имени 
+    /// Команда возвращает список активных представлений расширенных классов на основе разрешения уровня 1 группа на шаблон по идентификатору позиции
     /// </summary>
-    public class class_act_by_id_group_msk_name : IParametersFunction
+    public class class_act_allowed_rl1_by_id_position : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  группы
+        /// Идентификатор позиции
         /// </summary>
-        public long iid_group { get; set; }
-
-        /// <summary>
-        /// Маска имени класса
-        /// </summary>
-        public long name_mask { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -35,12 +30,8 @@ namespace ManDI.command.classes.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_group;
-                ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("name_mask", NpgsqlDbType.Varchar);
-                Parameter.Value = name_mask;
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -54,7 +45,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_act_by_id_group_msk_name";
+                return "class_act_allowed_rl1_by_id_position";
             }
         }
     }

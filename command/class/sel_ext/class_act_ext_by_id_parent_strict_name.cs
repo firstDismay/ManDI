@@ -8,22 +8,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.sel
+namespace ManDI.command.classes.sel_ext
 {
     /// <summary>
-    /// Команда возвращает список активных представлений классов по идентификатору группы и маске имени 
+    /// Команда возвращает активное представление класса по идентификатору класса родителя и строгому соотвествию имени
     /// </summary>
-    public class class_act_by_id_group_msk_name : IParametersFunction
+    public class class_act_ext_by_id_parent_strict_name : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  группы
+        /// Идентификатор родителького класса
         /// </summary>
-        public long iid_group { get; set; }
+        public long iid_parent { get; set; }
 
         /// <summary>
         /// Маска имени класса
         /// </summary>
-        public long name_mask { get; set; }
+        public long iname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -35,12 +35,12 @@ namespace ManDI.command.classes.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_group;
+                Parameter = new NpgsqlParameter("iid_parent", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_parent;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("name_mask", NpgsqlDbType.Varchar);
-                Parameter.Value = name_mask;
+                Parameter = new NpgsqlParameter("iname", NpgsqlDbType.Varchar);
+                Parameter.Value = iname;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -54,7 +54,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_act_by_id_group_msk_name";
+                return "class_act_ext_by_id_parent_strict_name";
             }
         }
     }

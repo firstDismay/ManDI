@@ -8,12 +8,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.sel
+namespace ManDI.command.classes.sel_ext
 {
     /// <summary>
     /// Команда возвращает список активных разрешенных базовых классов по идентификатору группы
     /// </summary>
-    public class class_act_base_ext_allowed_by_id_group : IParametersFunction
+    public class class_act_ext_base_allowed_by_id_group : IParametersFunction
     {
         /// <summary>
         /// Идентификатор группы
@@ -54,7 +54,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_act_base_ext_allowed_by_id_group";
+                return "class_act_ext_base_allowed_by_id_group";
             }
         }
     }
