@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.dell
+namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда  удаляет активные представления классов по идентификатору класса носителя
+    /// Команда возвращает полный список вещественных классов по идентификатору концепции
     /// </summary>
-    public class class_del : IParametersFunction
+    public class class_full_real_by_id_conception : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор концепции
         /// </summary>
-        public long iid { get; set; }
+        public long iid_conception { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +30,8 @@ namespace ManDI.command.classes.dell
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +45,7 @@ namespace ManDI.command.classes.dell
         {
             get
             {
-                return "class_del";
+                return "class_full_real_by_id_conception";
             }
         }
     }

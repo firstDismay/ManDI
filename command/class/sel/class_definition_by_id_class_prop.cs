@@ -1,6 +1,5 @@
 ﻿using ManDI.command.common;
 using Npgsql;
-using Npgsql.Internal.TypeHandlers.DateTimeHandlers;
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
@@ -9,27 +8,28 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.sel
+namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает класс, определяющий указанное свойство, по идентификатору свойства
     /// </summary>
-    public class class_is_actual : IParametersFunction
+    public class class_definition_by_id_class_prop : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  класса
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
-        /// Штамп времени
+        /// Штамп времени класса
         /// </summary>
-        public DateTime itimestamp { get; set; }
+        public DateTime itimestamp_class { get; set; }
 
         /// <summary>
-        /// Штамп времени сопоставляемой сущности
+        /// Тип хранилища данных класса
+        /// Active/History
         /// </summary>
-        public DateTime itimestamp_child_change { get; set; }
+        public string storagetype { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -41,16 +41,16 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp;
+                Parameter = new NpgsqlParameter("itimestamp_class", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp_class;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp_child_change", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp_child_change;
+                Parameter = new NpgsqlParameter("storagetype", NpgsqlDbType.Varchar);
+                Parameter.Value = storagetype;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -64,7 +64,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "class_is_actual";
+                return "class_definition_by_id_class_prop";
             }
         }
     }
