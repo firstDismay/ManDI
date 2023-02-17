@@ -8,18 +8,23 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.dell
+namespace ManDI.command.classes.upd
 {
     /// <summary>
-    /// Команда  удаляет активные представления классов по идентификатору класса носителя
+    /// Команда возвращает текущее представление класса по идентификатору снимка и штампу времени 
     /// </summary>
-    public class class_del : IParametersFunction
+    public class class_rollback : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор класса
         /// </summary>
-        public long iid { get; set; }
+        public long iid_snapshot { get; set; }
 
+        /// <summary>
+        /// Штамп времени класса
+        /// </summary>
+        public DateTime timestamp_snapshot { get; set; }
+        
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -30,8 +35,12 @@ namespace ManDI.command.classes.dell
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_snapshot", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_snapshot;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("timestamp_snapshot", NpgsqlDbType.Timestamp);
+                Parameter.Value = timestamp_snapshot;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +54,7 @@ namespace ManDI.command.classes.dell
         {
             get
             {
-                return "class_del";
+                return "class_rollback";
             }
         }
     }

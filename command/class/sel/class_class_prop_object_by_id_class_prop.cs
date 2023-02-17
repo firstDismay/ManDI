@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.dell
+namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда  удаляет активные представления классов по идентификатору класса носителя
+    /// Команда возвращает активный класс носитель по идентификатору свойства
     /// </summary>
-    public class class_del : IParametersFunction
+    public class class_class_prop_object_by_id_class_prop : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +30,8 @@ namespace ManDI.command.classes.dell
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +45,7 @@ namespace ManDI.command.classes.dell
         {
             get
             {
-                return "class_del";
+                return "class_class_prop_object_by_id_class_prop";
             }
         }
     }

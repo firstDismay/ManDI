@@ -8,17 +8,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.dell
+namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда  удаляет активные представления классов по идентификатору класса носителя
+    /// Команда возвращает полный список вещественных классов по идентификатору родительского класса, рекурсивно
     /// </summary>
-    public class class_del : IParametersFunction
+    public class class_full_real_by_id_parent : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор родительского класса
         /// </summary>
-        public long iid { get; set; }
+        public long iid_parent { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -30,8 +30,8 @@ namespace ManDI.command.classes.dell
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_parent", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_parent;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -45,7 +45,7 @@ namespace ManDI.command.classes.dell
         {
             get
             {
-                return "class_del";
+                return "class_full_real_by_id_parent";
             }
         }
     }
