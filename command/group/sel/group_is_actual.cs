@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.conception.sel
+namespace ManDI.command.group.sel
 {
     /// <summary>
     /// Команда возвращает данные по актуальности сопоставляемой сущности
@@ -15,7 +15,7 @@ namespace ManDI.command.conception.sel
     /// 2 - Не актуальна
     /// 3 - Актуальна
     /// </summary>
-    public class conception_is_actual : IParametersFunction
+    public class group_is_actual : IParametersFunction
     {
         /// <summary>
         /// Идентификатор объекта
@@ -25,7 +25,12 @@ namespace ManDI.command.conception.sel
         /// <summary>
         /// Штамп времени объекта
         /// </summary>
-        public long mytimestamp { get; set; }
+        public long itimestamp { get; set; }
+
+        /// <summary>
+        /// Штамп времени объекта
+        /// </summary>
+        public long itimestamp_child_change { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -41,8 +46,12 @@ namespace ManDI.command.conception.sel
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("mytimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = mytimestamp;
+                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("itimestamp_child_change", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp_child_change;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -56,7 +65,7 @@ namespace ManDI.command.conception.sel
         {
             get
             {
-                return "conception_is_actual";
+                return "group_is_actual3";
             }
         }
     }

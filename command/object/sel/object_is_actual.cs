@@ -42,7 +42,7 @@ namespace ManDI.command.objects.sel
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("mytimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = iid;
+                Parameter.Value = mytimestamp;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;

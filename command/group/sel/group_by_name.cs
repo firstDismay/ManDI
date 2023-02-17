@@ -4,28 +4,26 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.conception.sel
+namespace ManDI.command.group.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
-    /// 1 - Не найдена
-    /// 2 - Не актуальна
-    /// 3 - Актуальна
+    /// Команда возвращает список групп по идентификатору класса родителя и маске имени
     /// </summary>
-    public class conception_is_actual : IParametersFunction
+    public class group_by_name : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор родительской группы
         /// </summary>
-        public long iid { get; set; }
+        public long iid_parent { get; set; }
 
         /// <summary>
-        /// Штамп времени объекта
+        /// Маска наименования группы
         /// </summary>
-        public long mytimestamp { get; set; }
+        public long iname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -37,12 +35,12 @@ namespace ManDI.command.conception.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_parent", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_parent;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("mytimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = mytimestamp;
+                Parameter = new NpgsqlParameter("iname", NpgsqlDbType.Varchar);
+                Parameter.Value = iname;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -56,7 +54,7 @@ namespace ManDI.command.conception.sel
         {
             get
             {
-                return "conception_is_actual";
+                return "group_by_name";
             }
         }
     }

@@ -7,25 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.conception.sel
+namespace ManDI.command.group.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
-    /// 1 - Не найдена
-    /// 2 - Не актуальна
-    /// 3 - Актуальна
+    /// Команда возвращает группу по идентификатору группы
     /// </summary>
-    public class conception_is_actual : IParametersFunction
+    public class group_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор группы
         /// </summary>
         public long iid { get; set; }
-
-        /// <summary>
-        /// Штамп времени объекта
-        /// </summary>
-        public long mytimestamp { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -40,11 +32,6 @@ namespace ManDI.command.conception.sel
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("mytimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = mytimestamp;
-                ListParameter.Add(Parameter);
-
                 return ListParameter;
             }
         }
@@ -56,7 +43,7 @@ namespace ManDI.command.conception.sel
         {
             get
             {
-                return "conception_is_actual";
+                return "group_by_id";
             }
         }
     }

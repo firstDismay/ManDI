@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.conception.add
 {
     /// <summary>
-    /// Команда Добавляет новую концепцию
+    /// Команда добавляет новую концепцию
     public class conception_add : IParametersFunction
     {
         /// <summary>

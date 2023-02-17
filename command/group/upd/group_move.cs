@@ -4,28 +4,26 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.conception.sel
+namespace ManDI.command.group.upd
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
-    /// 1 - Не найдена
-    /// 2 - Не актуальна
-    /// 3 - Актуальна
+    /// Команда перемещает группу
     /// </summary>
-    public class conception_is_actual : IParametersFunction
+    public class group_move : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор группы
         /// </summary>
         public long iid { get; set; }
 
         /// <summary>
-        /// Штамп времени объекта
+        /// Идентификатор целевой группы
         /// </summary>
-        public long mytimestamp { get; set; }
+        public long iid_parent { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -41,8 +39,8 @@ namespace ManDI.command.conception.sel
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("mytimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = mytimestamp;
+                Parameter = new NpgsqlParameter("iid_parent", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_parent;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -56,7 +54,7 @@ namespace ManDI.command.conception.sel
         {
             get
             {
-                return "conception_is_actual";
+                return "group_move";
             }
         }
     }

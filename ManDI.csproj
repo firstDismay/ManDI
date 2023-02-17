@@ -17,7 +17,6 @@
     <Folder Include="command\doc_lib\file\" />
     <Folder Include="command\doc_lib\link\" />
     <Folder Include="command\postemp\" />
-    <Folder Include="command\group\" />
     <Folder Include="command\class\" />
     <Folder Include="command\properties\common\" />
     <Folder Include="command\properties\class\" />
