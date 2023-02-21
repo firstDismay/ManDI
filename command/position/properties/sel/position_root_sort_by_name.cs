@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ManDI.command.position.properties.sel
+{
     /// <summary>
     /// Команда изменяет сортировку корневых позиций концепций на сортировку по алфавиту
     /// </summary>
