@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace ManDI.executor
 {
     /// <summary>
-    /// Команда добавляет новый объект в указанное расположение
+    /// Классс исполнителя подготовленных команд
     /// </summary>
     public class command_executor : ICommandExecutor
     {

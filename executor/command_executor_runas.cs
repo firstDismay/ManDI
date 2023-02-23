@@ -15,7 +15,7 @@ using System.Transactions;
 namespace ManDI.executor
 {
     /// <summary>
-    /// Декоратор выполняет функцию в контексте указанного пользователя
+    /// Декоратор класса исполнителя команд выполняет команду в контексте указанного пользователя
     /// </summary>
     public class command_executor_runas : ICommandExecutor
     {
