@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ManDI.command;
 using System.Text;
 
 namespace ManDI.enums
 {
-    #region Перечисления для функций и методов сложного поиска
-
     /// <summary>
     /// Перечисление определяет доступные методы поиска
     /// </summary>
@@ -69,5 +67,4 @@ namespace ManDI.enums
         /// </summary>
         not_any_array
     }
-    #endregion
 }

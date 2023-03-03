@@ -4,17 +4,12 @@ using System.Globalization;
 using NpgsqlTypes;
 using ManDI.enums;
 
-namespace ManDI.function
-{
-    partial class search_method_dictionary
-    {
-        #region Функции сопоставления методов поиска и его пользовательского представления
-
+namespace ManDI.function {
+    partial class search_method_dictionary {
         /// <summary>
         /// Пользовательское представление символьного обозначения метода поиска
         /// </summary>    
-        public static string SearchMethodsToString(eSearchMethods SearchMethods)
-        {
+        public static string SearchMethodsToString(eSearchMethods SearchMethods) {
             string Result = "?";
             string TValue;
             if (Dictionary_SearchMethods.TryGetValue(SearchMethods, out TValue))
@@ -45,8 +40,7 @@ namespace ManDI.function
         /// <summary>
         /// Пользовательское описание символьного обозначения метода поиска
         /// </summary>    
-        public static string SearchMethodsToDescription(eSearchMethods SearchMethods)
-        {
+        public static string SearchMethodsToDescription(eSearchMethods SearchMethods) {
             string Result = "?";
             string TValue;
             if (Dictionary_SearchMethodsDescription.TryGetValue(SearchMethods, out TValue))
@@ -78,6 +72,5 @@ namespace ManDI.function
             { eSearchMethods.any_array, "Соответствует значениям"},
             { eSearchMethods.not_any_array, "Не соответствует значениям"},
         };
-        #endregion
     }
 }

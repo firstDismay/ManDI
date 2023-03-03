@@ -1,16 +1,6 @@
-﻿using ManDI.command.common;
-using ManDI.command.objects;
-using ManDI.executor.common;
+﻿using ManDI.extractor;
 using Npgsql;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace ManDI.executor
 {

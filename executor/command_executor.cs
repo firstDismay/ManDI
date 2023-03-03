@@ -1,19 +1,11 @@
-﻿using ManDI.command.common;
-using ManDI.command.objects;
-using ManDI.composite.entities;
-using ManDI.executor.common;
+﻿using ManDI.extractor;
 using Npgsql;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.executor
 {
     /// <summary>
-    /// Классс исполнителя подготовленных команд
+    /// Класс исполнителя подготовленных команд
     /// </summary>
     public class command_executor : ICommandExecutor
     {
