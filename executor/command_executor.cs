@@ -23,25 +23,33 @@ namespace ManDI.executor
 
         public int ExecuteNonQuery()
         {
+            int result;
             NpgsqlCommand cmd;
 
             using (var cn = _data_source.CreateConnection())
             {
                 cn.Open();
                 cmd = prepare_cmd(_function, cn);
-                return cmd.ExecuteNonQuery();
+                result = cmd.ExecuteNonQuery();
+                if (cmd.Transaction != null)
+                    cmd.Transaction.Commit();
             }
+            return result;
         }
         public object ExecuteScalar()
         {
+            object result;
             NpgsqlCommand cmd;
 
             using (var cn = _data_source.CreateConnection())
             {
                 cn.Open();
                 cmd = prepare_cmd(_function, cn);
-                return cmd.ExecuteScalar();
+                result =  cmd.ExecuteScalar();
+                if (cmd.Transaction != null)
+                    cmd.Transaction.Commit();
             }
+            return result;
         }
 
         public DataTable Fill()
@@ -57,6 +65,8 @@ namespace ManDI.executor
 
                 adapter.SelectCommand = cmd;
                 adapter.Fill(table);
+                if (cmd.Transaction != null)
+                    cmd.Transaction.Commit();
             }
             return table;
         }
@@ -66,8 +76,10 @@ namespace ManDI.executor
         /// </summary>
         NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn)
         {
+            var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
+            cmd.Transaction = trans;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = signature.Signature;
 

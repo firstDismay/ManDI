@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System.Data;
 using ManDI.extractor;
+using System.Diagnostics;
 
 namespace ManDI.executor
 {
@@ -35,17 +36,14 @@ namespace ManDI.executor
             NpgsqlCommand set_role;
             NpgsqlCommand cmd;
 
-
             using (var cn = _data_source.CreateConnection())
             {
                 cn.Open();
-                var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
-                cmd = prepare_cmd(_function, cn, trans);
-                set_role = prepare_set_role(_user_context.Role, cn, trans);
+                cmd = prepare_cmd(_function, cn);
+                set_role = prepare_set_role(_user_context.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
-
                 result = cmd.ExecuteScalar();
-                trans.Commit();
+                cmd.Transaction.Commit();
             }
             return result;
         }
@@ -59,23 +57,23 @@ namespace ManDI.executor
             using (var cn = _data_source.CreateConnection())
             {
                 cn.Open();
-                var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
-                cmd = prepare_cmd(_function, cn, trans);
-                set_role = prepare_set_role(_user_context.Role, cn, trans);
+                cmd = prepare_cmd(_function, cn);
+                set_role = prepare_set_role(_user_context.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
 
                 var adapter = new NpgsqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(table);
-                trans.Commit();
+                cmd.Transaction.Commit();
             }
             return table;
         }
         /// <summary>
         /// Подготовка основной функции со сменой роли
         /// </summary>
-        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn, NpgsqlTransaction trans)
+        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn)
         {
+            var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
             cmd.Transaction = trans;
@@ -94,6 +92,7 @@ namespace ManDI.executor
         {
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
+            cmd.Transaction = trans;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = string.Format("SET ROLE '{0}';", Role);
             return cmd;
