@@ -1,0 +1,17 @@
+﻿using ManDI.composite.entities.vclass.property;
+
+namespace ManDI.composite.entities.common
+{
+    /// <summary>
+    /// Композитный тип объектов пути
+    /// </summary>
+    public class path4
+    {
+        public long id { get; set; }
+        public long id_parent { get; set; }
+        public long id_root { get; set; }
+        public long id_pos_temp { get; set; }
+        public string name { get; set; }
+        public int level { get; set; }
+    }
+}
