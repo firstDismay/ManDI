@@ -65,6 +65,7 @@ namespace ManDI
             dataSourceBuilder.MapComposite<vobject_prop_object_val>("vobject_prop_object_val");
             dataSourceBuilder.MapComposite<vobject_prop_user_big_val>("vobject_prop_user_big_val");
             dataSourceBuilder.MapComposite<vobject_prop_user_small_val>("vobject_prop_user_small_val");
+            dataSourceBuilder.MapComposite<vobject_prop_create_emded_mode>("dataSourceBuilder.MapComposite<");
         }
     }
 }
