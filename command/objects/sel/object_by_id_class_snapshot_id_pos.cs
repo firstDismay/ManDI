@@ -9,7 +9,7 @@ namespace ManDI.command.objects.sel
 {
     /// <summary>
     /// Команда возвращает список объектов снимка класса и всех наследующих снимков классов 
-    /// по идентификаторам класса, позиции и штампу времени
+    /// по идентификаторам класса, позиции и Штампу времени
     /// </summary>
     public class object_by_id_class_snapshot_id_pos : IParametersFunction
     {
