@@ -2,17 +2,16 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.properties.val
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает список данных значения свойства позиции LINK STEP №3 по идентификатору свойства
     /// </summary>
-    public class position_prop_object_val_is_actual : IParametersFunction
+    public class position_prop_link_val_by_id_prop : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции
@@ -23,11 +22,6 @@ namespace ManDI.command.position.properties.sel
         /// Идентификатор свойства шаблона позиции
         /// </summary>
         public long iid_pos_temp_prop { get; set; }
-
-        /// <summary>
-        /// Штамп времени
-        /// </summary>
-        public DateTime itimestamp_val { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -47,10 +41,6 @@ namespace ManDI.command.position.properties.sel
                 Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp_val", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp_val;
-                ListParameter.Add(Parameter);
-
                 return ListParameter;
             }
         }
@@ -62,7 +52,7 @@ namespace ManDI.command.position.properties.sel
         {
             get
             {
-                return "position_prop_object_val_is_actual";
+                return "position_prop_link_val_by_id_prop";
             }
         }
     }

@@ -2,15 +2,14 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.properties.val
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
     public class position_prop_user_val_is_actual : IParametersFunction
     {

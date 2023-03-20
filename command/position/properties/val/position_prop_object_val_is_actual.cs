@@ -2,17 +2,16 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.properties.val
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
-    public class position_prop_link_val_is_actual : IParametersFunction
+    public class position_prop_object_val_is_actual : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции
@@ -62,7 +61,7 @@ namespace ManDI.command.position.properties.sel
         {
             get
             {
-                return "position_prop_link_val_is_actual";
+                return "position_prop_object_val_is_actual";
             }
         }
     }

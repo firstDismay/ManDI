@@ -2,20 +2,19 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.properties.val
 {
     /// <summary>
-    /// Команда возвращает список данных значения пользовательского свойства типа BIG  позиции по идентификатору свойства
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
-    public class position_prop_user_big_val_by_id_prop : IParametersFunction
+    public class position_prop_enum_val_is_actual : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор  позиции
         /// </summary>
         public long iid_position { get; set; }
 
@@ -23,6 +22,11 @@ namespace ManDI.command.position.properties.sel
         /// Идентификатор свойства шаблона позиции
         /// </summary>
         public long iid_pos_temp_prop { get; set; }
+
+        /// <summary>
+        /// Штамп времени
+        /// </summary>
+        public DateTime itimestamp_val { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -42,6 +46,10 @@ namespace ManDI.command.position.properties.sel
                 Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("itimestamp_val", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp_val;
+                ListParameter.Add(Parameter);
+
                 return ListParameter;
             }
         }
@@ -53,7 +61,7 @@ namespace ManDI.command.position.properties.sel
         {
             get
             {
-                return "position_prop_user_big_val_by_id_prop";
+                return "position_prop_enum_val_is_actual";
             }
         }
     }

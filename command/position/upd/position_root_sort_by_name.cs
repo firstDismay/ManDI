@@ -2,12 +2,11 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.upd
 {
     /// <summary>
     /// Команда изменяет сортировку корневых позиций концепций на сортировку по алфавиту

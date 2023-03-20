@@ -2,17 +2,16 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.position.properties.sel
+namespace ManDI.command.position.properties.val
 {
     /// <summary>
-    /// Команда возвращает список данных значения пользовательского свойства позиции по идентификатору свойства
+    /// Команда возвращает список данных значения пользовательского свойства типа BIG  позиции по идентификатору свойства
     /// </summary>
-    public class position_prop_object_val_by_id_prop : IParametersFunction
+    public class position_prop_user_big_val_by_id_prop : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции
@@ -53,7 +52,7 @@ namespace ManDI.command.position.properties.sel
         {
             get
             {
-                return "position_prop_object_val_by_id_prop";
+                return "position_prop_user_big_val_by_id_prop";
             }
         }
     }

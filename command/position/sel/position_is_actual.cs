@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.position.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
     public class position_is_actual : IParametersFunction
     {
@@ -26,7 +26,7 @@ namespace ManDI.command.position.sel
         public DateTime itimestamp { get; set; }
 
         /// <summary>
-        /// Штамп времени сопоставлямой сущности
+        /// Штамп времени сопоставляемой сущности
         /// </summary>
         public DateTime itimestamp_child_change { get; set; }
 
