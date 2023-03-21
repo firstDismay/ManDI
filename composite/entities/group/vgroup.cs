@@ -1,6 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-
-namespace ManDI.composite.entities.vclass
+﻿namespace ManDI.composite.entities.group
 {
     /// <summary>
     /// Композитный тип групп классов

@@ -11,7 +11,6 @@ namespace ManDI.composite.entities.vclass.property
     /// </summary>
     public class vclass_prop_user_small_val
     {
-        
         public long id_class { get; set; }
         public long id_class_definition { get; set; }
         public long id_class_prop { get; set; }
