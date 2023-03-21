@@ -1,6 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-
-namespace ManDI.composite.entities.common
+﻿namespace ManDI.composite.entities.common
 {
     /// <summary>
     /// Композитный тип объектов пути
