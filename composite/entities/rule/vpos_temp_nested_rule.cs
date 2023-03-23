@@ -1,4 +1,4 @@
-﻿namespace ManDI.composite.entities.vpos_temp
+﻿namespace ManDI.composite.entities.rule
 {
     /// <summary>
     /// Композитный тип правила вложенности шаблонов позиций
