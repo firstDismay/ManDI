@@ -64,7 +64,7 @@ namespace ManDI.command.group.sel
         {
             get
             {
-                return "group_is_actual3";
+                return "group_is_actual";
             }
         }
     }
