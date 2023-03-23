@@ -1,5 +1,4 @@
 ﻿using Npgsql;
-using Npgsql.Internal.TypeHandlers.DateTimeHandlers;
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
@@ -8,24 +7,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.user.sel
+namespace ManDI.command.properties.common
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
+    /// Команда возвращает доступные методы поиска для указанного типа свойства и типа данных
     /// </summary>
-    public class user_is_actual : IParametersFunction
+    public class prop_search_method_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Идентификатор типа свойства
         /// </summary>
-        public string ilogin { get; set; }
+        public int iid_prop_type { get; set; }
 
         /// <summary>
-        /// Штамп времени
+        /// Идентификатор  типа данных свойства
         /// </summary>
-        public DateTime itimestamp { get; set; }
-
-        
+        public int iid_data_type { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -37,12 +34,12 @@ namespace ManDI.command.user.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Varchar);
-                Parameter.Value = ilogin;
+                Parameter = new NpgsqlParameter("iid_prop_type", NpgsqlDbType.Integer);
+                Parameter.Value = iid_prop_type;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp;
+                Parameter = new NpgsqlParameter("iid_data_type", NpgsqlDbType.Integer);
+                Parameter.Value = iid_data_type;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -56,7 +53,7 @@ namespace ManDI.command.user.sel
         {
             get
             {
-                return "user_is_actual";
+                return "prop_search_method_by_id";
             }
         }
     }

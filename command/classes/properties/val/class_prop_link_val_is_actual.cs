@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.position.val
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
     public class class_prop_link_val_is_actual : IParametersFunction
     {

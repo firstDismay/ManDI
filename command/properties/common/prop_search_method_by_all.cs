@@ -2,22 +2,18 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
+using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.classes.sel
+namespace ManDI.command.properties.common
 {
     /// <summary>
-    /// Команда удаляет снимки концепции, не содержащие каскадно наследующие объекты и классы значения свойств
+    /// Команда возвращает доступные методы поиска
     /// </summary>
-    public class class_snapshot_clear_info : IParametersFunction
+    public class prop_search_method_by_all : IParametersFunction
     {
-        /// <summary>
-        /// Идентификатор позиции
-        /// </summary>
-        public long iid_conception { get; set; }
-
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -27,10 +23,6 @@ namespace ManDI.command.classes.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-
-                Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_conception;
-                ListParameter.Add(Parameter);
 
                 return ListParameter;
             }
@@ -43,7 +35,7 @@ namespace ManDI.command.classes.sel
         {
             get
             {
-                return "class_snapshot_clear_info";
+                return "prop_search_method_by_all";
             }
         }
     }

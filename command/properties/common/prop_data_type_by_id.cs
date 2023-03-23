@@ -1,5 +1,4 @@
 ﻿using Npgsql;
-using Npgsql.Internal.TypeHandlers.DateTimeHandlers;
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
@@ -8,24 +7,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.user.sel
+namespace ManDI.command.properties.common
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
+    /// Команда возвращает тип данных свойства по идентификатору
     /// </summary>
-    public class user_is_actual : IParametersFunction
+    public class prop_data_type_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  позиции
+        /// Идентификатор  типа данных свойства
         /// </summary>
-        public string ilogin { get; set; }
-
-        /// <summary>
-        /// Штамп времени
-        /// </summary>
-        public DateTime itimestamp { get; set; }
-
-        
+        public long iid { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -37,12 +29,8 @@ namespace ManDI.command.user.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Varchar);
-                Parameter.Value = ilogin;
-                ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp;
+                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
+                Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -56,7 +44,7 @@ namespace ManDI.command.user.sel
         {
             get
             {
-                return "user_is_actual";
+                return "prop_data_type_by_id";
             }
         }
     }

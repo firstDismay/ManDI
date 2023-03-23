@@ -28,8 +28,8 @@ namespace ManDI.command.nesting_rule.postemp
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_pos_temp", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp;
+                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
+                Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_pos_temp_nested", NpgsqlDbType.Bigint);

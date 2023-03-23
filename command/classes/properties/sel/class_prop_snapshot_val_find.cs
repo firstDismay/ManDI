@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 namespace ManDI.command.classes.properties.sel
 {
     /// <summary>
-    /// Команда возвращает данные значения определяющего свойства по идентификатору свойства и штампу времени
+    /// Команда возвращает данные значения определяющего свойства по идентификатору свойства и Штампу времени
     /// </summary>
     public class class_prop_snapshot_val_find : IParametersFunction
     {
