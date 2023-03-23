@@ -1,7 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-using System;
-
-namespace ManDI.composite.entities.vpos_temp
+﻿namespace ManDI.composite.entities.vpos_temp
 {
     /// <summary>
     /// Композитный тип правила вложенности шаблонов позиций

@@ -1,6 +1,6 @@
 ﻿using ManDI.composite.entities.vclass.property;
 
-namespace ManDI.composite.entities.common
+namespace ManDI.composite.entities.conception
 {
     /// <summary>
     /// Композитный тип измеряемых величин
