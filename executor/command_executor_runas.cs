@@ -10,19 +10,19 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor_runas : ICommandExecutor
     {
-        ISignatureExtractor _function;
-        UserContextRole _user_context;
-        NpgsqlDataSource _data_source;
+        ISignatureExtractor function;
+        UserContextRole user_context;
+        mandi data_source;
 
-        public command_executor_runas(ISignatureExtractor Function, UserContextRole UserContext, NpgsqlDataSource DataSource)
+        public command_executor_runas(ISignatureExtractor Function, UserContextRole UserContext, mandi DataSource)
         {
             if (Function == null) throw new ArgumentNullException("Function");
             if (UserContext == null) throw new ArgumentNullException("UserContext");
             if (DataSource == null) throw new ArgumentNullException("DataSource");
 
-            _function = Function;
-            _user_context = UserContext;
-            _data_source = DataSource;
+            this.function = Function;
+            this.user_context = UserContext;
+            this.data_source = DataSource;
         }
 
         public int ExecuteNonQuery()
@@ -36,11 +36,11 @@ namespace ManDI.executor
             NpgsqlCommand set_role;
             NpgsqlCommand cmd;
 
-            using (var cn = _data_source.CreateConnection())
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(_function, cn);
-                set_role = prepare_set_role(_user_context.Role, cn, cmd.Transaction);
+                cmd = prepare_cmd(this.function, cn);
+                set_role = prepare_set_role(this.user_context.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
                 result = cmd.ExecuteScalar();
                 cmd.Transaction.Commit();
@@ -54,11 +54,11 @@ namespace ManDI.executor
             NpgsqlCommand set_role;
             NpgsqlCommand cmd;
 
-            using (var cn = _data_source.CreateConnection())
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(_function, cn);
-                set_role = prepare_set_role(_user_context.Role, cn, cmd.Transaction);
+                cmd = prepare_cmd(this.function, cn);
+                set_role = prepare_set_role(this.user_context.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
 
                 var adapter = new NpgsqlDataAdapter();

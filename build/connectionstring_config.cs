@@ -5,7 +5,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация обязательных значений строки подключения
     /// </summary>
-    public partial class ManDiBuilder
+    public partial class mandi
     {
         /// <summary>
         /// Настройка обязательных значений строки подключения
