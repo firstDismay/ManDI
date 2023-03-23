@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.user_role.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставлямой сущности
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
     /// </summary>
     public class user_role_user_is_actual : IParametersFunction
     {

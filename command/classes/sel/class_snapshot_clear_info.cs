@@ -2,12 +2,11 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
-using ManDI.command;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManDI.command.@class.sel
+namespace ManDI.command.classes.sel
 {
     /// <summary>
     /// Команда удаляет снимки концепции, не содержащие каскадно наследующие объекты и классы значения свойств

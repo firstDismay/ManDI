@@ -49,7 +49,7 @@ namespace ManDI.command.classes.properties.val
         public bool iround_on { get; set; }
 
         /// <summary>
-        /// Строковое значение свойства класса
+        /// Значение свойства класса типа character varying
         /// </summary>
         public string ival_varchar { get; set; }
 

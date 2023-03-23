@@ -9,16 +9,16 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor : ICommandExecutor
     {
-        ISignatureExtractor _function;
-        NpgsqlDataSource _data_source;
+        ISignatureExtractor function;
+        mandi data_source;
 
-        public command_executor(ISignatureExtractor Function, NpgsqlDataSource DataSource)
+        public command_executor(ISignatureExtractor Function, mandi DataSource)
         {
             if (Function == null) throw new ArgumentNullException("Function");
             if (DataSource == null) throw new ArgumentNullException("DataSource");
 
-            _function = Function;
-            _data_source = DataSource;
+            this.function = Function;
+            this.data_source = DataSource;
         }
 
         public int ExecuteNonQuery()
@@ -26,10 +26,10 @@ namespace ManDI.executor
             int result;
             NpgsqlCommand cmd;
 
-            using (var cn = _data_source.CreateConnection())
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(_function, cn);
+                cmd = prepare_cmd(this.function, cn);
                 result = cmd.ExecuteNonQuery();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
@@ -41,10 +41,10 @@ namespace ManDI.executor
             object result;
             NpgsqlCommand cmd;
 
-            using (var cn = _data_source.CreateConnection())
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(_function, cn);
+                cmd = prepare_cmd(function, cn);
                 result =  cmd.ExecuteScalar();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
@@ -57,10 +57,10 @@ namespace ManDI.executor
             var table = new DataTable();
             NpgsqlCommand cmd;
 
-            using (var cn = _data_source.CreateConnection())
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(_function, cn);
+                cmd = prepare_cmd(this.function, cn);
                 var adapter = new NpgsqlDataAdapter();
 
                 adapter.SelectCommand = cmd;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.classes.sel
 {
     /// <summary>
-    /// Команда возвращает историческое представление класса по идентификатору класса и штампу времени
+    /// Команда возвращает историческое представление класса по идентификатору класса и Штампу времени
     /// </summary>
     public class class_snapshot_by_id : IParametersFunction
     {

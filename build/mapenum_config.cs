@@ -13,7 +13,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых типов перечислений
     /// </summary>
-    public partial class ManDiBuilder
+    public partial class mandi
     {
         /// <summary>
         /// Метод сопоставления перечислений

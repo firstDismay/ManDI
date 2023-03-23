@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ManDI.command.classes.upd
 {
     /// <summary>
-    /// Команда возвращает текущее представление класса по идентификатору снимка и штампу времени 
+    /// Команда возвращает текущее представление класса по идентификатору снимка и Штампу времени 
     /// </summary>
     public class class_rollback : IParametersFunction
     {

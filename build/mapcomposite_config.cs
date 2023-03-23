@@ -22,7 +22,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых композитных типов
     /// </summary>
-    public partial class ManDiBuilder
+    public partial class mandi
     {
         /// <summary>
         /// Метод сопоставления композитных типов
@@ -36,17 +36,20 @@ namespace ManDI
             dataSourceBuilder.MapComposite<path3>("bpd.path3");
             dataSourceBuilder.MapComposite<path4>("bpd.path4");
             dataSourceBuilder.MapComposite<ventity>("ventity");
+            dataSourceBuilder.MapComposite<vpattern_string>("vpattern_string");
 
             dataSourceBuilder.MapComposite<vunits>("vunits");
             dataSourceBuilder.MapComposite<vunit_conversion_rules>("vunit_conversion_rules");
             dataSourceBuilder.MapComposite<vclass_unit_conversion_rules>("vclass_unit_conversion_rules");
 
+            dataSourceBuilder.MapComposite<vcfg_prop_spec_limit2>("vcfg_prop_spec_limit2");
+            dataSourceBuilder.MapComposite<vcon_prop_data_type>("vcon_prop_data_type");
+            
             dataSourceBuilder.MapComposite<vglobal_prop>("vglobal_prop");
             dataSourceBuilder.MapComposite<vglobal_prop_area_val>("vglobal_prop_area_val");
             dataSourceBuilder.MapComposite<vglobal_prop_link_class_prop>("vglobal_prop_link_class_prop");
             dataSourceBuilder.MapComposite<vglobal_prop_link_pos_temp_prop>("vglobal_prop_link_pos_temp_prop");
 
-            dataSourceBuilder.MapComposite<vcon_prop_data_type>("vcon_prop_data_type");
             dataSourceBuilder.MapComposite<vprop_data_type>("vprop_data_type");
             dataSourceBuilder.MapComposite<vprop_enum>("vprop_enum");
             dataSourceBuilder.MapComposite<vprop_enum_use_area>("vprop_enum_use_area");
