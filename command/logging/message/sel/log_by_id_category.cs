@@ -1,21 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Principal;
 
-namespace ManDI.command.logging.del
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда удаляет запись журнала по идентификатору записи
+    /// Команда возвращает список записей журнала по идентификатору категории записей
     /// </summary>
-    public class log_del : IParametersFunction
-    {   
+    public class log_by_id_category : IParametersFunction
+    {
         /// <summary>
-        /// Идентификатор записи
+        /// Идентификатор категории записей
         /// </summary>
-        public long iid_log { get; set; }
+        public long iid_category { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -26,9 +22,9 @@ namespace ManDI.command.logging.del
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_log", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_log;
+
+                Parameter = new NpgsqlParameter("iid_category", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_category;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -42,7 +38,7 @@ namespace ManDI.command.logging.del
         {
             get
             {
-                return "log_del";
+                return "log_by_id_category";
             }
         }
     }

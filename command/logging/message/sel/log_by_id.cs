@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает записи журнала по идентификатору концепции
+    /// Команда возвращает запись журнала по идентификатору
     /// </summary>
-    public class log_by_id_conception : IParametersFunction
+    public class log_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор концепции
+        /// Идентификатор записи
         /// </summary>
-        public long iid_conception { get; set; }
+        public long iid { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -22,9 +22,9 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_conception;
+
+                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
+                Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -38,7 +38,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_conception";
+                return "log_by_id";
             }
         }
     }

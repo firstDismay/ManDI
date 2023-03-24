@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
     /// Команда возвращает записи журнала свойства объекта по идентификатору

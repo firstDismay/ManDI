@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
     /// Команда возвращает записи журнала по идентификатору позиции
@@ -32,7 +32,7 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);

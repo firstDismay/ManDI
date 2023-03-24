@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Security.Principal;
 
-namespace ManDI.command.logging.add
+namespace ManDI.command.logging.message.add
 {
     /// <summary>
     /// Команда добавляет запись журнала
@@ -111,7 +111,7 @@ namespace ManDI.command.logging.add
                 Parameter = new NpgsqlParameter("iid_sub_entity_instance", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_sub_entity_instance;
                 ListParameter.Add(Parameter);
-           
+
                 return ListParameter;
             }
         }

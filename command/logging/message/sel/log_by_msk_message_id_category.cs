@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает записи журнала по идентификатору категории и маске описания
+    /// Команда возвращает записи журнала по идентификатору категории и маске сообщения
     /// </summary>
-    public class log_by_msk_title_id_category : IParametersFunction
+    public class log_by_msk_message_id_category : IParametersFunction
     {
         /// <summary>
-        /// Маска описания
+        /// Маска сообщения
         /// </summary>
-        public string ititle { get; set; }
+        public string imessage { get; set; }
 
         /// <summary>
         /// Идентификатор категории записей
@@ -28,8 +28,8 @@ namespace ManDI.command.logging.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("ititle", NpgsqlDbType.Varchar);
-                Parameter.Value = ititle;
+                Parameter = new NpgsqlParameter("imessage", NpgsqlDbType.Varchar);
+                Parameter.Value = imessage;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_category", NpgsqlDbType.Bigint);
@@ -47,7 +47,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_msk_title_id_category";
+                return "log_by_msk_message_id_category";
             }
         }
     }

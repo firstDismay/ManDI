@@ -1,13 +1,13 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
     /// Команда возвращает список записей журнала по идентификатору категории записей
     /// </summary>
     public class log_by_id_class : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор класса
         /// </summary>
@@ -32,7 +32,7 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_class", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_class;
                 ListParameter.Add(Parameter);

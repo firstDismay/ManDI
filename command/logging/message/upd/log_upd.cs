@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Security.Principal;
 
-namespace ManDI.command.logging.upd
+namespace ManDI.command.logging.message.upd
 {
     /// <summary>
     /// Команда обновляет запись журнала
     /// </summary>
     public class log_upd : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор записи
         /// </summary>
@@ -61,7 +61,7 @@ namespace ManDI.command.logging.upd
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_log", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_log;
                 ListParameter.Add(Parameter);

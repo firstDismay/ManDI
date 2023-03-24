@@ -1,22 +1,25 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает записи журнала свойства позиции по идентификатору
+    /// Команда возвращает данные по актуальности сопоставляемой сущности
+    /// 1 - Не найдена
+    /// 2 - Не актуальна
+    /// 3 - Актуальна
     /// </summary>
-    public class log_by_id_position_prop : IParametersFunction
+    public class log_is_actual : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
+        /// Идентификатор записи журнала
         /// </summary>
-        public long iid_pos_temp_prop { get; set; }
+        public long iid { get; set; }
 
         /// <summary>
-        /// Идентификатор позиции
+        /// Штамп времени объекта
         /// </summary>
-        public long iid_position { get; set; }
+        public long itimestamp { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -28,12 +31,12 @@ namespace ManDI.command.logging.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp_prop;
+                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
+                Parameter.Value = iid;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
+                Parameter.Value = itimestamp;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -47,7 +50,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_position_prop";
+                return "log_is_actual";
             }
         }
     }

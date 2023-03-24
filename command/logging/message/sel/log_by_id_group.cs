@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает записи журнала объекта по идентификатору объекта
+    /// Команда возвращает список записей журнала по идентификатору группы
     /// </summary>
-    public class log_by_id_object : IParametersFunction
+    public class log_by_id_group : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор группы
         /// </summary>
-        public long iid_object { get; set; }
+        public long iid_group { get; set; }
 
         /// <summary>
         /// Включить в выборку записи классов
@@ -19,9 +19,9 @@ namespace ManDI.command.logging.sel
         public bool class_on { get; set; }
 
         /// <summary>
-        /// Включить в выборку записи групп
+        /// Включить в выборку записи объектов класса
         /// </summary>
-        public bool group_on { get; set; }
+        public bool object_on { get; set; }
 
         /// <summary>
         /// Выполнить рекурсивно
@@ -37,17 +37,17 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object;
+
+                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_group;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("class_on", NpgsqlDbType.Boolean);
                 Parameter.Value = class_on;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("group_on", NpgsqlDbType.Boolean);
-                Parameter.Value = group_on;
+                Parameter = new NpgsqlParameter("object_on", NpgsqlDbType.Boolean);
+                Parameter.Value = object_on;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("recursive_on", NpgsqlDbType.Boolean);
@@ -65,7 +65,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_object";
+                return "log_by_id_group";
             }
         }
     }

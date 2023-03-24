@@ -1,25 +1,25 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает список записей журнала по идентификатору группы
+    /// Команда возвращает записи журнала по идентификатору шаблона позиции
     /// </summary>
-    public class log_by_id_group : IParametersFunction
+    public class log_by_id_pos_temp : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор группы
+        /// Идентификатор шаблона позиции
         /// </summary>
-        public long iid_group { get; set; }
+        public long iid_pos_temp { get; set; }
 
         /// <summary>
-        /// Включить в выборку записи классов
+        /// Включить в выборку записи позиций
         /// </summary>
-        public bool class_on { get; set; }
+        public bool position_on { get; set; }
 
         /// <summary>
-        /// Включить в выборку записи объектов класса
+        /// Включить в выборку записи объектов
         /// </summary>
         public bool object_on { get; set; }
 
@@ -37,13 +37,13 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_group;
+
+                Parameter = new NpgsqlParameter("iid_pos_temp", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("class_on", NpgsqlDbType.Boolean);
-                Parameter.Value = class_on;
+                Parameter = new NpgsqlParameter("position_on", NpgsqlDbType.Boolean);
+                Parameter.Value = position_on;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("object_on", NpgsqlDbType.Boolean);
@@ -65,7 +65,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_group";
+                return "log_by_id_pos_temp";
             }
         }
     }

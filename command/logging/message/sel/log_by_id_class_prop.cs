@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает список записей журнала по идентификатору категории записей
+    /// Команда возвращает записи журнала свойства класса по идентификатору свойства
     /// </summary>
-    public class log_by_id_category : IParametersFunction
-    {   
+    public class log_by_id_class_prop : IParametersFunction
+    {
         /// <summary>
-        /// Идентификатор категории записей
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid_category { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -22,9 +22,9 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_category", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_category;
+
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -38,7 +38,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_category";
+                return "log_by_id_class_prop";
             }
         }
     }

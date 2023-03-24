@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает записи журнала по массиву идентификаторов записей
+    /// Команда возвращает записи журнала по идентификатору шаблона позиции
     /// </summary>
-    public class log_by_id_array : IParametersFunction
+    public class log_by_id_pos_temp_prop : IParametersFunction
     {
         /// <summary>
-        /// Массив идентификаторов записей журнала
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long[] log_array { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -23,9 +23,10 @@ namespace ManDI.command.logging.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("log_array", NpgsqlDbType.Array | NpgsqlDbType.Bigint);
-                Parameter.Value = log_array;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
+
                 return ListParameter;
             }
         }
@@ -37,7 +38,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_array";
+                return "log_by_id_pos_temp_prop";
             }
         }
     }

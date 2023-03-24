@@ -1,25 +1,22 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает данные по актуальности сопоставляемой сущности
-    /// 1 - Не найдена
-    /// 2 - Не актуальна
-    /// 3 - Актуальна
+    /// Команда возвращает записи журнала свойства позиции по идентификатору
     /// </summary>
-    public class log_is_actual : IParametersFunction
+    public class log_by_id_position_prop : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор записи журнала
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Штамп времени объекта
+        /// Идентификатор позиции
         /// </summary>
-        public long itimestamp { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -31,12 +28,12 @@ namespace ManDI.command.logging.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp;
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -50,7 +47,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_is_actual";
+                return "log_by_id_position_prop";
             }
         }
     }

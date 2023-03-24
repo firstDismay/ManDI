@@ -1,17 +1,21 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Security.Principal;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.del
 {
     /// <summary>
-    /// Команда возвращает записи журнала по идентификатору шаблона позиции
+    /// Команда удаляет запись журнала по идентификатору записи
     /// </summary>
-    public class log_by_id_pos_temp_prop : IParametersFunction
+    public class log_del : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
+        /// Идентификатор записи
         /// </summary>
-        public long iid_pos_temp_prop { get; set; }
+        public long iid_log { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -22,9 +26,9 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp_prop;
+
+                Parameter = new NpgsqlParameter("iid_log", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_log;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -38,7 +42,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id_pos_temp_prop";
+                return "log_del";
             }
         }
     }

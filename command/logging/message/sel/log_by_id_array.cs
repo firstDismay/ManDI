@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.logging.sel
+namespace ManDI.command.logging.message.sel
 {
     /// <summary>
-    /// Команда возвращает запись журнала по идентификатору
+    /// Команда возвращает записи журнала по массиву идентификаторов записей
     /// </summary>
-    public class log_by_id : IParametersFunction
-    {   
+    public class log_by_id_array : IParametersFunction
+    {
         /// <summary>
-        /// Идентификатор записи
+        /// Массив идентификаторов записей журнала
         /// </summary>
-        public long iid { get; set; }
+        public long[] log_array { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -22,11 +22,10 @@ namespace ManDI.command.logging.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
-                Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
-                Parameter.Value = iid;
-                ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("log_array", NpgsqlDbType.Array | NpgsqlDbType.Bigint);
+                Parameter.Value = log_array;
+                ListParameter.Add(Parameter);
                 return ListParameter;
             }
         }
@@ -38,7 +37,7 @@ namespace ManDI.command.logging.sel
         {
             get
             {
-                return "log_by_id";
+                return "log_by_id_array";
             }
         }
     }
