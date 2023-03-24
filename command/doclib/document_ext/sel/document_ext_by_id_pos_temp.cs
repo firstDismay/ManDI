@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Principal;
 
 namespace ManDI.command.doclib.document_ext.sel
 {
@@ -14,9 +8,9 @@ namespace ManDI.command.doclib.document_ext.sel
     public class document_ext_by_id_pos_temp : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор экземпляра сущности
+        /// Идентификатор шаблона позиции
         /// </summary>
-        public long iid_entity_instance { get; set; }
+        public long iid_pos_temp { get; set; }
 
         /// <summary>
         /// Включение позиций
@@ -43,8 +37,8 @@ namespace ManDI.command.doclib.document_ext.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_entity_instance;
+                Parameter = new NpgsqlParameter("iid_pos_temp", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("position_on", NpgsqlDbType.Boolean);

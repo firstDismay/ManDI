@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Principal;
 
 namespace ManDI.command.doclib.document_ext.sel
 {
@@ -14,9 +8,9 @@ namespace ManDI.command.doclib.document_ext.sel
     public class document_ext_by_id_object : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор экземпляра сущности
+        /// Идентификатор объекта
         /// </summary>
-        public long iid_entity_instance { get; set; }
+        public long iid_object { get; set; }
 
         /// <summary>
         /// Включение классов
@@ -43,8 +37,8 @@ namespace ManDI.command.doclib.document_ext.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_entity_instance;
+                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_object;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("class_on", NpgsqlDbType.Boolean);

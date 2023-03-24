@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Principal;
 
 namespace ManDI.command.doclib.document.sel
 {
@@ -14,9 +8,9 @@ namespace ManDI.command.doclib.document.sel
     public class document_by_id_class_prop : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор экземпляра сущности
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid_entity_instance { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -28,8 +22,8 @@ namespace ManDI.command.doclib.document.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_entity_instance;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
