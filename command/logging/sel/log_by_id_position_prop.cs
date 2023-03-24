@@ -9,14 +9,14 @@ namespace ManDI.command.logging.sel
     public class log_by_id_position_prop : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор свойства позиции
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid_position_prop { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор позиции
         /// </summary>
-        public long iid_object { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -28,12 +28,12 @@ namespace ManDI.command.logging.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position_prop;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object;
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
