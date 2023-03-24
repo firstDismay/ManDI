@@ -14,9 +14,9 @@ namespace ManDI.command.doclib.document_ext.sel
     public class document_ext_by_id_user : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор экземпляра сущности
+        /// Идентификатор пользователя
         /// </summary>
-        public long iid_entity_instance { get; set; }
+        public long iid_user { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -28,8 +28,8 @@ namespace ManDI.command.doclib.document_ext.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_entity_instance;
+                Parameter = new NpgsqlParameter("iid_user", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_user;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
