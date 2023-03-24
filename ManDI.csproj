@@ -7,16 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="command\doc_lib\docement\**" />
-    <EmbeddedResource Remove="command\doc_lib\docement\**" />
-    <None Remove="command\doc_lib\docement\**" />
+    <Compile Remove="command\doc_lib\**" />
+    <EmbeddedResource Remove="command\doc_lib\**" />
+    <None Remove="command\doc_lib\**" />
     <None Remove="command\properties\position\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="command\doc_lib\category\" />
-    <Folder Include="command\doc_lib\file\" />
-    <Folder Include="command\doc_lib\link\" />
   </ItemGroup>
 
   <ItemGroup>
