@@ -1,10 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.user.upd
 {
@@ -22,7 +17,7 @@ namespace ManDI.command.user.upd
         /// Коректируемый логин
         /// </summary>
         public string icorrectable_login { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

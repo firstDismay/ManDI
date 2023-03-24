@@ -7,7 +7,7 @@ namespace ManDI.command.logging.category.sel
     /// Команда возвращает список категорий записей журнала по идентификатору концепции
     /// </summary>
     public class log_category_by_id_conception : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор концепции
         /// </summary>
@@ -22,7 +22,7 @@ namespace ManDI.command.logging.category.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);

@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.properties.common
 {
@@ -17,7 +11,7 @@ namespace ManDI.command.properties.common
         /// <summary>
         /// Идентификатор типа свойства
         /// </summary>
-        public int iid{ get; set; }
+        public int iid { get; set; }
 
         /// <summary>
         /// Список параметров функции

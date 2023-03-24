@@ -1,5 +1,5 @@
-﻿using Npgsql;
-using ManDI.command;
+﻿using ManDI.command;
+using Npgsql;
 using System.Text;
 
 namespace ManDI.extractor

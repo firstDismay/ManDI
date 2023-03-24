@@ -1,10 +1,6 @@
-﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using ManDI.command;
+﻿using ManDI.command;
+using Npgsql;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.extractor
 {

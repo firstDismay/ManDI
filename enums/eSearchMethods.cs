@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-
-namespace ManDI.enums
+﻿namespace ManDI.enums
 {
     /// <summary>
     /// Перечисление определяет доступные методы поиска

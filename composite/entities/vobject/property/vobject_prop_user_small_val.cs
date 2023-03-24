@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vobject.property
+﻿namespace ManDI.composite.entities.vobject.property
 {
     /// <summary>
     /// Композитный тип данных значения свойства объекта типа  пользовательское маленькое
     /// </summary>
-    public class vobject_prop_user_small_val {
+    public class vobject_prop_user_small_val
+    {
         public long id_object { get; set; }
         public long id_class { get; set; }
         public DateTime timestamp_class { get; set; }

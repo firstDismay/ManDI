@@ -1,7 +1,6 @@
-﻿using Npgsql;
+﻿using ManDI.extractor;
+using Npgsql;
 using System.Data;
-using ManDI.extractor;
-using System.Diagnostics;
 
 namespace ManDI.executor
 {

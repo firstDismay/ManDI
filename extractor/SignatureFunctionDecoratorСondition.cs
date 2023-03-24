@@ -1,10 +1,5 @@
 ﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using ManDI.command;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.extractor
 {

@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace ManDI.composite.entities.rule
+﻿namespace ManDI.composite.entities.rule
 {
     /// <summary>
     /// Композитный тип правила вложенности уровня 1 группа на шаблон

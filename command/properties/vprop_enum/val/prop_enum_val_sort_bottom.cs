@@ -1,6 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
 
 namespace ManDI.command.properties.vprop_enum.val
 {

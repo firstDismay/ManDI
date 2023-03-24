@@ -12,7 +12,7 @@ namespace ManDI.command.properties.global.sel
         /// Идентификатор определяющего свойства класса
         /// </summary>
         public long iid_class_prop_definition { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.postemp.properties.sel
 {
@@ -14,7 +12,7 @@ namespace ManDI.command.postemp.properties.sel
         /// Идентификатор свойства шаблона позиции
         /// </summary>
         public long iid { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vobject.property
+﻿namespace ManDI.composite.entities.vobject.property
 {
     /// <summary>
     /// Композитный тип данных режимов встраивания объектов-значений объектных свойств при создании объектов-носителей

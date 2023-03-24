@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vobject
+﻿namespace ManDI.composite.entities.vobject
 {
     /// <summary>
     /// Композитный тип объектов

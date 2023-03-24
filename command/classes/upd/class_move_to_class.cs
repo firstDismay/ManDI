@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.classes.upd
 {
@@ -23,7 +17,7 @@ namespace ManDI.command.classes.upd
         /// Идентификатор целевого класса
         /// </summary>
         public long iid_target { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

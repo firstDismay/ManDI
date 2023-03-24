@@ -11,8 +11,8 @@ namespace ManDI.command.properties.vprop_enum.sel
         /// <summary>
         /// Идентификатор области применения перечисления
         /// </summary>
-        public long iid  { get; set; }
-        
+        public long iid { get; set; }
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

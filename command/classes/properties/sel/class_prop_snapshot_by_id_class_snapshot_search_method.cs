@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.classes.properties.sel
 {
@@ -25,7 +23,7 @@ namespace ManDI.command.classes.properties.sel
         /// </summary>
         public string isearch_method { get; set; }
 
-        
+
 
         /// <summary>
         /// Список параметров функции

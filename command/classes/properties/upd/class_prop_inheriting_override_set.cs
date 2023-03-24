@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.classes.properties.upd
 {
@@ -14,7 +12,7 @@ namespace ManDI.command.classes.properties.upd
         /// Идентификатор свойства класса
         /// </summary>
         public long iid { get; set; }
-                
+
         /// <summary>
         /// Признак переопределяемости значения свойства
         /// </summary>
@@ -33,7 +31,7 @@ namespace ManDI.command.classes.properties.upd
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);
-        
+
                 Parameter = new NpgsqlParameter("ion_override", NpgsqlDbType.Boolean);
                 Parameter.Value = ion_override;
                 ListParameter.Add(Parameter);

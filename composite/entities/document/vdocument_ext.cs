@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace ManDI.composite.entities.document
+﻿namespace ManDI.composite.entities.document
 {
     /// <summary>
     /// Композитный тип расширенного документа
@@ -25,5 +23,5 @@ namespace ManDI.composite.entities.document
         public vdoc_file[] doc_file_list { get; set; }
         public vdoc_link[] doc_link_list { get; set; }
         public vdoc_category[] doc_category_list { get; set; }
-}
+    }
 }

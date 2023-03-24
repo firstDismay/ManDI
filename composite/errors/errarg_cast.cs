@@ -1,7 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-using System;
-
-namespace ManDI.composite.errors
+﻿namespace ManDI.composite.errors
 {
     /// <summary>
     /// Композитный тип ошибки приведения объектов

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-using ManDI.enums;
-using ManDI.function;
+﻿using ManDI.enums;
 using Newtonsoft.Json;
 
 namespace ManDI.composite.arguments

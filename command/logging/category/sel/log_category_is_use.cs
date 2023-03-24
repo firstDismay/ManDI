@@ -7,7 +7,7 @@ namespace ManDI.command.logging.category.sel
     /// Команда возвращает данные об использовании категории сообщений
     /// </summary>
     public class log_category_is_use : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор категории записей
         /// </summary>
@@ -22,7 +22,7 @@ namespace ManDI.command.logging.category.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);

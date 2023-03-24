@@ -1,6 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using ManDI.command;
 
 namespace ManDI.command.postemp.add
 {

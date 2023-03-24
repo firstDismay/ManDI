@@ -12,7 +12,7 @@ namespace ManDI.command.unit.add
         /// Идентификатор правила пересчета
         /// </summary>
         public long iid { get; set; }
-                
+
         /// <summary>
         /// Обозначение единиц измерения
         /// </summary>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ManDI.composite.entities.rule
+﻿namespace ManDI.composite.entities.rule
 {
     /// <summary>
     /// Композитный тип разрешений правила вложенности уровня 1 класс на шаблон

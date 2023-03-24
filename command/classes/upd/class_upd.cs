@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.classes.upd
 {
@@ -18,7 +12,7 @@ namespace ManDI.command.classes.upd
         /// Идентификатор класса
         /// </summary>
         public long iid { get; set; }
-                
+
         /// <summary>
         /// Наименование класса
         /// </summary>

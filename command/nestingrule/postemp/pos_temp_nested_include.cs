@@ -23,7 +23,7 @@ namespace ManDI.command.nesting_rule.postemp
         ///Максимальное количество встраиваемых позиций
         /// </summary>
         public long ipos_temp_nested_limit { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

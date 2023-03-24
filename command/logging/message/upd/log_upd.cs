@@ -1,9 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Principal;
 
 namespace ManDI.command.logging.message.upd
 {

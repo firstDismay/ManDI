@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.classes.add
 {
@@ -28,7 +22,7 @@ namespace ManDI.command.classes.add
         /// Признак копирования вложенных классов
         /// </summary>
         public bool on_nested { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -50,7 +44,7 @@ namespace ManDI.command.classes.add
                 Parameter = new NpgsqlParameter("on_nested", NpgsqlDbType.Boolean);
                 Parameter.Value = on_nested;
                 ListParameter.Add(Parameter);
-                                
+
                 return ListParameter;
             }
         }

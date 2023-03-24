@@ -1,8 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ManDI.command.classes.properties.val
 {

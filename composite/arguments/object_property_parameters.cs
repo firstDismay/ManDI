@@ -20,13 +20,13 @@ namespace ManDI.composite.arguments
         /// </summary>
         [JsonProperty]
         public Int64 IdClassProp { get; set; }
-        
+
         /// <summary>
         ///Наименование свойства класса
         /// </summary>
         [JsonProperty]
         public String NameClassProp { get; set; }
-        
+
         /// <summary>
         ///Значеие свойства объекта
         /// </summary>

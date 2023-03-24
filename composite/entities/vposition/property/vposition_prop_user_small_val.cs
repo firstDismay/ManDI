@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vposition.property
+﻿namespace ManDI.composite.entities.vposition.property
 {
     /// <summary>
     /// Композитный тип данных значения свойства шаблона позиции типа пользовательское маленькое

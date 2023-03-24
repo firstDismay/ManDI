@@ -1,6 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-
-namespace ManDI.composite.entities.unit
+﻿namespace ManDI.composite.entities.unit
 {
     /// <summary>
     /// Композитный тип правил пересчета

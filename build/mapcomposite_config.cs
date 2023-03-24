@@ -1,21 +1,21 @@
-﻿using Npgsql;
+﻿using ManDI.composite.entities.common;
 using ManDI.composite.entities.conception;
-using ManDI.composite.entities.common;
-using ManDI.composite.entities.unit;
+using ManDI.composite.entities.document;
+using ManDI.composite.entities.group;
 using ManDI.composite.entities.property;
-using ManDI.composite.entities.rule;
 using ManDI.composite.entities.role;
+using ManDI.composite.entities.rule;
+using ManDI.composite.entities.unit;
 using ManDI.composite.entities.vclass;
 using ManDI.composite.entities.vclass.property;
+using ManDI.composite.entities.vlog;
+using ManDI.composite.entities.vobject;
+using ManDI.composite.entities.vobject.property;
 using ManDI.composite.entities.vpos_temp;
 using ManDI.composite.entities.vpos_temp.property;
 using ManDI.composite.entities.vposition;
 using ManDI.composite.entities.vposition.property;
-using ManDI.composite.entities.vobject;
-using ManDI.composite.entities.vobject.property;
-using ManDI.composite.entities.document;
-using ManDI.composite.entities.group;
-using ManDI.composite.entities.vlog;
+using Npgsql;
 
 namespace ManDI
 {
@@ -44,7 +44,7 @@ namespace ManDI
 
             dataSourceBuilder.MapComposite<vcfg_prop_spec_limit2>("vcfg_prop_spec_limit2");
             dataSourceBuilder.MapComposite<vcon_prop_data_type>("vcon_prop_data_type");
-            
+
             dataSourceBuilder.MapComposite<vglobal_prop>("vglobal_prop");
             dataSourceBuilder.MapComposite<vglobal_prop_area_val>("vglobal_prop_area_val");
             dataSourceBuilder.MapComposite<vglobal_prop_link_class_prop>("vglobal_prop_link_class_prop");

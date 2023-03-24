@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vclass.property
+﻿namespace ManDI.composite.entities.vclass.property
 {
     /// <summary>
     /// Композитный тип данных значения свойства класса типа объектное
     /// </summary>
     public class vclass_prop_object_val
-    {   
+    {
         public long id { get; set; }
         public long id_class { get; set; }
         public long id_class_definition { get; set; }

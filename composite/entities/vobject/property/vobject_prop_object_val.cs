@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vobject.property
+﻿namespace ManDI.composite.entities.vobject.property
 {
     /// <summary>
     /// Композитный тип данных значения свойства объекта типа объектное
     /// </summary>
-    public class vobject_prop_object_val {
+    public class vobject_prop_object_val
+    {
         public long id_object_carrier { get; set; }
         public long id_class_object_carrier { get; set; }
         public DateTime timestamp_class_object_carrier { get; set; }

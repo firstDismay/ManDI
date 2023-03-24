@@ -12,7 +12,7 @@ namespace ManDI.command.properties.global.sel
         /// Идентификатор концепции
         /// </summary>
         public long iid_conception { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.classes.add
 {
@@ -23,7 +17,7 @@ namespace ManDI.command.classes.add
         /// Идентификатор целевого класса
         /// </summary>
         public long iid_group { get; set; }
-                
+
         /// <summary>
         /// Список параметров функции
         /// </summary>
@@ -41,7 +35,7 @@ namespace ManDI.command.classes.add
                 Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_group;
                 ListParameter.Add(Parameter);
-                
+
                 return ListParameter;
             }
         }

@@ -17,7 +17,7 @@ namespace ManDI.command.properties.global.add
         /// Идентификатор свойства класса
         /// </summary>
         public long iid_class_prop { get; set; }
-                
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

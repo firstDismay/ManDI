@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.objects.properties.sel
 {
@@ -19,7 +17,7 @@ namespace ManDI.command.objects.properties.sel
         /// Идентификатор свойства класса
         /// </summary>
         public long iid_class_prop { get; set; }
-    
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

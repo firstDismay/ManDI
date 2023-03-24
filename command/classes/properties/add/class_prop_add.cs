@@ -1,6 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
 
 namespace ManDI.command.classes.properties.add
 {

@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace ManDI.composite.entities.property
+﻿namespace ManDI.composite.entities.property
 {
     /// <summary>
     /// Композитный тип таблицы спецификаторов пределов значений для используемых типов данных

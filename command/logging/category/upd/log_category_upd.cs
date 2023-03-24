@@ -1,6 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Security.Cryptography;
 
 namespace ManDI.command.logging.category.upd
 {
@@ -8,7 +7,7 @@ namespace ManDI.command.logging.category.upd
     /// Команда изменяет категорию записей журнала
     /// </summary>
     public class log_category_upd : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор записи
         /// </summary>
@@ -43,7 +42,7 @@ namespace ManDI.command.logging.category.upd
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);

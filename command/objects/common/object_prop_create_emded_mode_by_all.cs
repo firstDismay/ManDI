@@ -1,9 +1,4 @@
 ﻿using Npgsql;
-using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.objects.common
 {

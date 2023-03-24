@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ManDI.composite.entities.property
+﻿namespace ManDI.composite.entities.property
 {
     /// <summary>
     /// Композитный тип ссылки глобального свойства на свойство шаблона позиций

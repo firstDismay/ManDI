@@ -1,12 +1,5 @@
 ﻿using Npgsql;
-using Npgsql.Internal.TypeHandlers.DateTimeHandlers;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.postemp.sel
 {

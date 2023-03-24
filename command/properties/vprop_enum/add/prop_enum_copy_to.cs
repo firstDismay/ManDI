@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.properties.vprop_enum.add
 {
@@ -23,8 +17,8 @@ namespace ManDI.command.properties.vprop_enum.add
         /// Идентификатор концепции
         /// </summary>
         public long iid_conception { get; set; }
-        
-        
+
+
 
         /// <summary>
         /// Список параметров функции
@@ -43,7 +37,7 @@ namespace ManDI.command.properties.vprop_enum.add
                 Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);
-                                
+
                 return ListParameter;
             }
         }

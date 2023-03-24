@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.position.properties.sel
 {
@@ -14,7 +8,7 @@ namespace ManDI.command.position.properties.sel
     /// </summary>
     public class position_prop_is_actual : IParametersFunction
     {
-       
+
         /// <summary>
         /// Идентификатор свойства шаблона позиции
         /// </summary>
@@ -39,7 +33,7 @@ namespace ManDI.command.position.properties.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-               
+
                 Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);

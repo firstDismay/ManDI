@@ -1,12 +1,4 @@
-﻿using ManDI.composite.entities;
-using Npgsql;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using Npgsql;
 
 namespace ManDI
 {

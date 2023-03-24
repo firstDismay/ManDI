@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace ManDI.composite.entities.document
+﻿namespace ManDI.composite.entities.document
 {
     /// <summary>
     /// Композитный тип документа

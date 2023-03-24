@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System;
-namespace ManDI.composite.entities.vlog
+﻿namespace ManDI.composite.entities.vlog
 {
     /// <summary>
     /// Композитный тип записи журнала

@@ -1,10 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ManDI.command.classes.properties.val
 {
@@ -47,7 +42,7 @@ namespace ManDI.command.classes.properties.val
         /// Признак активности округления
         /// </summary>
         public bool iround_on { get; set; }
-        
+
         /// <summary>
         /// Значение свойства класса типа character varying
         /// </summary>
@@ -107,7 +102,7 @@ namespace ManDI.command.classes.properties.val
         /// Значение свойства класса типа bigint
         /// </summary>
         public long ival_bigint { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

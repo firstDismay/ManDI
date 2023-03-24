@@ -12,7 +12,7 @@ namespace ManDI.command.properties.vprop_enum.sel
         /// Идентификатор перечисления
         /// </summary>
         public long iid_prop_enum { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

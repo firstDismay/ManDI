@@ -7,7 +7,7 @@ namespace ManDI.command.logging.category.del
     /// Команда удаляет категорию записей журнала по идентификатору категории
     /// </summary>
     public class log_category_del : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор категории записей
         /// </summary>
@@ -22,7 +22,7 @@ namespace ManDI.command.logging.category.del
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);

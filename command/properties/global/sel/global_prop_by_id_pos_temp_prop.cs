@@ -12,7 +12,7 @@ namespace ManDI.command.properties.global.sel
         /// Идентификатор свойства шаблона позиции
         /// </summary>
         public long iid_pos_temp_prop { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

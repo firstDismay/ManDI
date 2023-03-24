@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ManDI.composite.entities.vobject.property
+﻿namespace ManDI.composite.entities.vobject.property
 {
     /// <summary>
     /// Композитный тип данных значения свойства объекта типа пользовательское большое
     /// </summary>
-    public class vobject_prop_user_big_val {
+    public class vobject_prop_user_big_val
+    {
         public long id_object_carrier { get; set; }
         public long id_object { get; set; }
         public long id_class { get; set; }

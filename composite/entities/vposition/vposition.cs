@@ -1,8 +1,4 @@
-﻿using ManDI.composite.entities.vclass.property;
-using System;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace ManDI.composite.entities.vposition
+﻿namespace ManDI.composite.entities.vposition
 {
     /// <summary>
     /// Композитный тип позиции

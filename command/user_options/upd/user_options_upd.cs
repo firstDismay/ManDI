@@ -1,10 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.user.upd
 {
@@ -31,7 +26,7 @@ namespace ManDI.command.user.upd
                 Parameter = new NpgsqlParameter("ipref_conception", NpgsqlDbType.Bigint);
                 Parameter.Value = ipref_conception;
                 ListParameter.Add(Parameter);
-                
+
                 return ListParameter;
             }
         }

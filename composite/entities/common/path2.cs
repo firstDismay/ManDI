@@ -14,6 +14,5 @@
         public string name { get; set; }
         public int level { get; set; }
     }
-}    
-    
-    
+}
+

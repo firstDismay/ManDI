@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.classes.properties.sel
 {
@@ -15,7 +13,7 @@ namespace ManDI.command.classes.properties.sel
         /// Идентификатор позиции
         /// </summary>
         public long iid_position { get; set; }
-        
+
         /// <summary>
         /// Идентификатор свойства класса
         /// </summary>
@@ -25,7 +23,7 @@ namespace ManDI.command.classes.properties.sel
         /// Штамп времени класса
         /// </summary>
         public DateTime itimestamp_class { get; set; }
-        
+
         /// <summary>
         /// Признак проверки встроенных объектов
         /// </summary>

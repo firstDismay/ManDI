@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace ManDI.executor
 {

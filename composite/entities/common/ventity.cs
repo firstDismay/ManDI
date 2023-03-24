@@ -4,7 +4,7 @@
     /// Композитный тип обобщенной сущности
     /// </summary>
     public class ventity
-    {   
+    {
         public int id { get; set; }
         public string entity { get; set; }
         public string name { get; set; }

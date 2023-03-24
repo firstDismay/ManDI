@@ -12,7 +12,7 @@ namespace ManDI.command.nesting_rule.del
         /// Идентификатор позиции
         /// </summary>
         public long iid_position { get; set; }
-                
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

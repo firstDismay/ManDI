@@ -1,7 +1,7 @@
 ﻿using ManDI.composite.arguments;
+using Newtonsoft.Json;
 using Npgsql;
 using NpgsqlTypes;
-using Newtonsoft.Json;
 
 namespace ManDI.command.objects.sel
 {

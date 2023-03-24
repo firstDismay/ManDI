@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.user_role.del
 {
@@ -18,7 +12,7 @@ namespace ManDI.command.user_role.del
         /// Системное имя роли
         /// </summary>
         public string inamesys { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

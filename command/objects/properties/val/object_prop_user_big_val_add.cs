@@ -1,8 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ManDI.command.classes.properties.val
 {
@@ -55,7 +52,7 @@ namespace ManDI.command.classes.properties.val
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_object;
                 ListParameter.Add(Parameter);

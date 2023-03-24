@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.properties.vprop_enum.upd
 {
@@ -23,7 +17,7 @@ namespace ManDI.command.properties.vprop_enum.upd
         /// Идентификатор концепции
         /// </summary>
         public long iid_conception { get; set; }
-        
+
         /// <summary>
         /// Наименование перечисления
         /// </summary>

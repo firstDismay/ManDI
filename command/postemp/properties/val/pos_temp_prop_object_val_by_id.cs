@@ -1,8 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Principal;
 
 namespace ManDI.command.postemp.properties.val
 {

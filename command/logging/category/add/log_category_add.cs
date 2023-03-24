@@ -7,7 +7,7 @@ namespace ManDI.command.logging.category.add
     /// Команда добавляет новую категорию записей
     /// </summary>
     public class log_category_add : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор концепции
         /// </summary>
@@ -42,7 +42,7 @@ namespace ManDI.command.logging.category.add
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);

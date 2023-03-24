@@ -1,5 +1,4 @@
 ﻿using Npgsql;
-using NpgsqlTypes;
 
 namespace ManDI.command.properties.vprop_enum.sel
 {
@@ -8,7 +7,7 @@ namespace ManDI.command.properties.vprop_enum.sel
     /// </summary>
     public class prop_enum_use_area_by_all : IParametersFunction
     {
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

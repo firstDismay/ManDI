@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 
 namespace ManDI.command.classes.properties.val
 {
@@ -56,7 +54,7 @@ namespace ManDI.command.classes.properties.val
                 Parameter = new NpgsqlParameter("on_internal", NpgsqlDbType.Boolean);
                 Parameter.Value = on_internal;
                 ListParameter.Add(Parameter);
-                
+
                 return ListParameter;
             }
         }

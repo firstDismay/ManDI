@@ -1,10 +1,4 @@
 ﻿using Npgsql;
-using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.conception.sel
 {
@@ -22,7 +16,7 @@ namespace ManDI.command.conception.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 return ListParameter;
             }
         }

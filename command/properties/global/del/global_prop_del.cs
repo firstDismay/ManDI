@@ -12,7 +12,7 @@ namespace ManDI.command.properties.global.del
         /// Идентификатор глобального свойства
         /// </summary>
         public long iid_global_prop { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

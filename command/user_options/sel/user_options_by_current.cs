@@ -1,10 +1,4 @@
 ﻿using Npgsql;
-using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.user_options.sel
 {

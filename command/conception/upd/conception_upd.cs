@@ -1,10 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.conception.upd
 {
@@ -27,12 +22,12 @@ namespace ManDI.command.conception.upd
         /// Описание концепции
         /// </summary>
         public string idesc { get; set; }
-        
+
         /// <summary>
         /// Признак включенной концепции
         /// </summary>
         public bool ion { get; set; }
-        
+
         /// <summary>
         /// 
         /// </summary>

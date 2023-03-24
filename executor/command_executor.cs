@@ -1,6 +1,6 @@
-﻿using Npgsql;
+﻿using ManDI.extractor;
+using Npgsql;
 using System.Data;
-using ManDI.extractor;
 
 namespace ManDI.executor
 {
@@ -45,7 +45,7 @@ namespace ManDI.executor
             {
                 cn.Open();
                 cmd = prepare_cmd(function, cn);
-                result =  cmd.ExecuteScalar();
+                result = cmd.ExecuteScalar();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
             }

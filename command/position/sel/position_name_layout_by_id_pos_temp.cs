@@ -1,11 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManDI.command.position.sel
 {
@@ -19,7 +13,7 @@ namespace ManDI.command.position.sel
         /// </summary>
         public long iid_pos_temp { get; set; }
 
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

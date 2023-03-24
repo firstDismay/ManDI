@@ -7,7 +7,7 @@ namespace ManDI.command.logging.category.sel
     /// Команда возвращает категорию записи журнала по идентификатору категории
     /// </summary>
     public class log_category_by_id : IParametersFunction
-    {   
+    {
         /// <summary>
         /// Идентификатор категории записей
         /// </summary>
@@ -22,7 +22,7 @@ namespace ManDI.command.logging.category.sel
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-                
+
                 Parameter = new NpgsqlParameter("iid", NpgsqlDbType.Bigint);
                 Parameter.Value = iid;
                 ListParameter.Add(Parameter);

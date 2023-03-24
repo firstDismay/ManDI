@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace ManDI.composite.entities.rule
+﻿namespace ManDI.composite.entities.rule
 {
     /// <summary>
     /// Композитный тип правила вложенности уровня 2 снимок класса на позицию

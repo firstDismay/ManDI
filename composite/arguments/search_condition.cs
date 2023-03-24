@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using ManDI.command;
-using System.Text;
-using System.Threading.Tasks;
-using ManDI.enums;
-using ManDI.function;
+﻿using ManDI.enums;
 using Newtonsoft.Json;
 
 namespace ManDI.composite.arguments
@@ -16,9 +9,9 @@ namespace ManDI.composite.arguments
     [JsonObject(MemberSerialization.OptIn)]
     public class search_condition
     {
-     /// <summary>
-     /// Конструктор по умолчанию
-     /// </summary>
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public search_condition()
         {
             IdGlobalProp = -1;
@@ -48,11 +41,12 @@ namespace ManDI.composite.arguments
         ///Метод поиска строковое представление
         /// </summary>
         [JsonProperty]
-        public String SearchMethodsToString 
-        { get
+        public String SearchMethodsToString
+        {
+            get
             {
                 return _SearchMethods.ToString();
-            } 
+            }
         }
 
         /// <summary>
