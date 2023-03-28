@@ -5,31 +5,38 @@ using System.Data;
 namespace ManDI.executor
 {
     /// <summary>
-    /// Декоратор класса исполнителя команд выполняет команду в контексте указанного пользователя
+    /// Класс исполнителя подготовленных команд с переключением на указанную роль
     /// </summary>
-    public class command_executor_runas : ICommandExecutor
+    public class command_executor_runas : ICommandExecutorAs<ISignatureExtractor>
     {
-        ISignatureExtractor function;
-        UserContextRole user_context;
         mandi data_source;
 
-        public command_executor_runas(ISignatureExtractor Function, UserContextRole UserContext, mandi DataSource)
+        public command_executor_runas(mandi DataSource)
         {
-            if (Function == null) throw new ArgumentNullException("Function");
-            if (UserContext == null) throw new ArgumentNullException("UserContext");
             if (DataSource == null) throw new ArgumentNullException("DataSource");
-
-            this.function = Function;
-            this.user_context = UserContext;
             this.data_source = DataSource;
         }
 
-        public int ExecuteNonQuery()
+        public int ExecuteNonQuery(ISignatureExtractor command, UserContextRole user)
         {
-            throw new NotImplementedException();
+            int result;
+            NpgsqlCommand set_role;
+            NpgsqlCommand cmd;
+
+            using (var cn = this.data_source.GetDataSource().CreateConnection())
+            {
+                cn.Open();
+                cmd = prepare_cmd(command, cn);
+                set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
+                set_role.ExecuteNonQuery();
+                result = cmd.ExecuteNonQuery();
+                if (cmd.Transaction != null)
+                    cmd.Transaction.Commit();
+            }
+            return result;
         }
 
-        public object ExecuteScalar()
+        public object ExecuteScalar(ISignatureExtractor command, UserContextRole user)
         {
             object result;
             NpgsqlCommand set_role;
@@ -38,8 +45,8 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(this.function, cn);
-                set_role = prepare_set_role(this.user_context.Role, cn, cmd.Transaction);
+                cmd = prepare_cmd(command, cn);
+                set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
                 result = cmd.ExecuteScalar();
                 cmd.Transaction.Commit();
@@ -47,7 +54,7 @@ namespace ManDI.executor
             return result;
         }
 
-        public DataTable Fill()
+        public DataTable Fill(ISignatureExtractor command, UserContextRole user)
         {
             var table = new DataTable();
             NpgsqlCommand set_role;
@@ -56,8 +63,8 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(this.function, cn);
-                set_role = prepare_set_role(this.user_context.Role, cn, cmd.Transaction);
+                cmd = prepare_cmd(command, cn);
+                set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
 
                 var adapter = new NpgsqlDataAdapter();

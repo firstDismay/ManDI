@@ -1,26 +1,27 @@
-﻿using System.Data;
+﻿using ManDI.executor;
+using System.Data;
 
 namespace ManDI.executor
 {
-
     /// <summary>
-    /// Интерфейс класса исполнителя подготовленных команд
+    /// Интерфейс класса исполнителя подготовленных команд с переключением на указанную роль
     /// </summary>
-    public interface ICommandExecutor<TCommand>
+    /// <typeparam name="TCommand"></typeparam>
+    public interface ICommandExecutorAs<TCommand>
     {
         /// <summary>
 		/// Выполнение команды в режиме без вывода результата, возвращает количество затронутых строк или -1
 		/// </summary>
-		Int32 ExecuteNonQuery(TCommand command);
+		Int32 ExecuteNonQuery(TCommand command, UserContextRole user);
 
         /// <summary>
         /// Выполнение команды в режиме с выводом результата в указанный контейнер
         /// </summary>
-        DataTable Fill(TCommand command);
+        DataTable Fill(TCommand command, UserContextRole user);
 
         /// <summary>
         /// Выполнение команды в режиме без вывода результата, возвращает содержимое первой строки первого столбца результата команды
         /// </summary>
-        Object ExecuteScalar(TCommand command);
+        Object ExecuteScalar(TCommand command, UserContextRole user);
     }
 }

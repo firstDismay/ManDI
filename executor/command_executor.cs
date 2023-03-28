@@ -7,21 +7,17 @@ namespace ManDI.executor
     /// <summary>
     /// Класс исполнителя подготовленных команд
     /// </summary>
-    public class command_executor : ICommandExecutor
+    public class command_executor : ICommandExecutor<ISignatureExtractor>
     {
-        ISignatureExtractor function;
         mandi data_source;
 
-        public command_executor(ISignatureExtractor Function, mandi DataSource)
+        public command_executor( mandi DataSource)
         {
-            if (Function == null) throw new ArgumentNullException("Function");
             if (DataSource == null) throw new ArgumentNullException("DataSource");
-
-            this.function = Function;
             this.data_source = DataSource;
         }
 
-        public int ExecuteNonQuery()
+        public int ExecuteNonQuery(ISignatureExtractor command)
         {
             int result;
             NpgsqlCommand cmd;
@@ -29,14 +25,14 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(this.function, cn);
+                cmd = prepare_cmd(command, cn);
                 result = cmd.ExecuteNonQuery();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
             }
             return result;
         }
-        public object ExecuteScalar()
+        public object ExecuteScalar(ISignatureExtractor command)
         {
             object result;
             NpgsqlCommand cmd;
@@ -44,7 +40,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(function, cn);
+                cmd = prepare_cmd(command, cn);
                 result = cmd.ExecuteScalar();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
@@ -52,7 +48,7 @@ namespace ManDI.executor
             return result;
         }
 
-        public DataTable Fill()
+        public DataTable Fill(ISignatureExtractor command)
         {
             var table = new DataTable();
             NpgsqlCommand cmd;
@@ -60,7 +56,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(this.function, cn);
+                cmd = prepare_cmd(command, cn);
                 var adapter = new NpgsqlDataAdapter();
 
                 adapter.SelectCommand = cmd;
