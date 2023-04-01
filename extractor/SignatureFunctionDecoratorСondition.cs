@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using ManDI.command;
+using Npgsql;
 using System.Text;
 
 namespace ManDI.extractor
@@ -8,48 +9,42 @@ namespace ManDI.extractor
     /// </summary>
     public class SignatureFunctionDecoratorСondition : ISignatureExtractor
     {
-        ISignatureExtractor _signature;
-        UserContextSQL _user_context;
+        ISignatureExtractor signature;
+        UserContextSQL user_context;
 
         public SignatureFunctionDecoratorСondition(ISignatureExtractor Signature, UserContextSQL UserContext)
         {
             if (Signature == null) throw new ArgumentNullException("Signature");
             if (UserContext == null) throw new ArgumentNullException("UserContext");
-            _signature = Signature;
-            _user_context = UserContext;
+            this.signature = Signature;
+            this.user_context = UserContext;
         }
 
-        public string Signature
+        public string GetSignatureFunction(IParametersFunction function)
         {
-            get
-            {
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.Append(_signature.Signature);
-                if (_user_context.Where != null && !_signature.Signature.Contains("where", StringComparison.OrdinalIgnoreCase))
+                stringBuilder.Append(this.signature.GetSignatureFunction(function));
+                if (this.user_context.Where != null && !stringBuilder.ToString().Contains("where", StringComparison.OrdinalIgnoreCase))
                 {
                     stringBuilder.Append(" ");
-                    stringBuilder.Append(_user_context.Where);
+                    stringBuilder.Append(this.user_context.Where);
                 }
-                if (_user_context.Limit != null && !_signature.Signature.Contains("limit", StringComparison.OrdinalIgnoreCase))
+                if (this.user_context.Limit != null && !stringBuilder.ToString().Contains("limit", StringComparison.OrdinalIgnoreCase))
                 {
                     stringBuilder.Append(" ");
-                    stringBuilder.Append(_user_context.Limit);
+                    stringBuilder.Append(this.user_context.Limit);
                 }
 
-                if (_user_context.OrderBy != null && !_signature.Signature.Contains("order by", StringComparison.OrdinalIgnoreCase))
+                if (this.user_context.OrderBy != null && !stringBuilder.ToString().Contains("order by", StringComparison.OrdinalIgnoreCase))
                 {
                     stringBuilder.Append(" ");
-                    stringBuilder.Append(_user_context.OrderBy);
+                    stringBuilder.Append(this.user_context.OrderBy);
                 }
                 return stringBuilder.ToString();
-            }
         }
-        public IEnumerable<NpgsqlParameter> Parameters
+        public IEnumerable<NpgsqlParameter> GetParametersFunction(IParametersFunction function)
         {
-            get
-            {
-                return _signature.Parameters;
-            }
+            return function.Parameters;
         }
     }
 }

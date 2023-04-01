@@ -1,4 +1,5 @@
-﻿using ManDI.extractor;
+﻿using ManDI.command;
+using ManDI.extractor;
 using Npgsql;
 using System.Data;
 
@@ -7,17 +8,20 @@ namespace ManDI.executor
     /// <summary>
     /// Класс исполнителя подготовленных команд с переключением на указанную роль
     /// </summary>
-    public class command_executor_runas : ICommandExecutorAs<ISignatureExtractor>
+    public class command_executor_runas : ICommandExecutorAs
     {
-        mandi data_source;
-
-        public command_executor_runas(mandi DataSource)
+        ManDI data_source;
+        ISignatureExtractor signature_extractor;
+        public command_executor_runas(ISignatureExtractor SignatureExtractor, ManDI DataSource)
         {
             if (DataSource == null) throw new ArgumentNullException("DataSource");
             this.data_source = DataSource;
+
+            if (DataSource == null) throw new ArgumentNullException("SignatureExtractor");
+            this.signature_extractor = SignatureExtractor;
         }
 
-        public int ExecuteNonQuery(ISignatureExtractor command, UserContextRole user)
+        public int ExecuteNonQuery(IParametersFunction function, UserContextRole user)
         {
             int result;
             NpgsqlCommand set_role;
@@ -26,7 +30,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
                 result = cmd.ExecuteNonQuery();
@@ -36,7 +40,7 @@ namespace ManDI.executor
             return result;
         }
 
-        public object ExecuteScalar(ISignatureExtractor command, UserContextRole user)
+        public object ExecuteScalar(IParametersFunction function, UserContextRole user)
         {
             object result;
             NpgsqlCommand set_role;
@@ -45,7 +49,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
                 result = cmd.ExecuteScalar();
@@ -54,7 +58,7 @@ namespace ManDI.executor
             return result;
         }
 
-        public DataTable Fill(ISignatureExtractor command, UserContextRole user)
+        public DataTable Fill(IParametersFunction function, UserContextRole user)
         {
             var table = new DataTable();
             NpgsqlCommand set_role;
@@ -63,7 +67,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 set_role = prepare_set_role(user.Role, cn, cmd.Transaction);
                 set_role.ExecuteNonQuery();
 
@@ -77,16 +81,16 @@ namespace ManDI.executor
         /// <summary>
         /// Подготовка основной функции со сменой роли
         /// </summary>
-        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn)
+        NpgsqlCommand prepare_cmd(IParametersFunction function, NpgsqlConnection cn)
         {
             var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
             cmd.Transaction = trans;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = signature.Signature;
+            cmd.CommandText = this.signature_extractor.GetSignatureFunction(function);
 
-            foreach (NpgsqlParameter p in signature.Parameters)
+            foreach (NpgsqlParameter p in function.Parameters)
             {
                 cmd.Parameters.Add(p);
             }

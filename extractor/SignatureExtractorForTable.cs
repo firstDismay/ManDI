@@ -9,42 +9,33 @@ namespace ManDI.extractor
     /// </summary>
     public class SignatureExtractorForTable : ISignatureExtractor
     {
-        IParametersFunction _function;
-        public SignatureExtractorForTable(IParametersFunction function)
+        public SignatureExtractorForTable() { }
+        public string GetSignatureFunction(IParametersFunction function)
         {
             if (function == null) throw new ArgumentNullException("function");
-            _function = function;
-        }
+            string signature;
 
-        public string Signature
-        {
-            get
-            {
-                string function;
-                StringBuilder signature = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
 
-                function = string.Format(@"SELECT * FROM {0}(?)", _function.NameFunction);
-                if (_function.Parameters.Count() > 0)
+            signature = string.Format(@"SELECT * FROM {0}(?)", function.NameFunction);
+                if (function.Parameters.Count() > 0)
                 {
-                    foreach (NpgsqlParameter p in _function.Parameters)
+                    foreach (NpgsqlParameter p in function.Parameters)
                     {
-                        signature.Append(string.Format("@{0}, ", p.ParameterName));
+                    builder.Append(string.Format("@{0}, ", p.ParameterName));
                     }
-                    function = function.Replace("?", signature.ToString().Substring(0, signature.Length - 2));
+                signature = signature.Replace("?", builder.ToString().Substring(0, builder.Length - 2));
                 }
                 else
                 {
-                    function = function.Replace("?", "");
+                signature = signature.Replace("?", "");
                 }
-                return function;
-            }
+                return signature;
         }
-        public IEnumerable<NpgsqlParameter> Parameters
+        public IEnumerable<NpgsqlParameter> GetParametersFunction(IParametersFunction function)
         {
-            get
-            {
-                return _function.Parameters;
-            }
+            if (function == null) throw new ArgumentNullException("function");
+            return function.Parameters;
         }
     }
 }

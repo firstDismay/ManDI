@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using ManDI.command;
+using Npgsql;
 
 namespace ManDI.extractor
 {
@@ -10,11 +11,11 @@ namespace ManDI.extractor
         /// <summary>
         /// Метод возвращает строковое представление сигнатуры связанной функции
         /// </summary>
-        public string Signature { get; }
+        public string GetSignatureFunction(IParametersFunction function);
 
         /// <summary>
         /// Метод возвращает список параметров связанной функции
         /// </summary>
-        public IEnumerable<NpgsqlParameter> Parameters { get; }
+        public IEnumerable<NpgsqlParameter> GetParametersFunction(IParametersFunction function);
     }
 }

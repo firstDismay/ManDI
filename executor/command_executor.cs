@@ -1,4 +1,5 @@
-﻿using ManDI.extractor;
+﻿using ManDI.command;
+using ManDI.extractor;
 using Npgsql;
 using System.Data;
 
@@ -7,17 +8,20 @@ namespace ManDI.executor
     /// <summary>
     /// Класс исполнителя подготовленных команд
     /// </summary>
-    public class command_executor : ICommandExecutor<ISignatureExtractor>
+    public class command_executor : ICommandExecutor
     {
-        mandi data_source;
-
-        public command_executor( mandi DataSource)
+        ManDI data_source;
+        ISignatureExtractor signature_extractor;
+        public command_executor(ISignatureExtractor SignatureExtractor, ManDI DataSource)
         {
             if (DataSource == null) throw new ArgumentNullException("DataSource");
             this.data_source = DataSource;
+            
+            if (DataSource == null) throw new ArgumentNullException("SignatureExtractor");
+            this.signature_extractor = SignatureExtractor;
         }
 
-        public int ExecuteNonQuery(ISignatureExtractor command)
+        public int ExecuteNonQuery(IParametersFunction function)
         {
             int result;
             NpgsqlCommand cmd;
@@ -25,14 +29,14 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 result = cmd.ExecuteNonQuery();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
             }
             return result;
         }
-        public object ExecuteScalar(ISignatureExtractor command)
+        public object ExecuteScalar(IParametersFunction function)
         {
             object result;
             NpgsqlCommand cmd;
@@ -40,7 +44,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 result = cmd.ExecuteScalar();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
@@ -48,7 +52,7 @@ namespace ManDI.executor
             return result;
         }
 
-        public DataTable Fill(ISignatureExtractor command)
+        public DataTable Fill(IParametersFunction function)
         {
             var table = new DataTable();
             NpgsqlCommand cmd;
@@ -56,7 +60,7 @@ namespace ManDI.executor
             using (var cn = this.data_source.GetDataSource().CreateConnection())
             {
                 cn.Open();
-                cmd = prepare_cmd(command, cn);
+                cmd = prepare_cmd(function, cn);
                 var adapter = new NpgsqlDataAdapter();
 
                 adapter.SelectCommand = cmd;
@@ -70,16 +74,16 @@ namespace ManDI.executor
         /// <summary>
         /// Функция подготовки основной команды
         /// </summary>
-        NpgsqlCommand prepare_cmd(ISignatureExtractor signature, NpgsqlConnection cn)
+        NpgsqlCommand prepare_cmd(IParametersFunction function, NpgsqlConnection cn)
         {
             var trans = cn.BeginTransaction(System.Data.IsolationLevel.RepeatableRead);
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = cn;
             cmd.Transaction = trans;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = signature.Signature;
+            cmd.CommandText = this.signature_extractor.GetSignatureFunction(function);
 
-            foreach (NpgsqlParameter p in signature.Parameters)
+            foreach (NpgsqlParameter p in function.Parameters)
             {
                 cmd.Parameters.Add(p);
             }
