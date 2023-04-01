@@ -5,7 +5,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых типов перечислений
     /// </summary>
-    public partial class mandi
+    public partial class ManDI
     {
         /// <summary>
         /// Метод сопоставления перечислений

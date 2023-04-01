@@ -5,11 +5,11 @@ namespace ManDI
     /// <summary>
     /// Базовый конфигуратор источника данных ManDI
     /// </summary>
-    public partial class mandi
+    public partial class ManDI
     {
         NpgsqlConnectionStringBuilder csb;
         NpgsqlDataSource data_source;
-        public mandi(NpgsqlConnectionStringBuilder ConnectionStringBuilder)
+        public ManDI(NpgsqlConnectionStringBuilder ConnectionStringBuilder)
         {
             if (ConnectionStringBuilder == null) throw new ArgumentNullException("ConnectionStringBuilder");
             this.csb = ConnectionStringBuilder;

@@ -22,7 +22,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых композитных типов
     /// </summary>
-    public partial class mandi
+    public partial class ManDI
     {
         /// <summary>
         /// Метод сопоставления композитных типов
