@@ -1,5 +1,4 @@
 ﻿using ManDI.command;
-using ManDI.executor;
 using System.Data;
 
 namespace ManDI.executor

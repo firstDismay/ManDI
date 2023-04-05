@@ -16,7 +16,7 @@ namespace ManDI.executor
         {
             if (DataService == null) throw new ArgumentNullException("DataSource");
             this.data_service = DataService;
-            
+
             if (DataService == null) throw new ArgumentNullException("SignatureExtractor");
             this.signature_extractor = SignatureExtractor;
         }

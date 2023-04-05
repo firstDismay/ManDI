@@ -22,25 +22,25 @@ namespace ManDI.extractor
 
         public string GetSignatureFunction(IParametersFunction function)
         {
-                StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.Append(this.signature.GetSignatureFunction(function));
-                if (this.user_context.Where != null && !stringBuilder.ToString().Contains("where", StringComparison.OrdinalIgnoreCase))
-                {
-                    stringBuilder.Append(" ");
-                    stringBuilder.Append(this.user_context.Where);
-                }
-                if (this.user_context.Limit != null && !stringBuilder.ToString().Contains("limit", StringComparison.OrdinalIgnoreCase))
-                {
-                    stringBuilder.Append(" ");
-                    stringBuilder.Append(this.user_context.Limit);
-                }
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(this.signature.GetSignatureFunction(function));
+            if (this.user_context.Where != null && !stringBuilder.ToString().Contains("where", StringComparison.OrdinalIgnoreCase))
+            {
+                stringBuilder.Append(" ");
+                stringBuilder.Append(this.user_context.Where);
+            }
+            if (this.user_context.Limit != null && !stringBuilder.ToString().Contains("limit", StringComparison.OrdinalIgnoreCase))
+            {
+                stringBuilder.Append(" ");
+                stringBuilder.Append(this.user_context.Limit);
+            }
 
-                if (this.user_context.OrderBy != null && !stringBuilder.ToString().Contains("order by", StringComparison.OrdinalIgnoreCase))
-                {
-                    stringBuilder.Append(" ");
-                    stringBuilder.Append(this.user_context.OrderBy);
-                }
-                return stringBuilder.ToString();
+            if (this.user_context.OrderBy != null && !stringBuilder.ToString().Contains("order by", StringComparison.OrdinalIgnoreCase))
+            {
+                stringBuilder.Append(" ");
+                stringBuilder.Append(this.user_context.OrderBy);
+            }
+            return stringBuilder.ToString();
         }
         public IEnumerable<NpgsqlParameter> GetParametersFunction(IParametersFunction function)
         {

@@ -18,19 +18,19 @@ namespace ManDI.extractor
             StringBuilder builder = new StringBuilder();
 
             signature = string.Format(@"SELECT * FROM {0}(?)", function.NameFunction);
-                if (function.Parameters.Count() > 0)
+            if (function.Parameters.Count() > 0)
+            {
+                foreach (NpgsqlParameter p in function.Parameters)
                 {
-                    foreach (NpgsqlParameter p in function.Parameters)
-                    {
                     builder.Append(string.Format("@{0}, ", p.ParameterName));
-                    }
+                }
                 signature = signature.Replace("?", builder.ToString().Substring(0, builder.Length - 2));
-                }
-                else
-                {
+            }
+            else
+            {
                 signature = signature.Replace("?", "");
-                }
-                return signature;
+            }
+            return signature;
         }
         public IEnumerable<NpgsqlParameter> GetParametersFunction(IParametersFunction function)
         {

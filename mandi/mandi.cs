@@ -6,7 +6,7 @@ namespace ManDI
     /// <summary>
     /// Базовый конфигуратор источника данных ManDI
     /// </summary>
-    public partial class PgsqlDataService: IDataService
+    public partial class PgsqlDataService : IDataService
     {
         NpgsqlConnectionStringBuilder csb;
         NpgsqlDataSource data_source;
