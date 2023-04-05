@@ -5,7 +5,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация обязательных значений строки подключения
     /// </summary>
-    public partial class ManDI
+    public partial class PgsqlDataService
     {
         /// <summary>
         /// Настройка обязательных значений строки подключения

@@ -5,7 +5,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых типов перечислений
     /// </summary>
-    public partial class ManDI
+    public partial class PgsqlDataService
     {
         /// <summary>
         /// Метод сопоставления перечислений

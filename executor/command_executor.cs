@@ -10,14 +10,14 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor : ICommandExecutor
     {
-        ManDI data_source;
+        IDataService data_service;
         ISignatureExtractor signature_extractor;
-        public command_executor(ISignatureExtractor SignatureExtractor, ManDI DataSource)
+        public command_executor(ISignatureExtractor SignatureExtractor, IDataService DataService)
         {
-            if (DataSource == null) throw new ArgumentNullException("DataSource");
-            this.data_source = DataSource;
+            if (DataService == null) throw new ArgumentNullException("DataSource");
+            this.data_service = DataService;
             
-            if (DataSource == null) throw new ArgumentNullException("SignatureExtractor");
+            if (DataService == null) throw new ArgumentNullException("SignatureExtractor");
             this.signature_extractor = SignatureExtractor;
         }
 
@@ -26,7 +26,7 @@ namespace ManDI.executor
             int result;
             NpgsqlCommand cmd;
 
-            using (var cn = this.data_source.GetDataSource().CreateConnection())
+            using (var cn = this.data_service.GetDataSource().CreateConnection())
             {
                 cn.Open();
                 cmd = prepare_cmd(function, cn);
@@ -41,7 +41,7 @@ namespace ManDI.executor
             object result;
             NpgsqlCommand cmd;
 
-            using (var cn = this.data_source.GetDataSource().CreateConnection())
+            using (var cn = this.data_service.GetDataSource().CreateConnection())
             {
                 cn.Open();
                 cmd = prepare_cmd(function, cn);
@@ -57,7 +57,7 @@ namespace ManDI.executor
             var table = new DataTable();
             NpgsqlCommand cmd;
 
-            using (var cn = this.data_source.GetDataSource().CreateConnection())
+            using (var cn = this.data_service.GetDataSource().CreateConnection())
             {
                 cn.Open();
                 cmd = prepare_cmd(function, cn);

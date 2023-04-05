@@ -22,7 +22,7 @@ namespace ManDI
     /// <summary>
     /// Конфигурация используемых композитных типов
     /// </summary>
-    public partial class ManDI
+    public partial class PgsqlDataService
     {
         /// <summary>
         /// Метод сопоставления композитных типов

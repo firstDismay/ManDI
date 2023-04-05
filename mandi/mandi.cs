@@ -1,15 +1,16 @@
-﻿using Npgsql;
+﻿using ManDI.command;
+using Npgsql;
 
 namespace ManDI
 {
     /// <summary>
     /// Базовый конфигуратор источника данных ManDI
     /// </summary>
-    public partial class ManDI
+    public partial class PgsqlDataService: IDataService
     {
         NpgsqlConnectionStringBuilder csb;
         NpgsqlDataSource data_source;
-        public ManDI(NpgsqlConnectionStringBuilder ConnectionStringBuilder)
+        public PgsqlDataService(NpgsqlConnectionStringBuilder ConnectionStringBuilder)
         {
             if (ConnectionStringBuilder == null) throw new ArgumentNullException("ConnectionStringBuilder");
             this.csb = ConnectionStringBuilder;
