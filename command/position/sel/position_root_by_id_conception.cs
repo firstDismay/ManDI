@@ -4,14 +4,14 @@ using NpgsqlTypes;
 namespace ManDI.command.position.sel
 {
     /// <summary>
-    /// Команда возвращает позицию по идентификатору родителя
+    /// Команда возвращает список корневых позиций по идентификатору концепции
     /// </summary>
-    public class position_by_id_parent : IParametersFunction
+    public class position_root_by_id_conception : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор  родителя позиции
+        /// Идентификатор концепции
         /// </summary>
-        public long iid_parent { get; set; }
+        public long iid_conception { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -23,8 +23,8 @@ namespace ManDI.command.position.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_parent", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_parent;
+                Parameter = new NpgsqlParameter("iid_conception", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_conception;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -38,7 +38,7 @@ namespace ManDI.command.position.sel
         {
             get
             {
-                return "position_by_id_parent";
+                return "position_root_by_id_conception";
             }
         }
     }
