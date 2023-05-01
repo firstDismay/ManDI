@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManDI", "ManDI.csproj", "{6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "..\test\test.csproj", "{F1039C9B-733B-4634-9ABB-9D7383EC69D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJournal", "..\DJournal\DJournal.csproj", "{9A5036ED-3D10-4524-B60D-89E72C623266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DJournal", "..\DJournal\DJournal.csproj", "{9A5036ED-3D10-4524-B60D-89E72C623266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdapter", "..\DataAdapter\DataAdapter.csproj", "{EF1173D3-6989-4E72-B759-DE48BA2F702F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAdapter", "..\DataAdapter\DataAdapter.csproj", "{EF1173D3-6989-4E72-B759-DE48BA2F702F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "..\WebClient\WebClient.csproj", "{854C87E3-F2C8-4AF3-BD21-B22FCA637535}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "..\WebClient\WebClient.csproj", "{854C87E3-F2C8-4AF3-BD21-B22FCA637535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

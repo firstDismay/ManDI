@@ -14,6 +14,8 @@ namespace ManDI
         {
             ConnectionStringBuilder.SearchPath = "bpd";
             ConnectionStringBuilder.LoadTableComposites = true;
+            ConnectionStringBuilder.Pooling = true;
+            ConnectionStringBuilder.MaxPoolSize = 20;
         }
     }
 }
