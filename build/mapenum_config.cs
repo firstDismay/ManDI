@@ -1,11 +1,11 @@
 ﻿using Npgsql;
 
-namespace ManDI
+namespace ManDI.build
 {
     /// <summary>
     /// Конфигурация используемых типов перечислений
     /// </summary>
-    public partial class PgsqlDataService
+    public partial class ManDiDataService
     {
         /// <summary>
         /// Метод сопоставления перечислений

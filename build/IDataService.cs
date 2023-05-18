@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace ManDI.command
+namespace ManDI.build
 {
     /// <summary>
     /// Интерфейс источника данных на базе библиотеки NPGSQL версии 7.хх и выше

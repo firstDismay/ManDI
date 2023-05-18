@@ -1,11 +1,11 @@
 ﻿using Npgsql;
 
-namespace ManDI
+namespace ManDI.build
 {
     /// <summary>
     /// Конфигурация обязательных значений строки подключения
     /// </summary>
-    public partial class PgsqlDataService
+    public partial class ManDiDataService
     {
         /// <summary>
         /// Настройка обязательных значений строки подключения

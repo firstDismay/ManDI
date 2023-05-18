@@ -17,12 +17,12 @@ using ManDI.composite.entities.vposition;
 using ManDI.composite.entities.vposition.property;
 using Npgsql;
 
-namespace ManDI
+namespace ManDI.build
 {
     /// <summary>
     /// Конфигурация используемых композитных типов
     /// </summary>
-    public partial class PgsqlDataService
+    public partial class ManDiDataService
     {
         /// <summary>
         /// Метод сопоставления композитных типов
