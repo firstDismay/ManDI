@@ -6,7 +6,7 @@ using ManDI.extractor;
 using Npgsql;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebClient.build
+namespace ManDI.build
 {
     /// <summary>
     /// Сборка сервисов доступа к данным
