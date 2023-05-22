@@ -1,6 +1,6 @@
 ﻿namespace ManDI
 {
-    internal class AuthorizationPolicyBuilder
+    /*public class AuthorizationPolicyBuilder
     {
-    }
+    }*/
 }
