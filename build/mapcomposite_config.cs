@@ -15,6 +15,7 @@ using ManDI.composite.entities.vpos_temp;
 using ManDI.composite.entities.vpos_temp.property;
 using ManDI.composite.entities.vposition;
 using ManDI.composite.entities.vposition.property;
+using ManDI.composite.errors;
 using Npgsql;
 
 namespace ManDI.build
@@ -115,6 +116,9 @@ namespace ManDI.build
             dataSourceBuilder.MapComposite<vlog>("vlog");
             dataSourceBuilder.MapComposite<vlog_category>("vlog_category");
             dataSourceBuilder.MapComposite<vlog_link>("vlog_link");
+
+            dataSourceBuilder.MapComposite<error_object_add>("errarg_object_add");
+            dataSourceBuilder.MapComposite<error_object_cast>("errarg_cast");
         }
     }
 }
