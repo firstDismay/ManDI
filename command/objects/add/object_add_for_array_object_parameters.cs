@@ -25,7 +25,7 @@ namespace ManDI.command.objects.add
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("object_parameters ", NpgsqlDbType.Array | NpgsqlDbType.Jsonb);
+                Parameter = new NpgsqlParameter("object_parameters", NpgsqlDbType.Array | NpgsqlDbType.Jsonb);
                 string[] sarray_object_parameter = new string[object_parameters.Length];
                 for (int i = 0; i < object_parameters.Length; i++)
                 {
