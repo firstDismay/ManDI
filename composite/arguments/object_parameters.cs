@@ -21,12 +21,6 @@ namespace ManDI.composite.arguments
         public Int64 IdObject { get; set; }
 
         /// <summary>
-        /// Идентификатор объекта используется для обновления данных об объекте
-        /// </summary>
-        [JsonProperty]
-        public String NameObject { get; set; }
-
-        /// <summary>
         /// Идентификатор класса объекта используется для создания новых объектов
         /// </summary>
         [JsonProperty]
@@ -48,14 +42,6 @@ namespace ManDI.composite.arguments
         /// Лист свойств объекта
         /// </summary>
         [JsonProperty]
-        public List<object_property_parameters> ObjectPropertyList { get; set; }
-
-        /// <summary>
-        /// Переопределенный метод класса
-        /// </summary>
-        public override string ToString()
-        {
-            return NameObject;
-        }
+        public IEnumerable<object_property_parameters> ObjectPropertyList { get; set; }
     }
 }
