@@ -7,12 +7,12 @@ namespace ManDI.extractor
     /// <summary>
     /// Декоратор экстракторов сигнатур функций API для подставки условий выборки и сортировки
     /// </summary>
-    public class SignatureFunctionDecoratorСondition : ISignatureExtractor
+    public class SignatureFunctionDecoratorCondition : ISignatureExtractor
     {
         ISignatureExtractor signature;
         UserContextSQL user_context;
 
-        public SignatureFunctionDecoratorСondition(ISignatureExtractor Signature, UserContextSQL UserContext)
+        public SignatureFunctionDecoratorCondition(ISignatureExtractor Signature, UserContextSQL UserContext)
         {
             if (Signature == null) throw new ArgumentNullException("Signature");
             if (UserContext == null) throw new ArgumentNullException("UserContext");
