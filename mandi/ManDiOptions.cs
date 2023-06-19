@@ -1,4 +1,5 @@
 ﻿using ManDI.enums;
+using Microsoft.Extensions.Logging;
 
 namespace ManDI
 {
@@ -16,5 +17,10 @@ namespace ManDI
         /// Маска строки подключения
         /// </summary>
         public String ConnectionStrings { get; set; }
+
+        /// <summary>
+        /// Доступный провайдер логирования
+        /// </summary>
+        public ILogger? Logger { get; set; }
     }
 }

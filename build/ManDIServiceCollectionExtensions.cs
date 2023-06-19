@@ -5,6 +5,7 @@ using ManDI.executor;
 using ManDI.extractor;
 using Npgsql;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace ManDI.build
 {
@@ -19,8 +20,7 @@ namespace ManDI.build
 
             services.Add(new ServiceDescriptor(typeof(NpgsqlConnectionStringBuilder), csb));
             services.Add(new ServiceDescriptor(typeof(IDataService), typeof(ManDiDataService), ServiceLifetime.Scoped));
-            if (options != null)
-            {
+            
                 switch (options.SignatureExtractorMode)
                 {
                     case eSignatureExtractorMode.SignatureExtractorForComposite:
@@ -30,13 +30,12 @@ namespace ManDI.build
                         services.Add(new ServiceDescriptor(typeof(ISignatureExtractor), typeof(SignatureExtractorForTable), ServiceLifetime.Scoped));
                         break;
                 }
-            }
-            else
+            services.AddScoped<ICommandExecutor, command_executor>();
+            if (options.Logger!= null)
             {
-                services.Add(new ServiceDescriptor(typeof(ISignatureExtractor), typeof(SignatureExtractorForComposite), ServiceLifetime.Scoped));
+                services.AddSingleton<ILogger>(options.Logger);
+                services.Decorate<ICommandExecutor, command_executor_decorator_logger>();
             }
-            services.Add(new ServiceDescriptor(typeof(ICommandExecutor), typeof(command_executor), ServiceLifetime.Scoped));
-
             return services;
         }
     }
