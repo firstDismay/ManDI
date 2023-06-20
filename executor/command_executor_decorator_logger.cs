@@ -13,15 +13,18 @@ namespace ManDI.executor
     /// </summary>
     public class command_executor_decorator_logger : ICommandExecutor
     {
-        ICommandExecutor command_executor;
-        ILogger logger;
-        public command_executor_decorator_logger(ICommandExecutor CommandExecutor, ILogger Logger)
+        private readonly ICommandExecutor command_executor;
+        private readonly ILoggerFactory logger_factory;
+        private readonly ILogger logger;
+        public command_executor_decorator_logger(ICommandExecutor CommandExecutor, ILoggerFactory LoggerFactory)
         {
             if (CommandExecutor == null) throw new ArgumentNullException("CommandExecutor");
             this.command_executor = CommandExecutor;
 
-            if (Logger == null) throw new ArgumentNullException("Logger");
-            this.logger = Logger;
+            if (LoggerFactory == null) throw new ArgumentNullException("LoggerFactory");
+            this.logger_factory = LoggerFactory;
+
+            this.logger = LoggerFactory.CreateLogger<command_executor>();
         }
         public int ExecuteNonQuery(IParametersFunction function)
         {

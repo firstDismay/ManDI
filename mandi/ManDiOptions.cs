@@ -1,4 +1,5 @@
 ﻿using ManDI.enums;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace ManDI
@@ -9,18 +10,8 @@ namespace ManDI
     public class ManDiOptions
     {
         /// <summary>
-        /// Режимы экстракции сигнатур выполнения команд, определяющие формат выходных данных
-        /// </summary>
-        public eSignatureExtractorMode SignatureExtractorMode { get; set; } = eSignatureExtractorMode.SignatureExtractorForComposite;
-
-        /// <summary>
         /// Маска строки подключения
         /// </summary>
         public String ConnectionStrings { get; set; }
-
-        /// <summary>
-        /// Доступный провайдер логирования
-        /// </summary>
-        public ILogger? Logger { get; set; }
     }
 }

@@ -14,26 +14,32 @@ namespace ManDI.build
     /// </summary>
     public static class ManDIServiceCollectionExtensions
     {
-        public static IServiceCollection AddManDI(this IServiceCollection services, ManDiOptions options)
+        public static IServiceCollection AddManDI(this IServiceCollection services, ManDiOptions options,
+            params Action<IServiceCollection>[]? configureServicesCallbacks)
         {
-            NpgsqlConnectionStringBuilder csb = new NpgsqlConnectionStringBuilder(options.ConnectionStrings);
+            services.AddSingleton<NpgsqlConnectionStringBuilder>(new NpgsqlConnectionStringBuilder(options.ConnectionStrings));
+            services.AddScoped<IDataService, ManDiDataService>();
 
-            services.Add(new ServiceDescriptor(typeof(NpgsqlConnectionStringBuilder), csb));
-            services.Add(new ServiceDescriptor(typeof(IDataService), typeof(ManDiDataService), ServiceLifetime.Scoped));
-            
-                switch (options.SignatureExtractorMode)
-                {
-                    case eSignatureExtractorMode.SignatureExtractorForComposite:
-                        services.Add(new ServiceDescriptor(typeof(ISignatureExtractor), typeof(SignatureExtractorForComposite), ServiceLifetime.Scoped));
-                        break;
-                    case eSignatureExtractorMode.SignatureExtractorForTable:
-                        services.Add(new ServiceDescriptor(typeof(ISignatureExtractor), typeof(SignatureExtractorForTable), ServiceLifetime.Scoped));
-                        break;
-                }
-            services.AddScoped<ICommandExecutor, command_executor>();
-            if (options.Logger!= null)
+            if (configureServicesCallbacks != null)
             {
-                services.AddSingleton<ILogger>(options.Logger);
+                foreach (var callback in configureServicesCallbacks)
+                {
+                    callback(services);
+                }
+            }
+
+            if (!services.Any(x => x.ServiceType == typeof(ISignatureExtractor)))
+            {
+                services.AddScoped<ISignatureExtractor, SignatureExtractorForComposite>();
+            }
+            
+            if (!services.Any(x => x.ServiceType == typeof(ICommandExecutor)))
+            {
+                services.AddScoped<ICommandExecutor, command_executor>();
+            }
+
+            if (services.Any(x => x.ServiceType == typeof(ILoggerFactory)))
+            {
                 services.Decorate<ICommandExecutor, command_executor_decorator_logger>();
             }
             return services;
