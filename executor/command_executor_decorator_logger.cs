@@ -88,14 +88,14 @@ namespace ManDI.executor
         private String Response(IParametersFunction function, DateTime TimeStart, DateTime TimeEnd)
         { 
             StringBuilder result = new StringBuilder();
-            result.Append(String.Format("Выполнение: {0}(", function.NameFunction));
+            result.Append(String.Format("Executed: {0}(", function.NameFunction));
 
             foreach (var parametr in function.Parameters)
             {
                 result.Append(String.Format("{0}={1}", parametr.ParameterName, parametr.Value.ToString()));
             }
             
-            result.Append(String.Format(") Длительность: {0}мс", (TimeEnd - TimeStart).TotalMilliseconds));
+            result.Append(String.Format(") Duration: {0}мс", (TimeEnd - TimeStart).TotalMilliseconds));
 
             return result.ToString();
         }
