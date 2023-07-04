@@ -4,10 +4,9 @@ using NpgsqlTypes;
 namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда обновляет значение в виде идентификатора экземпляра сущности для свойств 
-    /// типа ссылка объектов снимка класса в указанной позиции
+    /// Команда создает встроенный объект-значение объектного свойства
     /// </summary>
-    public class object_prop_object_val_add : IParametersFunction
+    public class object_prop_object_val_set_new : IParametersFunction
     {
         /// <summary>
         /// Идентификатор объекта носителя
@@ -20,9 +19,14 @@ namespace ManDI.command.classes.properties.val
         public long iid_class_prop { get; set; }
 
         /// <summary>
-        /// Штамп времени класса
+        /// Идентификатор вещественного класса
         /// </summary>
-        public long iid_object_val { get; set; }
+        public long iid_class_real { get; set; }
+
+        /// <summary>
+        /// Идентификатор правила пересчета
+        /// </summary>
+        public long iid_unit_conversion_rule { get; set; }
 
         /// <summary>
         /// Количества объектов в текщем правиле пересчета
@@ -47,8 +51,12 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_object_val", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object_val;
+                Parameter = new NpgsqlParameter("iid_class_real", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_real;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("iid_unit_conversion_rule", NpgsqlDbType.Integer);
+                Parameter.Value = iid_unit_conversion_rule;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("icquantity", NpgsqlDbType.Numeric);
@@ -66,7 +74,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_object_val_add";
+                return "object_prop_object_val_set_new";
             }
         }
     }

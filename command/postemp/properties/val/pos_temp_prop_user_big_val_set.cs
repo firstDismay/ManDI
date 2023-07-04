@@ -1,32 +1,38 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.classes.properties.val
+namespace ManDI.command.postemp.properties.val
 {
     /// <summary>
-    /// Команда добавляет данные большого значения пользовательского свойства объектам снимка класса в указанной позиции
+    /// Команда добавляет значение BIG свойства шаблона
     /// </summary>
-    public class object_prop_user_big_val_objects_add : IParametersFunction
+    public class pos_temp_prop_user_big_val_set : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid_position { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства класса
+        /// Минимальное значение свойства класса
         /// </summary>
-        public long iid_class_prop { get; set; }
+        public decimal imin_val { get; set; }
 
         /// <summary>
-        /// Штамп времени класса
+        /// Признак активности контроля минимального значения свойства класса
         /// </summary>
-        public DateTime itimestamp_class { get; set; }
+        public bool imin_on { get; set; }
 
         /// <summary>
-        /// Выполнить включая встроенные объекты
+        /// Максимальное значение свойства класса
         /// </summary>
-        public bool on_internal { get; set; }
+        public decimal imax_val { get; set; }
+
+        /// <summary>
+        /// Признак активности контроля максимального значения свойства класса
+        /// </summary>
+        public bool imax_on { get; set; }
+
         /// <summary>
         /// Текстовое значение свойства класса
         /// </summary>
@@ -52,20 +58,24 @@ namespace ManDI.command.classes.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class_prop;
+                Parameter = new NpgsqlParameter("imin_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imin_val;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("itimestamp_class", NpgsqlDbType.Timestamp);
-                Parameter.Value = itimestamp_class;
+                Parameter = new NpgsqlParameter("imin_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("on_internal", NpgsqlDbType.Boolean);
-                Parameter.Value = on_internal;
+                Parameter = new NpgsqlParameter("imax_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imax_val;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imax_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_text", NpgsqlDbType.Text);
@@ -91,7 +101,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_user_big_val_objects_add";
+                return "pos_temp_prop_user_big_val_set";
             }
         }
     }

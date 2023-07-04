@@ -1,30 +1,30 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.classes.properties.val
+namespace ManDI.command.position.properties.upd
 {
     /// <summary>
-    /// Команда изменяет значение в виде идентификатора экземпляра сущности для свойства объекта типа ссылка
+    /// Команда добавляет значение в виде идентификатора экземпляра сущности для свойства позиции типа ссылка
     /// </summary>
-    public class object_prop_link_val_upd : IParametersFunction
+    public class position_prop_link_val_set : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор позиции
         /// </summary>
-        public long iid_object { get; set; }
+        public long iid_position { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства класса
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid_class_prop { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Идентификатор экземпляра сущности
+        ///  Идентификатор экземпляра сущности
         /// </summary>
         public long iid_entity_instance { get; set; }
 
         /// <summary>
-        /// Идентификатор экземпляра сущности, дополнительный
+        ///  Идентификатор экземпляра дочерней сущности
         /// </summary>
         public long iid_sub_entity_instance { get; set; }
 
@@ -38,12 +38,12 @@ namespace ManDI.command.classes.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object;
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class_prop;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_entity_instance", NpgsqlDbType.Bigint);
@@ -65,7 +65,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_link_val_upd";
+                return "position_prop_link_val_set";
             }
         }
     }

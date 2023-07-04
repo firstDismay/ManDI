@@ -1,30 +1,50 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.classes.properties.val
+namespace ManDI.command.postemp.properties.val
 {
     /// <summary>
-    /// Команда добавляет малое значение пользовательского свойства класса
+    /// Команда добавляет значение SMALL пользовательского свойства класса
     /// </summary>
-    public class object_prop_user_small_val_add : IParametersFunction
+    public class pos_temp_prop_user_small_val_set : IParametersFunction
     {
-        public object_prop_user_small_val_add()
-        {
-            this.setname = true;
-        }
-
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid_object { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства класса
+        /// Минимальное значение свойства класса
         /// </summary>
-        public long iid_class_prop { get; set; }
+        public decimal imin_val { get; set; }
 
         /// <summary>
-        /// Значение свойства класса типа character varying
+        /// Признак активности контроля минимального значения свойства класса
+        /// </summary>
+        public bool imin_on { get; set; }
+
+        /// <summary>
+        /// Максимальное значение свойства класса
+        /// </summary>
+        public decimal imax_val { get; set; }
+
+        /// <summary>
+        /// Признак активности контроля максимального значения свойства класса
+        /// </summary>
+        public bool imax_on { get; set; }
+
+        /// <summary>
+        /// Точность округления
+        /// </summary>
+        public int iround { get; set; }
+
+        /// <summary>
+        /// Признак активности округления
+        /// </summary>
+        public bool iround_on { get; set; }
+
+        /// <summary>
+        /// Строковое значение свойства класса
         /// </summary>
         public string ival_varchar { get; set; }
 
@@ -84,11 +104,6 @@ namespace ManDI.command.classes.properties.val
         public long ival_bigint { get; set; }
 
         /// <summary>
-        /// Признак опции обновления имени объекта
-        /// </summary>
-        public bool setname { get; set; }
-
-        /// <summary>
         /// Список параметров функции
         /// </summary>
         public IEnumerable<NpgsqlParameter> Parameters
@@ -98,12 +113,32 @@ namespace ManDI.command.classes.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class_prop;
+                Parameter = new NpgsqlParameter("imin_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imin_val;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imin_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imax_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imax_val;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imax_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("iround", NpgsqlDbType.Integer);
+                Parameter.Value = iround;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("iround_on", NpgsqlDbType.Boolean);
+                Parameter.Value = iround_on;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_varchar", NpgsqlDbType.Varchar);
@@ -154,10 +189,6 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = ival_timestamp;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
-                Parameter.Value = setname;
-                ListParameter.Add(Parameter);
-
                 return ListParameter;
             }
         }
@@ -169,7 +200,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_user_small_val_add";
+                return "pos_temp_prop_user_small_val_set";
             }
         }
     }

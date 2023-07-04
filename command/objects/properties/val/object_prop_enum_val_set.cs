@@ -6,8 +6,13 @@ namespace ManDI.command.classes.properties.val
     /// <summary>
     /// Команда добавляет значение в виде элемента перечисления для свойства объекта типа перечисление
     /// </summary>
-    public class object_prop_enum_val_upd : IParametersFunction
+    public class object_prop_enum_val_set : IParametersFunction
     {
+        public object_prop_enum_val_set()
+        {
+            this.setname = true;
+        }
+
         /// <summary>
         /// Идентификатор свойства класса
         /// </summary>
@@ -22,6 +27,11 @@ namespace ManDI.command.classes.properties.val
         /// Идентификатор элемента перечисления
         /// </summary>
         public long iid_prop_enum_val { get; set; }
+
+        /// <summary>
+        /// Признак опции обновления имени объекта
+        /// </summary>
+        public bool setname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -45,6 +55,10 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = iid_prop_enum_val;
                 ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
+                Parameter.Value = setname;
+                ListParameter.Add(Parameter);
+
                 return ListParameter;
             }
         }
@@ -56,7 +70,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_enum_val_upd";
+                return "object_prop_enum_val_set";
             }
         }
     }

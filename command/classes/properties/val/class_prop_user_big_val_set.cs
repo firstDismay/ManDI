@@ -4,19 +4,34 @@ using NpgsqlTypes;
 namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда обновляет большое значение пользовательского свойства объекта
+    /// Команда добавляет большое значение пользовательского свойства класса
     /// </summary>
-    public class object_prop_user_big_val_upd : IParametersFunction
+    public class class_prop_user_big_val_set : IParametersFunction
     {
-        /// <summary>
-        /// Идентификатор объекта
-        /// </summary>
-        public long iid_object { get; set; }
-
         /// <summary>
         /// Идентификатор свойства класса
         /// </summary>
         public long iid_class_prop { get; set; }
+
+        /// <summary>
+        /// Минимальное значение свойства класса
+        /// </summary>
+        public decimal imin_val { get; set; }
+
+        /// <summary>
+        /// Признак активности контроля минимального значения свойства класса
+        /// </summary>
+        public bool imin_on { get; set; }
+
+        /// <summary>
+        /// Максимальное значение свойства класса
+        /// </summary>
+        public decimal imax_val { get; set; }
+
+        /// <summary>
+        /// Признак активности контроля максимального значения свойства класса
+        /// </summary>
+        public bool imax_on { get; set; }
 
         /// <summary>
         /// Текстовое значение свойства класса
@@ -34,11 +49,6 @@ namespace ManDI.command.classes.properties.val
         public string ival_json { get; set; }
 
         /// <summary>
-        /// Признак опции обновления имени объекта
-        /// </summary>
-        public bool setname { get; set; }
-
-        /// <summary>
         /// Список параметров функции
         /// </summary>
         public IEnumerable<NpgsqlParameter> Parameters
@@ -48,12 +58,24 @@ namespace ManDI.command.classes.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object;
-                ListParameter.Add(Parameter);
-
                 Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_class_prop;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imin_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imin_val;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imin_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imax_val", NpgsqlDbType.Numeric);
+                Parameter.Value = imax_val;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("imax_on", NpgsqlDbType.Boolean);
+                Parameter.Value = imin_on;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_text", NpgsqlDbType.Text);
@@ -68,10 +90,6 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = ival_json;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
-                Parameter.Value = setname;
-                ListParameter.Add(Parameter);
-
                 return ListParameter;
             }
         }
@@ -83,7 +101,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_user_big_val_upd";
+                return "class_prop_user_big_val_set";
             }
         }
     }

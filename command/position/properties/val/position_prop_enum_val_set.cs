@@ -4,9 +4,9 @@ using NpgsqlTypes;
 namespace ManDI.command.position.properties.upd
 {
     /// <summary>
-    /// Команда обновляет значение в виде элемента перечисления для свойства позиции типа перечисление
+    /// Команда добавляет значение в виде элемента перечисления для свойства позиции типа перечисление
     /// </summary>
-    public class position_prop_enum_val_upd : IParametersFunction
+    public class position_prop_enum_val_set : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции
@@ -56,7 +56,7 @@ namespace ManDI.command.position.properties.upd
         {
             get
             {
-                return "position_prop_enum_val_upd";
+                return "position_prop_enum_val_set";
             }
         }
     }
