@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.classes.properties.val
+namespace ManDI.command.postemp.properties.val
 {
     /// <summary>
-    /// Команда добавляет значение в виде элемента перечисления для свойства класса типа перечисление
+    /// Команда добавляет значение в виде элемента перечисления для свойства шаблона типа перечисление
     /// </summary>
-    public class class_prop_enum_val_add : IParametersFunction
+    public class pos_temp_prop_enum_val_set : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор свойства класса
+        /// Идентификатор свойства шаблона позиции
         /// </summary>
-        public long iid_class_prop { get; set; }
+        public long iid_pos_temp_prop { get; set; }
 
         /// <summary>
         /// Идентификатор перечисления
@@ -33,8 +33,8 @@ namespace ManDI.command.classes.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_class_prop;
+                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_pos_temp_prop;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_prop_enum", NpgsqlDbType.Bigint);
@@ -56,7 +56,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "class_prop_enum_val_add";
+                return "pos_temp_prop_enum_val_set";
             }
         }
     }

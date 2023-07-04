@@ -4,12 +4,17 @@ using NpgsqlTypes;
 namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда обновляет большое значение пользовательского свойства объекта
+    /// Команда добавляет значение в виде элемента перечисления для свойства объекта типа перечисление
     /// </summary>
-    public class object_prop_user_big_val_upd : IParametersFunction
+    public class object_prop_enum_val_set : IParametersFunction
     {
+        public object_prop_enum_val_add()
+        {
+            this.setname = true;
+        }
+
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор свойства класса
         /// </summary>
         public long iid_object { get; set; }
 
@@ -19,19 +24,9 @@ namespace ManDI.command.classes.properties.val
         public long iid_class_prop { get; set; }
 
         /// <summary>
-        /// Текстовое значение свойства класса
+        /// Идентификатор элемента перечисления
         /// </summary>
-        public string ival_text { get; set; }
-
-        /// <summary>
-        /// Байтовое значение свойства класса
-        /// </summary>
-        public Byte[] ival_bytea { get; set; }
-
-        /// <summary>
-        /// Текстовое значение свойства класса в формате JSON
-        /// </summary>
-        public string ival_json { get; set; }
+        public long iid_prop_enum_val { get; set; }
 
         /// <summary>
         /// Признак опции обновления имени объекта
@@ -56,16 +51,8 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("ival_text", NpgsqlDbType.Text);
-                Parameter.Value = ival_text;
-                ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("ival_bytea", NpgsqlDbType.Bytea);
-                Parameter.Value = ival_bytea;
-                ListParameter.Add(Parameter);
-
-                Parameter = new NpgsqlParameter("ival_json", NpgsqlDbType.Json);
-                Parameter.Value = ival_json;
+                Parameter = new NpgsqlParameter("iid_prop_enum_val", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_prop_enum_val;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
@@ -83,7 +70,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_user_big_val_upd";
+                return "object_prop_enum_val_set";
             }
         }
     }

@@ -6,7 +6,7 @@ namespace ManDI.command.position.properties.upd
     /// <summary>
     /// Команда создает встроенный объект значение объектного свойства STEP №03
     /// </summary>
-    public class position_prop_object_val_add_new : IParametersFunction
+    public class position_prop_object_val_set_new : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции
@@ -73,7 +73,7 @@ namespace ManDI.command.position.properties.upd
         {
             get
             {
-                return "position_prop_object_val_add_new";
+                return "position_prop_object_val_set_new";
             }
         }
     }

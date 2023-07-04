@@ -4,12 +4,17 @@ using NpgsqlTypes;
 namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда изменяет значение в виде идентификатора экземпляра сущности для свойства объекта типа ссылка
+    /// Команда добавляет значение в виде идентификатора экземпляра сущности для свойства объекта типа ссылка
     /// </summary>
-    public class object_prop_link_val_upd : IParametersFunction
+    public class object_prop_link_val_set : IParametersFunction
     {
+        public object_prop_link_val_add()
+        {
+            this.setname = true;
+        }
+
         /// <summary>
-        /// Идентификатор объекта
+        /// Идентификатор свойства класса
         /// </summary>
         public long iid_object { get; set; }
 
@@ -27,6 +32,11 @@ namespace ManDI.command.classes.properties.val
         /// Идентификатор экземпляра сущности, дополнительный
         /// </summary>
         public long iid_sub_entity_instance { get; set; }
+
+        /// <summary>
+        /// Признак опции обновления имени объекта
+        /// </summary>
+        public bool setname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -54,6 +64,9 @@ namespace ManDI.command.classes.properties.val
                 Parameter.Value = iid_sub_entity_instance;
                 ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
+                Parameter.Value = setname;
+                ListParameter.Add(Parameter);
                 return ListParameter;
             }
         }
@@ -65,7 +78,7 @@ namespace ManDI.command.classes.properties.val
         {
             get
             {
-                return "object_prop_link_val_upd";
+                return "object_prop_link_val_set";
             }
         }
     }

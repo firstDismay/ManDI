@@ -1,38 +1,47 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.position.properties.upd
+namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда добавляет значение BIG пользовательского свойства позиции
+    /// Команда добавляет большое значение пользовательского свойства объекта
     /// </summary>
-    public class position_prop_user_big_val_add : IParametersFunction
+    public class object_prop_user_big_val_set : IParametersFunction
     {
+        public object_prop_user_big_val_add()
+        {
+            this.setname = true;
+        }
 
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор объекта
         /// </summary>
-        public long iid_position { get; set; }
+        public long iid_object { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid_pos_temp_prop { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа text
+        /// Текстовое значение свойства класса
         /// </summary>
         public string ival_text { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа bytea
+        /// Байтовое значение свойства класса
         /// </summary>
-        public byte ival_bytea { get; set; }
+        public Byte[] ival_bytea { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Текстовое значение свойства класса в формате JSON
         /// </summary>
         public string ival_json { get; set; }
+
+        /// <summary>
+        /// Признак опции обновления имени объекта
+        /// </summary>
+        public bool setname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -44,12 +53,12 @@ namespace ManDI.command.position.properties.upd
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_object;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp_prop;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_text", NpgsqlDbType.Text);
@@ -64,6 +73,10 @@ namespace ManDI.command.position.properties.upd
                 Parameter.Value = ival_json;
                 ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
+                Parameter.Value = setname;
+                ListParameter.Add(Parameter);
+
                 return ListParameter;
             }
         }
@@ -75,7 +88,7 @@ namespace ManDI.command.position.properties.upd
         {
             get
             {
-                return "position_prop_user_big_val_add";
+                return "object_prop_user_big_val_set";
             }
         }
     }

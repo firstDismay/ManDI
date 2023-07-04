@@ -1,84 +1,92 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace ManDI.command.position.properties.upd
+namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда добавляет значение BIG пользовательского свойства позиции
+    /// Команда добавляет малое значение пользовательского свойства класса
     /// </summary>
-    public class position_prop_user_small_val_upd : IParametersFunction
+    public class object_prop_user_small_val_set : IParametersFunction
     {
+        public object_prop_user_small_val_add()
+        {
+            this.setname = true;
+        }
 
         /// <summary>
-        /// Идентификатор позиции
+        /// Идентификатор объекта
         /// </summary>
-        public long iid_position { get; set; }
+        public long iid_object { get; set; }
 
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid_pos_temp_prop { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа text
+        /// Значение свойства класса типа character varying
         /// </summary>
         public string ival_varchar { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа bytea
+        /// Значение свойства класса типа integer
         /// </summary>
-        public Int32 ival_int { get; set; }
+        public int ival_int { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа numeric
         /// </summary>
-        public Decimal ival_numeric { get; set; }
+        public decimal ival_numeric { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа real
         /// </summary>
         public float ival_real { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа double
         /// </summary>
-        public Double ival_double { get; set; }
+        public float ival_double { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа money
         /// </summary>
-        public Decimal ival_money { get; set; }
+        public decimal ival_money { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа boolean
         /// </summary>
         public bool ival_boolean { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа date
         /// </summary>
-        public DateOnly ival_date { get; set; }
+        public DateTime ival_date { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа time
         /// </summary>
         public DateTime ival_time { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа interval
         /// </summary>
-        public TimeOnly ival_interval { get; set; }
+        public TimeSpan ival_interval { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа timestamp
         /// </summary>
-        public Date ival_timestamp { get; set; }
+        public DateTime ival_timestamp { get; set; }
 
         /// <summary>
-        ///  Идентификатор значения типа json
+        /// Значение свойства класса типа bigint
         /// </summary>
         public long ival_bigint { get; set; }
+
+        /// <summary>
+        /// Признак опции обновления имени объекта
+        /// </summary>
+        public bool setname { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -90,12 +98,12 @@ namespace ManDI.command.position.properties.upd
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
+                Parameter = new NpgsqlParameter("iid_object", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_object;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp_prop;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_varchar", NpgsqlDbType.Varchar);
@@ -138,12 +146,16 @@ namespace ManDI.command.position.properties.upd
                 Parameter.Value = ival_interval;
                 ListParameter.Add(Parameter);
 
+                Parameter = new NpgsqlParameter("ival_bigint", NpgsqlDbType.Bigint);
+                Parameter.Value = ival_bigint;
+                ListParameter.Add(Parameter);
+
                 Parameter = new NpgsqlParameter("ival_timestamp", NpgsqlDbType.Timestamp);
                 Parameter.Value = ival_timestamp;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("ival_bigint", NpgsqlDbType.Bigint);
-                Parameter.Value = ival_bigint;
+                Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);
+                Parameter.Value = setname;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
@@ -157,7 +169,7 @@ namespace ManDI.command.position.properties.upd
         {
             get
             {
-                return "position_prop_user_small_val_upd";
+                return "object_prop_user_small_val_set";
             }
         }
     }

@@ -1,17 +1,17 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
 
-namespace ManDI.command.postemp.properties.val
+namespace ManDI.command.classes.properties.val
 {
     /// <summary>
-    /// Команда обновляет данные значения объектного свойства шаблона позиции по идентификатору свойства шаблока позиции
+    /// Команда устанавливает данные значения объектного свойства
     /// </summary>
-    public class pos_temp_prop_object_val_upd : IParametersFunction
+    public class class_prop_object_val_set : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор свойства шаблона позиции
+        /// Идентификатор свойства класса
         /// </summary>
-        public long iid_pos_temp_prop { get; set; }
+        public long iid_class_prop { get; set; }
 
         /// <summary>
         /// Идентификатор класса значения свойства
@@ -58,8 +58,8 @@ namespace ManDI.command.postemp.properties.val
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_pos_temp_prop;
+                Parameter = new NpgsqlParameter("iid_class_prop", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_class_prop;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_class_val", NpgsqlDbType.Bigint);
@@ -101,7 +101,7 @@ namespace ManDI.command.postemp.properties.val
         {
             get
             {
-                return "pos_temp_prop_object_val_upd";
+                return "class_prop_object_val_set";
             }
         }
     }

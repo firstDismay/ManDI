@@ -7,7 +7,7 @@ namespace ManDI.command.position.properties.upd
     /// <summary>
     /// Команда добавляет значение BIG пользовательского свойства позиции
     /// </summary>
-    public class position_prop_user_small_val_add : IParametersFunction
+    public class position_prop_user_small_val_set : IParametersFunction
     {
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace ManDI.command.position.properties.upd
         {
             get
             {
-                return "position_prop_user_small_val_add";
+                return "position_prop_user_small_val_set";
             }
         }
     }
