@@ -118,7 +118,6 @@ namespace ManDI.build
             dataSourceBuilder.MapComposite<vlog_link>("vlog_link");
             
             dataSourceBuilder.MapComposite<error_message>("error_message");
-            dataSourceBuilder.MapComposite<error_object_cast>("errarg_cast");
         }
     }
 }
