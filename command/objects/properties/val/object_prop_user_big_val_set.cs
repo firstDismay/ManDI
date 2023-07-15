@@ -12,7 +12,7 @@ namespace ManDI.command.classes.properties.val
         {
             this.setname = true;
         }
-
+       
         /// <summary>
         /// Идентификатор объекта
         /// </summary>
@@ -41,7 +41,6 @@ namespace ManDI.command.classes.properties.val
         /// <summary>
         /// Признак опции обновления имени объекта
         /// </summary>
-        public bool setname { get; set; }
 
         /// <summary>
         /// Список параметров функции
