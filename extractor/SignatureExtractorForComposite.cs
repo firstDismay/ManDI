@@ -18,7 +18,7 @@ namespace ManDI.extractor
             this.function = Function;
 
             StringBuilder builder = new StringBuilder();
-            signature = string.Format(@"SELECT {0}(?)", this.function.NameFunction);
+            signature = string.Format(@"SELECT entity FROM {0}(?) entity ", this.function.NameFunction);
             if (function.Parameters.Count() > 0)
             {
                 foreach (NpgsqlParameter p in this.function.Parameters)
@@ -35,8 +35,8 @@ namespace ManDI.extractor
             if (this.function.Condition != null || this.function.Condition != "")
             {
                 builder = new StringBuilder(signature);
-                builder.Append(" ");
                 builder.Append(this.function.Condition);
+                signature = builder.ToString();
             }
             return signature;
         }

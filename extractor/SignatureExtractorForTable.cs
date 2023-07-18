@@ -19,7 +19,7 @@ namespace ManDI.extractor
 
             StringBuilder builder = new StringBuilder();
 
-            signature = string.Format(@"SELECT * FROM {0}(?)", function.NameFunction);
+            signature = string.Format(@"SELECT entity.* FROM {0}(?) entity ", function.NameFunction);
             if (function.Parameters.Count() > 0)
             {
                 foreach (NpgsqlParameter p in function.Parameters)
