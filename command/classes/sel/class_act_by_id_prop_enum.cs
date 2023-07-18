@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_act_by_id_prop_enum";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

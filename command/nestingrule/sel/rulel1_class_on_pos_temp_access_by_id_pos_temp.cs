@@ -41,5 +41,7 @@ namespace ManDI.command.objects.properties.sel
                 return "rulel1_class_on_pos_temp_access_by_id_pos_temp";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

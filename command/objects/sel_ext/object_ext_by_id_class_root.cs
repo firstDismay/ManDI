@@ -40,5 +40,7 @@ namespace ManDI.command.objects.sel_ext
                 return "object_ext_by_id_class_root";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

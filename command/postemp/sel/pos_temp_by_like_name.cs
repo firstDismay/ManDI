@@ -50,5 +50,7 @@ namespace ManDI.command.postemp.sel
                 return "pos_temp_by_like_name";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

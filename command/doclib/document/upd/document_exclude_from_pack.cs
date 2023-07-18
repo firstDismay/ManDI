@@ -40,5 +40,7 @@ namespace ManDI.command.doclib.document.upd
                 return "document_exclude_from_pack";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

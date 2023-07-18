@@ -41,5 +41,7 @@ namespace ManDI.command.classes.properties.upd
                 return "class_prop_sort_top";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

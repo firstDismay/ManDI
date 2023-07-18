@@ -68,5 +68,7 @@ namespace ManDI.command.objects.add
                 return "object_add_by_single_unit";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

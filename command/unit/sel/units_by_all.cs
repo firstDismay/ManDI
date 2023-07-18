@@ -30,5 +30,7 @@ namespace ManDI.command.unit.sel
                 return "units_by_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

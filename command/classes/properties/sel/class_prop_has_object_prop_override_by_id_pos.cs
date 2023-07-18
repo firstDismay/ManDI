@@ -69,5 +69,7 @@ namespace ManDI.command.classes.properties.sel
                 return "class_prop_has_object_prop_override_by_id_pos";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

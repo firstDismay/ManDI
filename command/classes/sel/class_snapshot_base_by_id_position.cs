@@ -50,5 +50,7 @@ namespace ManDI.command.classes.sel
                 return "class_snapshot_base_by_id_position";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

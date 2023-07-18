@@ -59,5 +59,7 @@ namespace ManDI.command.classes.properties.sel
                 return "class_prop_snapshot_by_id_global_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

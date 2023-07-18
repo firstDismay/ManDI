@@ -41,5 +41,7 @@ namespace ManDI.command.classes.properties.val
                 return "class_prop_object_val_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

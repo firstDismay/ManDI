@@ -50,5 +50,7 @@ namespace ManDI.command.group.sel
                 return "group_by_name";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

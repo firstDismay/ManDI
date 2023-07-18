@@ -50,5 +50,7 @@ namespace ManDI.command.user.sel
                 return "user_pwd_verify";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

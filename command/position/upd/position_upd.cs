@@ -68,5 +68,7 @@ namespace ManDI.command.position.upd
                 return "position_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

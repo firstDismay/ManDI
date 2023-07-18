@@ -41,5 +41,7 @@ namespace ManDI.command.properties.global.del
                 return "global_prop_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

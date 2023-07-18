@@ -50,5 +50,7 @@ namespace ManDI.command.postemp.sel
                 return "pos_temp_white_nestedlist_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

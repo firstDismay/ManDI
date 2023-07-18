@@ -41,5 +41,10 @@ namespace ManDI.command.classes.sel
                 return "class_act_by_id_unit_conversion_rule";
             }
         }
+
+        /// <summary>
+        /// Дополнительные параметры вызова функции добавляемые к основному запросу
+        /// </summary>
+        public string? Condition { get; set; }
     }
 }

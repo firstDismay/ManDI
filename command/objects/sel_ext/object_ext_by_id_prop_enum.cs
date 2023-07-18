@@ -41,5 +41,7 @@ namespace ManDI.command.objects.sel_ext
                 return "object_ext_by_id_prop_enum";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -49,5 +49,7 @@ namespace ManDI.command.user_role.upd
                 return "user_role_user_grant";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

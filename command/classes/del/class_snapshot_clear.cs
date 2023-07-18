@@ -41,5 +41,7 @@ namespace ManDI.command.classes.dell
                 return "class_snapshot_clear";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

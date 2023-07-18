@@ -40,5 +40,7 @@ namespace ManDI.command.objects.del
                 return "object_del_by_id_array";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

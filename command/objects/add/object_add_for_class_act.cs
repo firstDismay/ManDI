@@ -60,5 +60,7 @@ namespace ManDI.command.objects.add
                 return "object_add_for_class_act";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

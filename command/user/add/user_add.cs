@@ -140,5 +140,7 @@ namespace ManDI.command.user.add
                 return "user_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

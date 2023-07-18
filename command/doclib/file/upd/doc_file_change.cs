@@ -95,5 +95,7 @@ namespace ManDI.command.doclib.file.upd
                 return "doc_file_change";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

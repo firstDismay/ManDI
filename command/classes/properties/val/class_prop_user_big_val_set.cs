@@ -104,5 +104,7 @@ namespace ManDI.command.classes.properties.val
                 return "class_prop_user_big_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

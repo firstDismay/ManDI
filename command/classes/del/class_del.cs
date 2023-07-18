@@ -41,5 +41,7 @@ namespace ManDI.command.classes.dell
                 return "class_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

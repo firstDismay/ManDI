@@ -41,5 +41,7 @@ namespace ManDI.command.unit.del
                 return "unit_conversion_rule_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

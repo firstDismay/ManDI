@@ -41,5 +41,7 @@ namespace ManDI.command.position.sel
                 return "position_sort_top";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

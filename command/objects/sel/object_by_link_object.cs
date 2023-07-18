@@ -50,5 +50,7 @@ namespace ManDI.command.objects.sel
                 return "object_by_link_object";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

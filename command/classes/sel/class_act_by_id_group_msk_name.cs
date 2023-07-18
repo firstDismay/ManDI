@@ -50,5 +50,7 @@ namespace ManDI.command.classes.sel
                 return "class_act_by_id_group_msk_name";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

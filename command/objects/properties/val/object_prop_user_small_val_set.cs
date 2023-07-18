@@ -167,5 +167,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_user_small_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

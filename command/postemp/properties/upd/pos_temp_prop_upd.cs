@@ -96,5 +96,7 @@ namespace ManDI.command.postemp.properties.upd
                 return "pos_temp_prop_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

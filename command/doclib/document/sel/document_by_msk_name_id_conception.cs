@@ -50,5 +50,7 @@ namespace ManDI.command.doclib.document.sel
                 return "document_by_msk_name_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

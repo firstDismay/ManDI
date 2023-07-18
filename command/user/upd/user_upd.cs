@@ -140,5 +140,7 @@ namespace ManDI.command.user.upd
                 return "user_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

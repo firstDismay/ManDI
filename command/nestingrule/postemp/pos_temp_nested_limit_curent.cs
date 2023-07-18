@@ -48,5 +48,7 @@ namespace ManDI.command.nesting_rule.postemp
                 return "pos_temp_nested_limit_curent";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

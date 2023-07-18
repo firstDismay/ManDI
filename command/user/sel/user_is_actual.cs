@@ -52,5 +52,7 @@ namespace ManDI.command.user.sel
                 return "user_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

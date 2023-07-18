@@ -50,5 +50,10 @@ namespace ManDI.command.classes.sel
                 return "class_act_by_id_parent_msk_name";
             }
         }
+
+        /// <summary>
+        /// Дополнительные параметры вызова функции добавляемые к основному запросу
+        /// </summary>
+        public string? Condition { get; set; }
     }
 }

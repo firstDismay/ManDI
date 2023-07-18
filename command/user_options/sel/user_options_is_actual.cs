@@ -52,5 +52,7 @@ namespace ManDI.command.user_options.sel
                 return "user_options_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

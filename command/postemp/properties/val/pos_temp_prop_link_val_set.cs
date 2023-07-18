@@ -68,5 +68,7 @@ namespace ManDI.command.postemp.properties.val
                 return "pos_temp_prop_link_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

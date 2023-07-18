@@ -49,5 +49,7 @@ namespace ManDI.command.nesting_rule.postemp
                 return "pos_temp_nestedlist_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

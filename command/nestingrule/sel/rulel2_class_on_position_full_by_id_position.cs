@@ -41,5 +41,7 @@ namespace ManDI.command.nesting_rule.sel
                 return "rulel2_class_on_position_full_by_id_position";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

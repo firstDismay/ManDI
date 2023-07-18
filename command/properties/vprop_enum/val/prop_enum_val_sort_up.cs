@@ -41,5 +41,7 @@ namespace ManDI.command.properties.vprop_enum.val
                 return "prop_enum_val_sort_up";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

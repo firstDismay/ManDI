@@ -67,5 +67,7 @@ namespace ManDI.command.export
                 return "exp_object_by_id_position_to_excel";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

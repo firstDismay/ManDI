@@ -62,5 +62,7 @@ namespace ManDI.command.group.sel
                 return "group_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

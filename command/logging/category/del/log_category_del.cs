@@ -41,5 +41,7 @@ namespace ManDI.command.logging.category.del
                 return "log_category_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

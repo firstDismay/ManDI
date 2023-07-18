@@ -53,5 +53,7 @@ namespace ManDI.command.objects.sel
                 return "object_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

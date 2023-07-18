@@ -50,5 +50,10 @@ namespace ManDI.command.properties.global.link
                 return "global_prop_link_pos_temp_prop_is_actual";
             }
         }
+
+        /// <summary>
+        /// Дополнительные параметры вызова функции добавляемые к основному запросу
+        /// </summary>
+        public string ?Condition { get; set; }
     }
 }

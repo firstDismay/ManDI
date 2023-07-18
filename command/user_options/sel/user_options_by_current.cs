@@ -30,5 +30,7 @@ namespace ManDI.command.user_options.sel
                 return "user_options_by_current";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

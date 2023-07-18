@@ -30,5 +30,7 @@ namespace ManDI.command.properties.common
                 return "prop_data_type_by_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

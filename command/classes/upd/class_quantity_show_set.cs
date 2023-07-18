@@ -50,5 +50,7 @@ namespace ManDI.command.classes.upd
                 return "class_quantity_show_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.doclib.category.del
                 return "doc_category_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

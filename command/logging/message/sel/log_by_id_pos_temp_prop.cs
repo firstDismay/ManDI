@@ -41,5 +41,7 @@ namespace ManDI.command.logging.message.sel
                 return "log_by_id_pos_temp_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

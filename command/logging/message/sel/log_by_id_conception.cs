@@ -41,5 +41,7 @@ namespace ManDI.command.logging.message.sel
                 return "log_by_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

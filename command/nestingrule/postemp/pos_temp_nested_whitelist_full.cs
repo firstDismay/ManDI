@@ -49,5 +49,7 @@ namespace ManDI.command.nesting_rule.postemp
                 return "pos_temp_nested_whitelist_full";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.conception.upd
                 return "conception_restore";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

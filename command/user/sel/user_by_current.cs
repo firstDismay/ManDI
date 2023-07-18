@@ -30,5 +30,7 @@ namespace ManDI.command.user.sel
                 return "user_by_current";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

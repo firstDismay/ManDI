@@ -39,5 +39,7 @@ namespace ManDI.command.objects.del
                 return "object_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

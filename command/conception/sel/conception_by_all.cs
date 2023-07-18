@@ -31,5 +31,7 @@ namespace ManDI.command.conception.sel
                 return "conception_by_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

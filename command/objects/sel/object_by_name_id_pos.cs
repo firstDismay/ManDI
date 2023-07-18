@@ -59,5 +59,7 @@ namespace ManDI.command.objects.sel
                 return "object_by_name_id_pos";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

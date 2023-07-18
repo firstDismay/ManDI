@@ -53,5 +53,7 @@ namespace ManDI.command.conception.sel
                 return "conception_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

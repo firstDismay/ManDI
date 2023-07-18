@@ -40,5 +40,7 @@ namespace ManDI.command.doclib.document_ext.sel
                 return "document_ext_by_id_category";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

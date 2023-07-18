@@ -40,5 +40,7 @@ namespace ManDI.command.nesting_rule.postemp
                 return "pos_temp_nested_exclude_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

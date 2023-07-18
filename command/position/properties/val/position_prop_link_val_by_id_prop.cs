@@ -50,5 +50,7 @@ namespace ManDI.command.position.properties.val
                 return "position_prop_link_val_by_id_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

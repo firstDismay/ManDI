@@ -41,5 +41,7 @@ namespace ManDI.command.classes.properties.sel
                 return "class_prop_search_method_by_id_class_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

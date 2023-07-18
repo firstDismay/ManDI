@@ -51,5 +51,7 @@ namespace ManDI.command.properties.global.link
                 return "global_prop_link_pos_temp_prop_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,10 @@ namespace ManDI.command.classes.sel
                 return "class_act_allowed_rl1_by_id_position";
             }
         }
+
+        /// <summary>
+        /// Дополнительные параметры вызова функции добавляемые к основному запросу
+        /// </summary>
+        public string? Condition { get; set; }
     }
 }

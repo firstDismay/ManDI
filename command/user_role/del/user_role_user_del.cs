@@ -41,5 +41,7 @@ namespace ManDI.command.user_role.del
                 return "user_role_user_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

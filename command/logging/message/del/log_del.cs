@@ -41,5 +41,7 @@ namespace ManDI.command.logging.message.del
                 return "log_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

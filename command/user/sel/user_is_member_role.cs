@@ -59,5 +59,7 @@ namespace ManDI.command.user.sel
                 return "user_is_member_role";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

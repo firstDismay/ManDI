@@ -41,5 +41,7 @@ namespace ManDI.command.objects.upd
                 return "object_cast_for_class_act";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.position.sel
                 return "position_root_by_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

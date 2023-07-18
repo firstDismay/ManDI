@@ -59,5 +59,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_enum_val_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

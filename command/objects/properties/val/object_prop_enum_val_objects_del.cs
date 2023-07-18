@@ -69,5 +69,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_enum_val_objects_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

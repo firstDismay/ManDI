@@ -104,5 +104,7 @@ namespace ManDI.command.postemp.properties.val
                 return "pos_temp_prop_user_big_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

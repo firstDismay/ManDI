@@ -69,5 +69,7 @@ namespace ManDI.command.position.add
                 return "position_copy";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

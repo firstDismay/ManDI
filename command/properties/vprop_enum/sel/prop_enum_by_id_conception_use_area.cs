@@ -50,5 +50,7 @@ namespace ManDI.command.properties.vprop_enum.sel
                 return "prop_enum_by_id_conception_use_area";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

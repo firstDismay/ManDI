@@ -41,5 +41,7 @@ namespace ManDI.command.logging.category.sel
                 return "log_category_is_use";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

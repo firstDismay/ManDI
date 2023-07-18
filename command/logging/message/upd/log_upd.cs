@@ -104,5 +104,7 @@ namespace ManDI.command.logging.message.upd
                 return "log_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

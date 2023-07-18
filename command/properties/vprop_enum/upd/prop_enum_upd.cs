@@ -86,5 +86,7 @@ namespace ManDI.command.properties.vprop_enum.upd
                 return "prop_enum_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

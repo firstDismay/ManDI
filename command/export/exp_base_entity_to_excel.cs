@@ -41,5 +41,7 @@ namespace ManDI.command.export
                 return "exp_base_entity_to_excel";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

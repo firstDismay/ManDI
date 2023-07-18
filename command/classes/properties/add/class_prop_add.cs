@@ -104,5 +104,7 @@ namespace ManDI.command.classes.properties.add
                 return "class_prop_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

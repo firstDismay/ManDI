@@ -41,5 +41,7 @@ namespace ManDI.command.user.upd
                 return "user_options_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

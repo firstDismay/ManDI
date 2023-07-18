@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.dell
                 return "pos_temp_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

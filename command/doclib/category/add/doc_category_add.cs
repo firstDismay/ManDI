@@ -77,5 +77,7 @@ namespace ManDI.command.doclib.category.add
                 return "doc_category_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

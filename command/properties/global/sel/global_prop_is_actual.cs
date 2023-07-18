@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.sel
                 return "global_prop_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.objects.upd
                 return "object_merging";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

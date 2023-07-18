@@ -60,5 +60,7 @@ namespace ManDI.command.classes.sel
                 return "class_carrier_by_id_class_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

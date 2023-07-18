@@ -50,5 +50,7 @@ namespace ManDI.command.properties.common
                 return "prop_search_method_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

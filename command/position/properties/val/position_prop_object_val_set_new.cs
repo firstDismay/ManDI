@@ -76,5 +76,7 @@ namespace ManDI.command.position.properties.upd
                 return "position_prop_object_val_set_new";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

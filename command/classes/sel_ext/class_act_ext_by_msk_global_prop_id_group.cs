@@ -68,5 +68,7 @@ namespace ManDI.command.classes.sel_ext
                 return "class_act_ext_by_msk_global_prop_id_group";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -85,5 +85,7 @@ namespace ManDI.command.group.add
                 return "group_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

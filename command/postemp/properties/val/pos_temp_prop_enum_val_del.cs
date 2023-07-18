@@ -40,5 +40,7 @@ namespace ManDI.command.postemp.properties.val
                 return "pos_temp_prop_enum_val_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

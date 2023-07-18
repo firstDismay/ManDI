@@ -41,5 +41,7 @@ namespace ManDI.command.objects.sel
                 return "object_spathfull";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

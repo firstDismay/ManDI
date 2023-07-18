@@ -41,5 +41,7 @@ namespace ManDI.command.doclib.file.sel
                 return "doc_file_extension_by_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

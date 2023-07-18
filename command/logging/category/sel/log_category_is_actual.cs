@@ -53,5 +53,7 @@ namespace ManDI.command.logging.category.sel
                 return "log_category_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

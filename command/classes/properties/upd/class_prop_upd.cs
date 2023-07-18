@@ -114,5 +114,7 @@ namespace ManDI.command.classes.properties.upd
                 return "class_prop_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

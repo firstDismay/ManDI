@@ -9,17 +9,19 @@ namespace ManDI.extractor
     /// </summary>
     public class SignatureExtractorForComposite : ISignatureExtractor
     {
+        string signature;
+        IParametersFunction function;
         public SignatureExtractorForComposite() { }
-        public string GetSignatureFunction(IParametersFunction function)
+        public string GetSignatureFunction(IParametersFunction Function)
         {
-            if (function == null) throw new ArgumentNullException("function");
-            string signature;
+            if (Function == null) throw new ArgumentNullException("function");
+            this.function = Function;
 
             StringBuilder builder = new StringBuilder();
-            signature = string.Format(@"SELECT {0}(?)", function.NameFunction);
+            signature = string.Format(@"SELECT {0}(?)", this.function.NameFunction);
             if (function.Parameters.Count() > 0)
             {
-                foreach (NpgsqlParameter p in function.Parameters)
+                foreach (NpgsqlParameter p in this.function.Parameters)
                 {
                     builder.Append(string.Format("@{0}, ", p.ParameterName));
                 }
@@ -28,6 +30,13 @@ namespace ManDI.extractor
             else
             {
                 signature = signature.Replace("?", "");
+            }
+
+            if (this.function.Condition != null || this.function.Condition != "")
+            {
+                builder = new StringBuilder(signature);
+                builder.Append(" ");
+                builder.Append(this.function.Condition);
             }
             return signature;
         }

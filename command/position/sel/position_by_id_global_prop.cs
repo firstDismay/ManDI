@@ -41,5 +41,7 @@ namespace ManDI.command.position.sel
                 return "position_by_id_global_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

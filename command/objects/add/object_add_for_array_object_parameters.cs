@@ -48,5 +48,7 @@ namespace ManDI.command.objects.add
                 return "object_add_for_array_object_parameters";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

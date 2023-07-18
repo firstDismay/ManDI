@@ -77,5 +77,7 @@ namespace ManDI.command.logging.category.add
                 return "log_category_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

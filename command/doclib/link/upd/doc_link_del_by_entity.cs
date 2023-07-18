@@ -67,5 +67,7 @@ namespace ManDI.command.doclib.link.upd
                 return "doc_link_del_by_entity";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

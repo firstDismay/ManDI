@@ -50,5 +50,7 @@ namespace ManDI.command.unit.del
                 return "class_unit_conversion_rules_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

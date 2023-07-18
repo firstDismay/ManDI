@@ -50,5 +50,7 @@ namespace ManDI.command.classes.upd
                 return "class_rollback";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

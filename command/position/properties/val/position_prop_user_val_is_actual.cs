@@ -59,5 +59,7 @@ namespace ManDI.command.position.properties.val
                 return "position_prop_user_val_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

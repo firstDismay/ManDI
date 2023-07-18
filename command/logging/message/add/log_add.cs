@@ -122,5 +122,7 @@ namespace ManDI.command.logging.message.add
                 return "log_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -51,5 +51,7 @@ namespace ManDI.command.position.properties.sel
                 return "position_prop_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

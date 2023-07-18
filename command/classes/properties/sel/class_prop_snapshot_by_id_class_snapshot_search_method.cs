@@ -61,5 +61,7 @@ namespace ManDI.command.classes.properties.sel
                 return "class_prop_snapshot_by_id_class_snapshot_search_method";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -40,5 +40,7 @@ namespace ManDI.command.objects.sel
                 return "object_path";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

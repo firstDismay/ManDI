@@ -41,5 +41,7 @@ namespace ManDI.command.logging.link.sel
                 return "log_link_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

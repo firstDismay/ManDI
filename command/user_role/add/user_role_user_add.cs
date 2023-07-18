@@ -58,5 +58,7 @@ namespace ManDI.command.user_role.add
                 return "user_role_user_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.upd
                 return "global_prop_area_val_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

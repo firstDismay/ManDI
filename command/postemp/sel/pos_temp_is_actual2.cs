@@ -50,5 +50,7 @@ namespace ManDI.command.postemp.sel
                 return "pos_temp_is_actual2";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

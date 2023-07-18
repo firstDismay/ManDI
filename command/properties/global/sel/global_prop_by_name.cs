@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.sel
                 return "global_prop_by_name";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

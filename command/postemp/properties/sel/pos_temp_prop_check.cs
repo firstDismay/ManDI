@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.properties.sel
                 return "pos_temp_prop_check";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

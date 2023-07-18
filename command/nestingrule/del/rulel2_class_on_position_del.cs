@@ -50,5 +50,7 @@ namespace ManDI.command.nesting_rule.del
                 return "rulel2_class_on_position_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

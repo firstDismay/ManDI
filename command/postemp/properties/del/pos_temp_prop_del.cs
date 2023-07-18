@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.properties.del
                 return "pos_temp_prop_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

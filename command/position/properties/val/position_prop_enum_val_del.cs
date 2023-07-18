@@ -50,5 +50,7 @@ namespace ManDI.command.position.properties.upd
                 return "position_prop_enum_val_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

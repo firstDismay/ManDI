@@ -42,5 +42,7 @@ namespace ManDI.command.position.sel
                 return "position_by_id_pos_temp";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

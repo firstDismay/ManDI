@@ -50,5 +50,7 @@ namespace ManDI.command.classes.sel
                 return "class_allowed_rl2_for_group_by_id_position";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -95,5 +95,7 @@ namespace ManDI.command.unit.add
                 return "unit_conversion_rule_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -59,5 +59,7 @@ namespace ManDI.command.classes.add
                 return "class_copy_to_group";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

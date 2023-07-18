@@ -50,5 +50,7 @@ namespace ManDI.command.logging.message.sel
                 return "log_by_msk_message_id_category";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -95,5 +95,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_object_val_objects_add_new";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

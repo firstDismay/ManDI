@@ -78,5 +78,7 @@ namespace ManDI.command.position.properties.upd
                 return "position_prop_user_big_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

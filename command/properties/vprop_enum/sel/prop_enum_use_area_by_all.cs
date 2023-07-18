@@ -32,5 +32,7 @@ namespace ManDI.command.properties.vprop_enum.sel
                 return "prop_enum_use_area_by_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

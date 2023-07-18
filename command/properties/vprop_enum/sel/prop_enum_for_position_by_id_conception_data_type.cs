@@ -50,5 +50,7 @@ namespace ManDI.command.properties.vprop_enum.sel
                 return "prop_enum_for_position_by_id_conception_data_type";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

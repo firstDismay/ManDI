@@ -41,5 +41,7 @@ namespace ManDI.command.properties.global.upd
                 return "global_prop_area_val_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

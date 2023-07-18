@@ -59,5 +59,7 @@ namespace ManDI.command.doclib.file.sel
                 return "doc_file_data_read_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

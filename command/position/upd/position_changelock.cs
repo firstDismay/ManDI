@@ -50,5 +50,7 @@ namespace ManDI.command.position.upd
                 return "position_changelock";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

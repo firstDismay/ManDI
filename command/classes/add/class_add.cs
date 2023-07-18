@@ -122,5 +122,7 @@ namespace ManDI.command.classes.add
                 return "class_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

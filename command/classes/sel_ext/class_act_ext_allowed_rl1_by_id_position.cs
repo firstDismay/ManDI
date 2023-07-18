@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel_ext
                 return "class_act_ext_allowed_rl1_by_id_position";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

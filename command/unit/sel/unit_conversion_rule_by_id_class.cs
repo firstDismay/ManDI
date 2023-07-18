@@ -41,5 +41,7 @@ namespace ManDI.command.unit.sel
                 return "unit_conversion_rule_by_id_class";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

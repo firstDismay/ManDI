@@ -50,5 +50,7 @@ namespace ManDI.command.postemp.sel
                 return "pos_temp_by_id_prototype";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

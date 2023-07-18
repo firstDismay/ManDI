@@ -77,5 +77,7 @@ namespace ManDI.command.objects.add
                 return "object_copy";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

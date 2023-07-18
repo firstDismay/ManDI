@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_allowed_rl1_by_id_pos_temp";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

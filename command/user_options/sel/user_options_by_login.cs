@@ -42,5 +42,7 @@ namespace ManDI.command.user_options.sel
                 return "user_options_by_login";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

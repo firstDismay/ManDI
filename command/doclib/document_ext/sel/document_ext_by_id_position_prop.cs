@@ -49,5 +49,7 @@ namespace ManDI.command.doclib.document_ext.sel
                 return "document_ext_by_id_position_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -30,5 +30,7 @@ namespace ManDI.command.objects.common
                 return "object_prop_create_emded_mode_by_all";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

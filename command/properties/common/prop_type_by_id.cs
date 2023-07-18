@@ -41,5 +41,7 @@ namespace ManDI.command.properties.common
                 return "prop_type_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

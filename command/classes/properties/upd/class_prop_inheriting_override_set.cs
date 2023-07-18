@@ -50,5 +50,7 @@ namespace ManDI.command.classes.properties.upd
                 return "class_prop_inheriting_override_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -67,5 +67,7 @@ namespace ManDI.command.doclib.link.add
                 return "doc_link_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -51,5 +51,7 @@ namespace ManDI.command.unit.add
                 return "class_unit_conversion_rules_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

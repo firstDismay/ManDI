@@ -41,5 +41,7 @@ namespace ManDI.command.logging.category.sel
                 return "log_category_by_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

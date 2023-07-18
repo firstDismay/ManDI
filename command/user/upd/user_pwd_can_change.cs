@@ -50,5 +50,7 @@ namespace ManDI.command.user.upd
                 return "user_pwd_can_change";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

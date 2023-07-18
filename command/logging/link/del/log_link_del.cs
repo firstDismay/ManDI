@@ -41,5 +41,7 @@ namespace ManDI.command.logging.link.sel
                 return "log_link_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

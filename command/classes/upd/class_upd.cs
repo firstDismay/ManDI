@@ -113,5 +113,7 @@ namespace ManDI.command.classes.upd
                 return "class_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

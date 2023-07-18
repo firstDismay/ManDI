@@ -77,5 +77,7 @@ namespace ManDI.command.postemp.add
                 return "pos_temp_copy";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.properties.vprop_enum.del
                 return "prop_enum_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

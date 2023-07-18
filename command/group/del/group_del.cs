@@ -40,5 +40,7 @@ namespace ManDI.command.group.del
                 return "group_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

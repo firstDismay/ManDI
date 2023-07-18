@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.properties.val
                 return "pos_temp_prop_sort_down";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

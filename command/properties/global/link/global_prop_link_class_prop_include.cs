@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.link
                 return "global_prop_link_class_prop_include";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

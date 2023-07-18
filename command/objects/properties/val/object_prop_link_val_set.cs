@@ -77,5 +77,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_link_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

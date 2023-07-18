@@ -50,5 +50,7 @@ namespace ManDI.command.nesting_rule.add
                 return "rulel1_class_on_pos_temp_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

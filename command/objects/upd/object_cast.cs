@@ -50,5 +50,7 @@ namespace ManDI.command.objects.upd
                 return "object_cast";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

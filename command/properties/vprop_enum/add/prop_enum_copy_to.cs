@@ -52,5 +52,7 @@ namespace ManDI.command.properties.vprop_enum.add
                 return "prop_enum_copy_to";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

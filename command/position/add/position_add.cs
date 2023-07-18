@@ -77,5 +77,7 @@ namespace ManDI.command.position.add
                 return "position_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

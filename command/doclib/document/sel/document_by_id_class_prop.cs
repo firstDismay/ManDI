@@ -40,5 +40,7 @@ namespace ManDI.command.doclib.document.sel
                 return "document_by_id_class_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

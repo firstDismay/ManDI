@@ -51,5 +51,7 @@ namespace ManDI.command.objects.sel_ext
                 return "object_object_prop_by_id_object_carrier";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

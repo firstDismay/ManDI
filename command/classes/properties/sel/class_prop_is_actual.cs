@@ -50,5 +50,7 @@ namespace ManDI.command.position.sel
                 return "class_prop_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

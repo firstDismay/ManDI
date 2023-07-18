@@ -61,5 +61,7 @@ namespace ManDI.command.position.properties.sel
                 return "position_prop_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

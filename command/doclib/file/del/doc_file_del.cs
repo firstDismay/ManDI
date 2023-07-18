@@ -41,5 +41,7 @@ namespace ManDI.command.doclib.file.del
                 return "doc_file_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

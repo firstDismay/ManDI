@@ -41,5 +41,7 @@ namespace ManDI.command.position.sel
                 return "position_by_id_parent";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

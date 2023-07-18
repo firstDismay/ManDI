@@ -45,5 +45,7 @@ namespace ManDI.command.doclib.document_ext.sel
                 return "document_ext_by_id_pos_temp_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

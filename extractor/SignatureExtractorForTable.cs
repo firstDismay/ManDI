@@ -9,11 +9,13 @@ namespace ManDI.extractor
     /// </summary>
     public class SignatureExtractorForTable : ISignatureExtractor
     {
+        string signature;
+        IParametersFunction function;
         public SignatureExtractorForTable() { }
-        public string GetSignatureFunction(IParametersFunction function)
+        public string GetSignatureFunction(IParametersFunction Function)
         {
-            if (function == null) throw new ArgumentNullException("function");
-            string signature;
+            if (Function == null) throw new ArgumentNullException("function");
+            this.function = Function;
 
             StringBuilder builder = new StringBuilder();
 
@@ -29,6 +31,13 @@ namespace ManDI.extractor
             else
             {
                 signature = signature.Replace("?", "");
+            }
+
+            if (this.function.Condition != null || this.function.Condition != "")
+            {
+                builder = new StringBuilder(signature);
+                builder.Append(" ");
+                builder.Append(this.function.Condition);
             }
             return signature;
         }

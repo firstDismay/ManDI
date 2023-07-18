@@ -68,5 +68,7 @@ namespace ManDI.command.logging.link.add
                 return "log_link_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

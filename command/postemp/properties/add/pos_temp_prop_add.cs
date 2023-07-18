@@ -96,5 +96,7 @@ namespace ManDI.command.postemp.properties.add
                 return "pos_temp_prop_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

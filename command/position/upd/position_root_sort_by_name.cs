@@ -41,5 +41,7 @@ namespace ManDI.command.position.upd
                 return "position_root_sort_by_name";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

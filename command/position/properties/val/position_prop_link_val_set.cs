@@ -68,5 +68,7 @@ namespace ManDI.command.position.properties.upd
                 return "position_prop_link_val_set";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

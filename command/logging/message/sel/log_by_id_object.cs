@@ -68,5 +68,7 @@ namespace ManDI.command.logging.message.sel
                 return "log_by_id_object";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

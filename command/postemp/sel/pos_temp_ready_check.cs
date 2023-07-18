@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.sel
                 return "pos_temp_ready_check";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

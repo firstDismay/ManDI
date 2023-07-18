@@ -78,5 +78,7 @@ namespace ManDI.command.postemp.upd
                 return "pos_temp_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.group.upd
                 return "group_move";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

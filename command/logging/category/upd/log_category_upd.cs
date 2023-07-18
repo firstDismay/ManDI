@@ -77,5 +77,7 @@ namespace ManDI.command.logging.category.upd
                 return "log_category_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

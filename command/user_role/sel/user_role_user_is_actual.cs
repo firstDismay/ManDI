@@ -52,5 +52,7 @@ namespace ManDI.command.user_role.sel
                 return "user_role_user_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

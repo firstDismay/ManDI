@@ -40,5 +40,7 @@ namespace ManDI.command.conception.sel
                 return "conception_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

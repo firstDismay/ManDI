@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_assigned_rl2_by_id_position";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

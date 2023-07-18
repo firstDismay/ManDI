@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_snapshot_clear_info";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

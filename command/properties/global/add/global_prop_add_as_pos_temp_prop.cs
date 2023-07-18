@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.add
                 return "global_prop_add_as_pos_temp_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

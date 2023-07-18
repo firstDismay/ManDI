@@ -50,5 +50,7 @@ namespace ManDI.command.nesting_rule.sel
                 return "rulel1_group_on_pos_temp_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

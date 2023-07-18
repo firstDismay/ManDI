@@ -41,5 +41,7 @@ namespace ManDI.command.postemp.properties.val
                 return "pos_temp_prop_object_val_by_id_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

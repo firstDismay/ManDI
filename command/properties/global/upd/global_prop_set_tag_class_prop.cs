@@ -50,5 +50,7 @@ namespace ManDI.command.properties.global.upd
                 return "global_prop_set_tag_class_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

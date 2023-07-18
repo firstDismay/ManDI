@@ -77,5 +77,7 @@ namespace ManDI.command.doclib.category.upd
                 return "doc_category_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

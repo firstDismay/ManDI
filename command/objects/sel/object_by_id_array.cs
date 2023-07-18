@@ -40,5 +40,7 @@ namespace ManDI.command.objects.sel
                 return "object_by_id_array";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

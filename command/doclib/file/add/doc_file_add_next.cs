@@ -50,5 +50,7 @@ namespace ManDI.command.doclib.file.add
                 return "doc_file_add_next";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

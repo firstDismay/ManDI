@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_snapshot_by_id_prop_enum_val";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

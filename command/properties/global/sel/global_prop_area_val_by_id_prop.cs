@@ -41,5 +41,7 @@ namespace ManDI.command.properties.global.sel
                 return "global_prop_area_val_by_id_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

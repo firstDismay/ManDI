@@ -50,5 +50,10 @@ namespace ManDI.command.classes.sel
                 return "class_act_base_allowed_by_id_group";
             }
         }
+
+        /// <summary>
+        /// Дополнительные параметры вызова функции добавляемые к основному запросу
+        /// </summary>
+        public string? Condition { get; set; }
     }
 }

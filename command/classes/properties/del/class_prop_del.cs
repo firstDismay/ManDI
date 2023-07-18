@@ -41,5 +41,7 @@ namespace ManDI.command.classes.properties.del
                 return "class_prop_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

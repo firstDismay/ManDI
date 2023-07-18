@@ -50,5 +50,7 @@ namespace ManDI.command.classes.upd
                 return "class_move_to_class";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

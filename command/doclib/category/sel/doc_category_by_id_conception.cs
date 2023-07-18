@@ -41,5 +41,7 @@ namespace ManDI.command.doclib.category.sel
                 return "doc_category_by_id_conception";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.doclib.file.sel
                 return "doc_file_hash_md5_check";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

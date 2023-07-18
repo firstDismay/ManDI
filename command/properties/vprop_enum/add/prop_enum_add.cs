@@ -77,5 +77,7 @@ namespace ManDI.command.properties.vprop_enum.add
                 return "prop_enum_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

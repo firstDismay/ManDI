@@ -40,5 +40,7 @@ namespace ManDI.command.doclib.document.del
                 return "document_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.user_role.sel
                 return "user_role_base_by_login";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -49,5 +49,7 @@ namespace ManDI.command.position.val
                 return "class_prop_object_val_snapshot_by_id_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

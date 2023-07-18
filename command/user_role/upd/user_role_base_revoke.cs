@@ -49,5 +49,7 @@ namespace ManDI.command.user_role.upd
                 return "user_role_base_revoke";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

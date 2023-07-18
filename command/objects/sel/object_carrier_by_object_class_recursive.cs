@@ -41,5 +41,7 @@ namespace ManDI.command.objects.sel
                 return "object_carrier_by_object_class_recursive";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

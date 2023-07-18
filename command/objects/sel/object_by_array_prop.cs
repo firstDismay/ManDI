@@ -57,5 +57,7 @@ namespace ManDI.command.objects.sel
                 return "object_by_array_prop";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

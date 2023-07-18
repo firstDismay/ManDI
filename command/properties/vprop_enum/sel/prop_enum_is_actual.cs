@@ -50,5 +50,7 @@ namespace ManDI.command.properties.vprop_enum.sel
                 return "prop_enum_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

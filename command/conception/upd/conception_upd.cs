@@ -86,5 +86,7 @@ namespace ManDI.command.conception.upd
                 return "conception_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

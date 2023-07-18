@@ -40,5 +40,7 @@ namespace ManDI.command.objects.sel
                 return "object_by_id_group_root";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

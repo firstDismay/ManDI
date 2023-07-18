@@ -86,5 +86,7 @@ namespace ManDI.command.properties.global.add
                 return "global_prop_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.user.del
                 return "user_by_id";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.position.dell
                 return "position_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

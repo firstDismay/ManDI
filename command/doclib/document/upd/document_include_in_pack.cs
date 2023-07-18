@@ -50,5 +50,7 @@ namespace ManDI.command.doclib.document.upd
                 return "document_include_in_pack";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

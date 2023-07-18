@@ -50,5 +50,7 @@ namespace ManDI.command.conception.add
                 return "conception_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

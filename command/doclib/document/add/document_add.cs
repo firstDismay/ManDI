@@ -112,5 +112,7 @@ namespace ManDI.command.doclib.document.add
                 return "document_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

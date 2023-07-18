@@ -104,5 +104,7 @@ namespace ManDI.command.doclib.file.add
                 return "doc_file_add";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -41,5 +41,7 @@ namespace ManDI.command.properties.global.sel
                 return "global_prop_by_id_pos_temp";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

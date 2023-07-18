@@ -41,5 +41,7 @@ namespace ManDI.command.classes.properties.sel
                 return "class_prop_state_for_global_prop_link";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

@@ -50,5 +50,7 @@ namespace ManDI.command.doclib.file.sel
                 return "doc_file_is_actual";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

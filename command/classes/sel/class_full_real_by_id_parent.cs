@@ -41,5 +41,7 @@ namespace ManDI.command.classes.sel
                 return "class_full_real_by_id_parent";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

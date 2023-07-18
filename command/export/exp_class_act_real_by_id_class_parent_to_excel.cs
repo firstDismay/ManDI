@@ -68,5 +68,7 @@ namespace ManDI.command.export
                 return "exp_class_act_real_by_id_class_parent_to_excel";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

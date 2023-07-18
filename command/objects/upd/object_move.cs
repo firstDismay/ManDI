@@ -60,5 +60,7 @@ namespace ManDI.command.objects.upd
                 return "object_move";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

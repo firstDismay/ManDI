@@ -76,5 +76,7 @@ namespace ManDI.command.group.upd
                 return "group_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

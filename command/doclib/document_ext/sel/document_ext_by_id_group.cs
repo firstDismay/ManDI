@@ -67,5 +67,7 @@ namespace ManDI.command.doclib.document_ext.sel
                 return "document_ext_by_id_group";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

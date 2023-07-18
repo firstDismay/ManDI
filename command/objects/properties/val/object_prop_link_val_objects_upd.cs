@@ -87,5 +87,7 @@ namespace ManDI.command.classes.properties.val
                 return "object_prop_link_val_objects_upd";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

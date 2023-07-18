@@ -39,5 +39,7 @@ namespace ManDI.command.conception.del
                 return "conception_del";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

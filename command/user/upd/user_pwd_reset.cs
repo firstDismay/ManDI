@@ -59,5 +59,7 @@ namespace ManDI.command.user.upd
                 return "user_pwd_reset";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

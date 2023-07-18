@@ -50,5 +50,7 @@ namespace ManDI.command.position.sel
                 return "position_nested_limit_control";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }

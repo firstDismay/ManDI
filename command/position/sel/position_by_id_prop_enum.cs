@@ -41,5 +41,7 @@ namespace ManDI.command.position.sel
                 return "position_by_id_prop_enum_val";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }
