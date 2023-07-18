@@ -8,7 +8,7 @@ namespace ManDI.command.classes.properties.val
     /// </summary>
     public class object_prop_link_val_set : IParametersFunction
     {
-        public object_prop_link_val_add()
+        public object_prop_link_val_set()
         {
             this.setname = true;
         }

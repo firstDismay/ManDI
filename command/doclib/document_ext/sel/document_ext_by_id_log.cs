@@ -40,5 +40,7 @@ namespace ManDI.command.doclib.document.sel
                 return "document_ext_by_id_log";
             }
         }
+
+        public string? Condition { get; set; }
     }
 }
