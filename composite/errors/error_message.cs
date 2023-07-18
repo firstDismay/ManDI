@@ -54,7 +54,21 @@ namespace ManDI.composite.errors
 
         public PgFunctionMessage MessageGet()
         {
-            return JsonConvert.DeserializeObject<PgFunctionMessage>(message);
+            PgFunctionMessage msg;
+            try
+            {
+                msg = JsonConvert.DeserializeObject<PgFunctionMessage>(message);
+            }
+            catch (JsonException)
+            {
+                msg = new PgFunctionMessage();
+                msg.func = "unknown_function";
+                msg.codeerr = "P0000";
+                msg.messageerr = message;
+                msg.classerr = "unknown_class";
+                msg.hinterr = "The error is probably a system error of the database server";
+            }
+            return msg;
         }
     }
 }

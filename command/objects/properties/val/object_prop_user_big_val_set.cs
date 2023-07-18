@@ -8,6 +8,10 @@ namespace ManDI.command.classes.properties.val
     /// </summary>
     public class object_prop_user_big_val_set : IParametersFunction
     {
+        public object_prop_user_big_val_set()
+        {
+            this.setname = true;
+        }
        
         /// <summary>
         /// Идентификатор объекта
@@ -37,7 +41,6 @@ namespace ManDI.command.classes.properties.val
         /// <summary>
         /// Признак опции обновления имени объекта
         /// </summary>
-        public bool setname { get; set; } = true;
 
         /// <summary>
         /// Список параметров функции

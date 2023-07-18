@@ -8,6 +8,11 @@ namespace ManDI.command.classes.properties.val
     /// </summary>
     public class object_prop_enum_val_set : IParametersFunction
     {
+        public object_prop_enum_val_add()
+        {
+            this.setname = true;
+        }
+
         /// <summary>
         /// Идентификатор свойства класса
         /// </summary>
