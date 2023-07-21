@@ -11,7 +11,7 @@ namespace ManDI.command.user.sel
         /// <summary>
         /// Идентификатор  пользователя
         /// </summary>
-        public long ilogin { get; set; }
+        public long irole_name { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -23,8 +23,8 @@ namespace ManDI.command.user.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("ilogin", NpgsqlDbType.Bigint);
-                Parameter.Value = ilogin;
+                Parameter = new NpgsqlParameter("irole_name", NpgsqlDbType.Bigint);
+                Parameter.Value = irole_name;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;

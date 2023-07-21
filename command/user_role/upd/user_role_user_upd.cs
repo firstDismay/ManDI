@@ -25,7 +25,7 @@ namespace ManDI.command.user_role.upd
         /// <summary>
         /// Новое системное имя пользовательской роли
         /// </summary>
-        public string irole_newnamesys { get; set; }
+        public string irole_namesys_new { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -49,8 +49,8 @@ namespace ManDI.command.user_role.upd
                 Parameter.Value = irole_namesys;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("irole_newnamesys", NpgsqlDbType.Varchar);
-                Parameter.Value = irole_newnamesys;
+                Parameter = new NpgsqlParameter("irole_namesys_new", NpgsqlDbType.Varchar);
+                Parameter.Value = irole_namesys_new;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
