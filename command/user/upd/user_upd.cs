@@ -24,14 +24,14 @@ namespace ManDI.command.user.upd
         public string usr_familiya { get; set; }
 
         /// <summary>
-        /// Отчество
+        /// Текущее имя роли
         /// </summary>
-        public string usr_login { get; set; }
+        public string usr_rolname { get; set; }
 
         /// <summary>
-        /// Пароль
+        /// Новое имя роли
         /// </summary>
-        public string usr_newlogin { get; set; }
+        public string usr_rolname_new { get; set; }
 
         /// <summary>
         /// Атрибут супер пользователь
@@ -90,12 +90,12 @@ namespace ManDI.command.user.upd
                 Parameter.Value = usr_familiya;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("usr_login", NpgsqlDbType.Varchar);
-                Parameter.Value = usr_login;
+                Parameter = new NpgsqlParameter("usr_rolname", NpgsqlDbType.Varchar);
+                Parameter.Value = usr_rolname;
                 ListParameter.Add(Parameter);
 
-                Parameter = new NpgsqlParameter("usr_newlogin", NpgsqlDbType.Varchar);
-                Parameter.Value = usr_newlogin;
+                Parameter = new NpgsqlParameter("usr_rolname_new", NpgsqlDbType.Varchar);
+                Parameter.Value = usr_rolname_new;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("usr_rolsuper", NpgsqlDbType.Boolean);
