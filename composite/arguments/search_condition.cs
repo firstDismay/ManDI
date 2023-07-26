@@ -30,12 +30,11 @@ namespace ManDI.composite.arguments
         [JsonProperty]
         public Int64 IdDefinitionProp { get; set; }
 
-        private eSearchMethods _SearchMethods;
         /// <summary>
         ///Метод поиска
         /// </summary>
         [JsonProperty]
-        public eSearchMethods SearchMethods { get; set; }
+        public eSearchMethods SearchMethods { get; set; } = eSearchMethods.more;
 
         /// <summary>
         ///Метод поиска строковое представление
@@ -45,7 +44,7 @@ namespace ManDI.composite.arguments
         {
             get
             {
-                return _SearchMethods.ToString();
+                return SearchMethods.ToString();
             }
         }
 
