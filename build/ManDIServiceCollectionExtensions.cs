@@ -38,6 +38,11 @@ namespace ManDI.build
                 services.AddScoped<ICommandExecutor, command_executor>();
             }
 
+            if (!services.Any(x => x.ServiceType == typeof(IExportExecutor)))
+            {
+                services.AddScoped<IExportExecutor, export_executor>();
+            }
+
             if (services.Any(x => x.ServiceType == typeof(ILoggerFactory)))
             {
                 services.Decorate<ICommandExecutor, command_executor_decorator_logger>();
