@@ -34,6 +34,7 @@ namespace ManDI.executor
                 result = (Byte[])cmd.ExecuteScalar();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
+                cn.CloseAsync();
             }
             return result;
         }

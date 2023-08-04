@@ -37,6 +37,7 @@ namespace ManDI.executor
                 result = cmd.ExecuteNonQuery();
                 if (cmd.Transaction != null)
                     cmd.Transaction.Commit();
+                cn.CloseAsync();
             }
             return result;
         }
@@ -55,6 +56,7 @@ namespace ManDI.executor
                 set_role.ExecuteNonQuery();
                 result = cmd.ExecuteScalar();
                 cmd.Transaction.Commit();
+                cn.CloseAsync();
             }
             return result;
         }
@@ -76,6 +78,7 @@ namespace ManDI.executor
                 adapter.SelectCommand = cmd;
                 adapter.Fill(table);
                 cmd.Transaction.Commit();
+                cn.CloseAsync();
             }
             return table;
         }
