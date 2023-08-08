@@ -32,7 +32,7 @@ namespace ManDI.command.export
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iclass_array", NpgsqlDbType.Bigint);
+                Parameter = new NpgsqlParameter("iclass_array", NpgsqlDbType.Array | NpgsqlDbType.Bigint);
                 Parameter.Value = iclass_array;
                 ListParameter.Add(Parameter);
 
