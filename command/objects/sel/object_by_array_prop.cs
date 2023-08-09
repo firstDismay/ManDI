@@ -30,10 +30,6 @@ namespace ManDI.command.objects.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_position;
-                ListParameter.Add(Parameter);
-
                 Parameter = new NpgsqlParameter("array_prop", NpgsqlDbType.Array | NpgsqlDbType.Jsonb);
                 string[] sarray_prop = new string[array_prop.Length];
                 for (int i = 0; i < array_prop.Length; i++)
@@ -41,6 +37,10 @@ namespace ManDI.command.objects.sel
                     sarray_prop[i] = JsonConvert.SerializeObject(array_prop[i], Formatting.Indented);
                 }
                 Parameter.Value = array_prop;
+                ListParameter.Add(Parameter);
+
+                Parameter = new NpgsqlParameter("iid_position", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_position;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
