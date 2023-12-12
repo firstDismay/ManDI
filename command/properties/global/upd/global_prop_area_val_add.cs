@@ -4,9 +4,9 @@ using NpgsqlTypes;
 namespace ManDI.command.properties.global.upd
 {
     /// <summary>
-    /// Команда добавляет область значений глобального свойства
+    /// Команда устанавливает область значений глобального свойства
     /// </summary>
-    public class global_prop_area_val_add : IParametersFunction
+    public class global_prop_area_val_set : IParametersFunction
     {
         /// <summary>
         /// Идентификатор глобального свойства
@@ -47,7 +47,7 @@ namespace ManDI.command.properties.global.upd
         {
             get
             {
-                return "global_prop_area_val_add";
+                return "global_prop_area_val_set";
             }
         }
 

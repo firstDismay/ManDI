@@ -21,12 +21,12 @@ namespace ManDI.command.classes.add
         /// <summary>
         /// Наименование класса
         /// </summary>
-        public string iname { get; set; }
+        public required string iname { get; set; }
 
         /// <summary>
         /// Описание класса
         /// </summary>
-        public string idesc { get; set; }
+        public required string idesc { get; set; }
 
         /// <summary>
         /// Признак включенного класса

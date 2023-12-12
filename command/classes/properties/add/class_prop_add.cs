@@ -31,17 +31,17 @@ namespace ManDI.command.classes.properties.add
         /// <summary>
         /// Наименование свойства
         /// </summary>
-        public string iname { get; set; }
+        public required string iname { get; set; }
 
         /// <summary>
         /// Описание свойства
         /// </summary>
-        public string idesc { get; set; }
+        public required string idesc { get; set; }
 
         /// <summary>
         /// Тэг свойства
         /// </summary>
-        public string itag { get; set; }
+        public required string itag { get; set; }
 
         /// <summary>
         /// Индекс сортировки свойства
