@@ -16,7 +16,7 @@ namespace ManDI.command.classes.properties.sel
         /// <summary>
         /// Метод поиска
         /// </summary>
-        public string isearch_method { get; set; }
+        public required string isearch_method { get; set; }
 
         /// <summary>
         /// Список параметров функции
