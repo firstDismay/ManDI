@@ -14,5 +14,7 @@
         public int id_entity { get; set; }
         public long id_entity_instance { get; set; }
         public long id_sub_entity_instance { get; set; }
+        public string path { get; set; }
+        public bool is_main_link { get; set; }
     }
 }

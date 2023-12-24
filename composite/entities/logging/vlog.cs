@@ -1,4 +1,6 @@
-﻿namespace ManDI.composite.entities.vlog
+﻿using System;
+
+namespace ManDI.composite.entities.vlog
 {
     /// <summary>
     /// Композитный тип записи журнала
@@ -18,5 +20,7 @@
         public string body { get; set; }
         public string user_author { get; set; }
         public DateTime datetime { get; set; }
+        public string path { get; set; }
+        public long main_log_link { get; set; }
     }
 }
