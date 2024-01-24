@@ -6,7 +6,7 @@ namespace ManDI.command.objects.sel_ext
     /// <summary>
     /// Команда возвращает полный список объектов носителей объектов по идентификатору класса рекурсивно
     /// </summary>
-    public class object_ext_object_prop_by_id_object_carrier : IParametersFunction
+    public class object_ext_carrier_by_object_class_recursive : IParametersFunction
     {
         /// <summary>
         /// Идентификатор позиции объекта

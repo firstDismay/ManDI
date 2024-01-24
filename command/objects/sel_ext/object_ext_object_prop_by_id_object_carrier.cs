@@ -6,7 +6,7 @@ namespace ManDI.command.objects.sel_ext
     /// <summary>
     /// Команда возвращает список объектов-значений объектного свойства объекта по идентификатору свойства объекта
     /// </summary>
-    public class object_object_prop_by_id_object_carrier : IParametersFunction
+    public class object_ext_object_prop_by_id_object_carrier : IParametersFunction
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ManDI.command.objects.sel_ext
         {
             get
             {
-                return "object_object_prop_by_id_object_carrier";
+                return "object_ext_object_prop_by_id_object_carrier";
             }
         }
 
