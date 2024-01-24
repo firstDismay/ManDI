@@ -1,11 +1,8 @@
-﻿using ManDI;
-using ManDI.build;
-using ManDI.enums;
-using ManDI.executor;
+﻿using ManDI.executor;
 using ManDI.extractor;
-using Npgsql;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Npgsql;
 
 namespace ManDI.build
 {
@@ -32,7 +29,7 @@ namespace ManDI.build
             {
                 services.AddScoped<ISignatureExtractor, SignatureExtractorForComposite>();
             }
-            
+
             if (!services.Any(x => x.ServiceType == typeof(ICommandExecutor)))
             {
                 services.AddScoped<ICommandExecutor, command_executor>();

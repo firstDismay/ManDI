@@ -18,7 +18,7 @@ namespace ManDI.command.logging.message.upd
         /// </summary>
         public long iid_log_link { get; set; }
 
-        
+
 
         /// <summary>
         /// Список параметров функции

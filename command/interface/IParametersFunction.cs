@@ -17,6 +17,6 @@ namespace ManDI.command
         /// <summary>
         /// Дополнительные параметры вызова функции добавляемые к основному запросу
         /// </summary>
-        public string ?Condition { get; set; }
+        public string? Condition { get; set; }
     }
 }

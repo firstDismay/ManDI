@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 
 namespace ManDI.command.properties.common
 {
@@ -14,7 +12,7 @@ namespace ManDI.command.properties.common
         /// Идентификатор концепции
         /// </summary>
         public long iid_conception { get; set; }
-        
+
         /// <summary>
         /// Список параметров функции
         /// </summary>

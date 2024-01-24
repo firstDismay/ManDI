@@ -1,7 +1,5 @@
 ﻿using Npgsql;
 using NpgsqlTypes;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 
 namespace ManDI.command.properties.common
 {

@@ -1,8 +1,5 @@
-﻿using ManDI.build;
-using ManDI.command;
-using ManDI.extractor;
+﻿using ManDI.command;
 using Microsoft.Extensions.Logging;
-using Npgsql;
 using System.Data;
 using System.Text;
 
@@ -37,7 +34,7 @@ namespace ManDI.executor
                 TimeEnd = DateTime.Now;
                 this.logger.LogInformation(Response(function, TimeStart, TimeEnd), function.Parameters);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 TimeEnd = DateTime.Now;
                 this.logger.LogError(Response(function, TimeStart, TimeEnd), function.Parameters);
@@ -86,7 +83,7 @@ namespace ManDI.executor
         }
 
         private String Response(IParametersFunction function, DateTime TimeStart, DateTime TimeEnd)
-        { 
+        {
             StringBuilder result = new StringBuilder();
             result.Append(String.Format("Executed: {0}(", function.NameFunction));
 
@@ -94,7 +91,7 @@ namespace ManDI.executor
             {
                 result.Append(String.Format("{0}={1}", parametr.ParameterName, parametr.Value.ToString()));
             }
-            
+
             result.Append(String.Format(") Duration: {0}мс", (TimeEnd - TimeStart).TotalMilliseconds));
 
             return result.ToString();

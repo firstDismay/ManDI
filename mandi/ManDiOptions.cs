@@ -1,8 +1,4 @@
-﻿using ManDI.enums;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace ManDI
+﻿namespace ManDI
 {
     /// <summary>
     /// Класс опциональной настройки поставщика API ManDI

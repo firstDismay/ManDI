@@ -54,6 +54,6 @@ namespace ManDI.command.properties.global.link
         /// <summary>
         /// Дополнительные параметры вызова функции добавляемые к основному запросу
         /// </summary>
-        public string ?Condition { get; set; }
+        public string? Condition { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace ManDI.command.unit.add
         /// <summary>
         /// Идентификатор класса
         /// </summary>
-        public long iid_class{ get; set; }
+        public long iid_class { get; set; }
 
         /// <summary>
         /// Идентификатор правила пересчета

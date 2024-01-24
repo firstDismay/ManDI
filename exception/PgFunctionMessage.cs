@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace pg_class.pg_exceptions
+﻿namespace pg_class.pg_exceptions
 {
     /// <summary>
     /// Сообщение функции API

@@ -116,7 +116,7 @@ namespace ManDI.build
             dataSourceBuilder.MapComposite<vlog>("vlog");
             dataSourceBuilder.MapComposite<vlog_category>("vlog_category");
             dataSourceBuilder.MapComposite<vlog_link>("vlog_link");
-            
+
             dataSourceBuilder.MapComposite<error_message>("error_message");
         }
     }
