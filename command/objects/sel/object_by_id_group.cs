@@ -6,12 +6,12 @@ namespace ManDI.command.objects.sel
     /// <summary>
     /// Команда ввозвращает список объектов по идентификатору группы рекурсивно
     /// </summary>
-    public class object_by_id_group_root : IParametersFunction
+    public class object_by_id_group : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор корневой группы классов объектов
+        /// Идентификатор группы классов объектов
         /// </summary>
-        public long iid_group_root { get; set; }
+        public long iid_group { get; set; }
 
         /// <summary>
         /// Список параметров функции
@@ -23,8 +23,8 @@ namespace ManDI.command.objects.sel
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
 
-                Parameter = new NpgsqlParameter("iid_group_root", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_group_root;
+                Parameter = new NpgsqlParameter("iid_group", NpgsqlDbType.Bigint);
+                Parameter.Value = iid_group;
                 ListParameter.Add(Parameter);
                 return ListParameter;
             }
@@ -37,7 +37,7 @@ namespace ManDI.command.objects.sel
         {
             get
             {
-                return "object_by_id_group_root";
+                return "object_by_id_group";
             }
         }
 
