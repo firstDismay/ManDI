@@ -9,11 +9,6 @@ namespace ManDI.command.properties.global.link
     public class global_prop_link_pos_temp_prop_exclude : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор глобального свойства
-        /// </summary>
-        public long iid_global_prop { get; set; }
-
-        /// <summary>
         /// Идентификатор свойства шаблона позиции
         /// </summary>
         public long iid_pos_temp_prop { get; set; }
@@ -27,10 +22,6 @@ namespace ManDI.command.properties.global.link
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-
-                Parameter = new NpgsqlParameter("iid_global_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_global_prop;
-                ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_pos_temp_prop", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_pos_temp_prop;

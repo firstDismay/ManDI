@@ -10,11 +10,6 @@ namespace ManDI.command.properties.global.link
     public class global_prop_link_class_prop_by_id : IParametersFunction
     {
         /// <summary>
-        /// Идентификатор глобального свойства
-        /// </summary>
-        public long iid_global_prop { get; set; }
-
-        /// <summary>
         /// Идентификатор определяющего свойства класса
         /// </summary>
         public long iid_class_prop_definition { get; set; }
@@ -28,10 +23,6 @@ namespace ManDI.command.properties.global.link
             {
                 NpgsqlParameter Parameter;
                 List<NpgsqlParameter> ListParameter = new List<NpgsqlParameter>();
-
-                Parameter = new NpgsqlParameter("iid_global_prop", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_global_prop;
-                ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_class_prop_definition", NpgsqlDbType.Bigint);
                 Parameter.Value = iid_class_prop_definition;
