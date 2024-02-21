@@ -23,62 +23,62 @@ namespace ManDI.command.position.properties.upd
         /// <summary>
         ///  Идентификатор значения типа text
         /// </summary>
-        public string ival_varchar { get; set; }
+        public string? ival_varchar { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа bytea
         /// </summary>
-        public Int32 ival_int { get; set; }
+        public Int32? ival_int { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public Decimal ival_numeric { get; set; }
+        public Decimal? ival_numeric { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public float ival_real { get; set; }
+        public float? ival_real { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public Double ival_double { get; set; }
+        public Double? ival_double { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public Decimal ival_money { get; set; }
+        public Decimal? ival_money { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public bool ival_boolean { get; set; }
+        public bool? ival_boolean { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public DateOnly ival_date { get; set; }
+        public DateOnly? ival_date { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public DateTime ival_time { get; set; }
+        public DateTime? ival_time { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public TimeOnly ival_interval { get; set; }
+        public TimeOnly? ival_interval { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public Date ival_timestamp { get; set; }
+        public Date? ival_timestamp { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа json
         /// </summary>
-        public long ival_bigint { get; set; }
+        public long? ival_bigint { get; set; } = null;
 
         /// <summary>
         /// Список параметров функции

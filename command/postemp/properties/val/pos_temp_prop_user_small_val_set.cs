@@ -46,62 +46,62 @@ namespace ManDI.command.postemp.properties.val
         /// <summary>
         /// Строковое значение свойства класса
         /// </summary>
-        public string ival_varchar { get; set; }
+        public string? ival_varchar { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа integer
         /// </summary>
-        public int ival_int { get; set; }
+        public int? ival_int { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа numeric
         /// </summary>
-        public decimal ival_numeric { get; set; }
+        public decimal? ival_numeric { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа real
         /// </summary>
-        public float ival_real { get; set; }
+        public float? ival_real { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа double
         /// </summary>
-        public float ival_double { get; set; }
+        public float? ival_double { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа money
         /// </summary>
-        public decimal ival_money { get; set; }
+        public decimal? ival_money { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа boolean
         /// </summary>
-        public bool ival_boolean { get; set; }
+        public bool? ival_boolean { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа date
         /// </summary>
-        public DateTime ival_date { get; set; }
+        public DateTime? ival_date { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа time
         /// </summary>
-        public DateTime ival_time { get; set; }
+        public DateTime? ival_time { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа interval
         /// </summary>
-        public TimeSpan ival_interval { get; set; }
+        public TimeSpan? ival_interval { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа timestamp
         /// </summary>
-        public DateTime ival_timestamp { get; set; }
+        public DateTime? ival_timestamp { get; set; } = null;
 
         /// <summary>
         /// Значение свойства класса типа bigint
         /// </summary>
-        public long ival_bigint { get; set; }
+        public long? ival_bigint { get; set; } = null;
 
         /// <summary>
         /// Список параметров функции

@@ -22,12 +22,12 @@ namespace ManDI.command.position.properties.upd
         /// <summary>
         ///  Идентификатор значения типа text
         /// </summary>
-        public string ival_text { get; set; }
+        public string? ival_text { get; set; } = null;
 
         /// <summary>
         ///  Идентификатор значения типа bytea
         /// </summary>
-        public byte ival_bytea { get; set; }
+        public byte[]? ival_bytea { get; set; }
 
         /// <summary>
         ///  Идентификатор значения типа json
