@@ -79,15 +79,15 @@ namespace ManDI.command.classes.properties.val
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_text", NpgsqlDbType.Text);
-                Parameter.Value = ival_text;
+                Parameter.Value = ival_text != null ? ival_text : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_bytea", NpgsqlDbType.Bytea);
-                Parameter.Value = ival_bytea;
+                Parameter.Value = ival_bytea != null ? ival_bytea : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_json", NpgsqlDbType.Json);
-                Parameter.Value = ival_json;
+                Parameter.Value = ival_json != null ? ival_json : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;

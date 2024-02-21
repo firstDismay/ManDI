@@ -99,51 +99,51 @@ namespace ManDI.command.position.properties.upd
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_varchar", NpgsqlDbType.Varchar);
-                Parameter.Value = ival_varchar;
+                Parameter.Value = ival_varchar != null ? ival_varchar : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_int", NpgsqlDbType.Integer);
-                Parameter.Value = ival_int;
+                Parameter.Value = ival_int != null ? ival_int : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_numeric", NpgsqlDbType.Numeric);
-                Parameter.Value = ival_numeric;
+                Parameter.Value = ival_numeric != null ? ival_numeric : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_real", NpgsqlDbType.Real);
-                Parameter.Value = ival_real;
+                Parameter.Value = ival_real != null ? ival_real : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_double", NpgsqlDbType.Double);
-                Parameter.Value = ival_double;
+                Parameter.Value = ival_double != null ? ival_double : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_money", NpgsqlDbType.Money);
-                Parameter.Value = ival_money;
+                Parameter.Value = ival_money != null ? ival_money : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_boolean", NpgsqlDbType.Boolean);
-                Parameter.Value = ival_boolean;
+                Parameter.Value = ival_boolean != null ? ival_boolean : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_date", NpgsqlDbType.Date);
-                Parameter.Value = ival_date;
+                Parameter.Value = ival_date != null ? ival_date : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_time", NpgsqlDbType.Time);
-                Parameter.Value = ival_time;
+                Parameter.Value = ival_time != null ? ival_time : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_interval", NpgsqlDbType.Interval);
-                Parameter.Value = ival_interval;
+                Parameter.Value = ival_interval != null ? ival_interval : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_timestamp", NpgsqlDbType.Timestamp);
-                Parameter.Value = ival_timestamp;
+                Parameter.Value = ival_timestamp != null ? ival_timestamp : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_bigint", NpgsqlDbType.Bigint);
-                Parameter.Value = ival_bigint;
+                Parameter.Value = ival_bigint != null ? ival_bigint : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;
