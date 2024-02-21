@@ -36,17 +36,17 @@ namespace ManDI.command.classes.properties.val
         /// <summary>
         /// Текстовое значение свойства класса
         /// </summary>
-        public string ival_text { get; set; }
+        public string? ival_text { get; set; } = null;
 
         /// <summary>
         /// Байтовое значение свойства класса
         /// </summary>
-        public Byte[] ival_bytea { get; set; }
+        public Byte[]? ival_bytea { get; set; } = null;
 
         /// <summary>
         /// Текстовое значение свойства класса в формате JSON
         /// </summary>
-        public string ival_json { get; set; }
+        public string? ival_json { get; set; } = null;
 
         /// <summary>
         /// Список параметров функции
