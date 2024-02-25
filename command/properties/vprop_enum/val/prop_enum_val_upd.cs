@@ -16,12 +16,12 @@ namespace ManDI.command.properties.vprop_enum.val
         /// <summary>
         /// Числовое значение элемента перечисления
         /// </summary>
-        public decimal ival_numeric { get; set; }
+        public decimal? ival_numeric { get; set; } = null;
 
         /// <summary>
         /// Строковое значение элемента перечисления
         /// </summary>
-        public string ival_varchar { get; set; }
+        public string? ival_varchar { get; set; } = null;
 
         /// <summary>
         /// Порядок сортировки элемента перечисления
@@ -31,7 +31,7 @@ namespace ManDI.command.properties.vprop_enum.val
         /// <summary>
         /// Ссылка на объектное значение элемента перечисления
         /// </summary>
-        public long iid_object_reference { get; set; }
+        public long? iid_object_reference { get; set; } = null;
 
         /// <summary>
         /// Список параметров функции
@@ -48,11 +48,11 @@ namespace ManDI.command.properties.vprop_enum.val
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_numeric", NpgsqlDbType.Numeric);
-                Parameter.Value = ival_numeric;
+                Parameter.Value = ival_numeric != null ? ival_numeric : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("ival_varchar", NpgsqlDbType.Varchar);
-                Parameter.Value = ival_varchar;
+                Parameter.Value = ival_varchar != null ? ival_varchar : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("isort", NpgsqlDbType.Bigint);
@@ -60,7 +60,7 @@ namespace ManDI.command.properties.vprop_enum.val
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_object_reference", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_object_reference;
+                Parameter.Value = iid_object_reference != null ? iid_object_reference : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;

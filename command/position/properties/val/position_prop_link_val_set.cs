@@ -26,7 +26,7 @@ namespace ManDI.command.position.properties.upd
         /// <summary>
         ///  Идентификатор экземпляра дочерней сущности
         /// </summary>
-        public long iid_sub_entity_instance { get; set; }
+        public long? iid_sub_entity_instance { get; set; } = null;
 
         /// <summary>
         /// Список параметров функции
@@ -51,7 +51,7 @@ namespace ManDI.command.position.properties.upd
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_sub_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_sub_entity_instance;
+                Parameter.Value = iid_sub_entity_instance != null ? iid_sub_entity_instance : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 return ListParameter;

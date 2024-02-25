@@ -31,7 +31,7 @@ namespace ManDI.command.classes.properties.val
         /// <summary>
         /// Идентификатор экземпляра сущности, дополнительный
         /// </summary>
-        public long iid_sub_entity_instance { get; set; }
+        public long? iid_sub_entity_instance { get; set; } = null;
 
         /// <summary>
         /// Признак опции обновления имени объекта
@@ -61,7 +61,7 @@ namespace ManDI.command.classes.properties.val
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_sub_entity_instance", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_sub_entity_instance;
+                Parameter.Value = iid_sub_entity_instance != null ? iid_sub_entity_instance : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("setname", NpgsqlDbType.Boolean);

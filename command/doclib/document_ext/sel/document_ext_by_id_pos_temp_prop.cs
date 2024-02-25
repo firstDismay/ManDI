@@ -13,11 +13,6 @@ namespace ManDI.command.doclib.document_ext.sel
         public long id_pos_temp_prop { get; set; }
 
         /// <summary>
-        /// Идентификатор экземпляра дочерней сущности
-        /// </summary>
-        public long iid_sub_entity_instance { get; set; }
-
-        /// <summary>
         /// Список параметров функции
         /// </summary>
         public IEnumerable<NpgsqlParameter> Parameters

@@ -26,7 +26,7 @@ namespace ManDI.command.objects.add
         /// <summary>
         /// Дополнительный идентификатор экземпляра целевой сущности
         /// </summary>
-        public long iid_sub_entity_instance_target { get; set; }
+        public long? iid_sub_entity_instance_target { get; set; } = null;
 
         /// <summary>
         /// Признак необходимости проверки правил вложенности объектов
@@ -56,7 +56,7 @@ namespace ManDI.command.objects.add
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("iid_sub_entity_instance_target", NpgsqlDbType.Bigint);
-                Parameter.Value = iid_sub_entity_instance_target;
+                Parameter.Value = iid_sub_entity_instance_target != null ? iid_sub_entity_instance_target : DBNull.Value;
                 ListParameter.Add(Parameter);
 
                 Parameter = new NpgsqlParameter("on_check_nested_rule", NpgsqlDbType.Boolean);
